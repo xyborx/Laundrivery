@@ -12,11 +12,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
-        if launchedBefore  {
-            print("go to next")
+        let finishTutorial = UserDefaults.standard.bool(forKey: "finishTutorial")
+        if finishTutorial  {
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "skipTutorial", sender: nil)
+            }
+            
         } else {
-            UserDefaults.standard.set(true, forKey: "launchedBefore")
+//            UserDefaults.standard.set(true, forKey: "finishTutorial")
         }
     }
 }

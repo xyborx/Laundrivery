@@ -13,6 +13,7 @@
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
             <string>Avenir-Heavy</string>
+            <string>Avenir-Light</string>
             <string>Avenir-Medium</string>
         </array>
     </customFonts>
@@ -20,7 +21,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Laundrivery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -39,15 +39,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are Laundrivery, the first innovative laundry in Indonesia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVV-1u-SOV" userLabel="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt">
-                                        <rect key="frame" x="37.5" y="495" width="300" height="38.5"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                                        <rect key="frame" x="37.5" y="495" width="300" height="46.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button autoresizesSubviews="NO" verifyAmbiguity="ignoreSizes" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bh4-TO-LPw">
-                                        <rect key="frame" x="128.5" y="545.5" width="118" height="42"/>
+                                        <rect key="frame" x="126" y="553.5" width="123" height="44"/>
                                         <color key="backgroundColor" red="0.0" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <inset key="contentEdgeInsets" minX="16" minY="10" maxX="16" maxY="10"/>
                                         <state key="normal" title="Get Started">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -63,11 +63,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="173-Kq-4S6">
-                                        <rect key="frame" x="150" y="599.5" width="75" height="30"/>
+                                        <rect key="frame" x="150" y="609.5" width="75" height="30"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="13"/>
                                         <state key="normal" title="Skip tutorial">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="0We-1L-3iK" kind="show" identifier="" id="hiO-gk-vSu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -96,7 +99,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="qRM-eU-iQg" kind="show" identifier="skipTutorial" animates="NO" id="8eR-XD-Eyr"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
@@ -106,7 +113,23 @@
                 <viewControllerPlaceholder storyboardName="Menu" id="lLH-oe-UfS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBo-sL-bCJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="133"/>
+            <point key="canvasLocation" x="669" y="58"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="SWB-Yy-03c">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" id="qRM-eU-iQg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38i-bC-sWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669" y="133"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="YMy-Jl-I95">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="a" storyboardName="Menu" id="0We-1L-3iK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GPl-s9-tEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669" y="210"/>
         </scene>
     </scenes>
     <resources>

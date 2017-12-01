@@ -11,6 +11,9 @@
 		DA511BE11FD176910017E940 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BE01FD176910017E940 /* Home.storyboard */; };
 		DA511BE31FD1774B0017E940 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BE21FD1774B0017E940 /* History.storyboard */; };
 		DA511BE51FD177700017E940 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BE41FD177700017E940 /* Profile.storyboard */; };
+		DA511C2B1FD1BE5D0017E940 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511C2A1FD1BE5D0017E940 /* SignIn.storyboard */; };
+		DA511C2D1FD1BF3A0017E940 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511C2C1FD1BF3A0017E940 /* SignUp.storyboard */; };
+		DA511C2F1FD1BFC40017E940 /* ForgetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511C2E1FD1BFC40017E940 /* ForgetPassword.storyboard */; };
 		DAF6232B1FCD14F200B68D22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6232A1FCD14F200B68D22 /* AppDelegate.swift */; };
 		DAF6232D1FCD14F200B68D22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6232C1FCD14F200B68D22 /* ViewController.swift */; };
 		DAF623301FCD14F200B68D22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF6232E1FCD14F200B68D22 /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 		DA511BE01FD176910017E940 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		DA511BE21FD1774B0017E940 /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		DA511BE41FD177700017E940 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		DA511C2A1FD1BE5D0017E940 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		DA511C2C1FD1BF3A0017E940 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		DA511C2E1FD1BFC40017E940 /* ForgetPassword.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ForgetPassword.storyboard; sourceTree = "<group>"; };
 		DAF623271FCD14F200B68D22 /* Laundrivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Laundrivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF6232A1FCD14F200B68D22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF6232C1FCD14F200B68D22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +57,9 @@
 				DA511BE01FD176910017E940 /* Home.storyboard */,
 				DA511BE21FD1774B0017E940 /* History.storyboard */,
 				DA511BE41FD177700017E940 /* Profile.storyboard */,
+				DA511C2A1FD1BE5D0017E940 /* SignIn.storyboard */,
+				DA511C2E1FD1BFC40017E940 /* ForgetPassword.storyboard */,
+				DA511C2C1FD1BF3A0017E940 /* SignUp.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -151,7 +160,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA511C2B1FD1BE5D0017E940 /* SignIn.storyboard in Resources */,
 				DAF623351FCD14F200B68D22 /* LaunchScreen.storyboard in Resources */,
+				DA511C2F1FD1BFC40017E940 /* ForgetPassword.storyboard in Resources */,
+				DA511C2D1FD1BF3A0017E940 /* SignUp.storyboard in Resources */,
 				DA511BE11FD176910017E940 /* Home.storyboard in Resources */,
 				DAF623321FCD14F200B68D22 /* Assets.xcassets in Resources */,
 				DAF623301FCD14F200B68D22 /* Main.storyboard in Resources */,
