@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA511BD91FD16E070017E940 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BD81FD16E070017E940 /* Menu.storyboard */; };
+		DA511BE11FD176910017E940 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BE01FD176910017E940 /* Home.storyboard */; };
+		DA511BE31FD1774B0017E940 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BE21FD1774B0017E940 /* History.storyboard */; };
+		DA511BE51FD177700017E940 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BE41FD177700017E940 /* Profile.storyboard */; };
 		DAF6232B1FCD14F200B68D22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6232A1FCD14F200B68D22 /* AppDelegate.swift */; };
 		DAF6232D1FCD14F200B68D22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6232C1FCD14F200B68D22 /* ViewController.swift */; };
 		DAF623301FCD14F200B68D22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF6232E1FCD14F200B68D22 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA511BD81FD16E070017E940 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		DA511BE01FD176910017E940 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		DA511BE21FD1774B0017E940 /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		DA511BE41FD177700017E940 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		DAF623271FCD14F200B68D22 /* Laundrivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Laundrivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF6232A1FCD14F200B68D22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF6232C1FCD14F200B68D22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +43,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA511BD31FD1682F0017E940 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DAF6232E1FCD14F200B68D22 /* Main.storyboard */,
+				DA511BD81FD16E070017E940 /* Menu.storyboard */,
+				DA511BE01FD176910017E940 /* Home.storyboard */,
+				DA511BE21FD1774B0017E940 /* History.storyboard */,
+				DA511BE41FD177700017E940 /* Profile.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		DA511BD41FD1684B0017E940 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DAF6232C1FCD14F200B68D22 /* ViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		DAF6231E1FCD14F200B68D22 = {
 			isa = PBXGroup;
 			children = (
@@ -54,9 +82,9 @@
 		DAF623291FCD14F200B68D22 /* Laundrivery */ = {
 			isa = PBXGroup;
 			children = (
+				DA511BD31FD1682F0017E940 /* Storyboard */,
+				DA511BD41FD1684B0017E940 /* View Controller */,
 				DAF6232A1FCD14F200B68D22 /* AppDelegate.swift */,
-				DAF6232C1FCD14F200B68D22 /* ViewController.swift */,
-				DAF6232E1FCD14F200B68D22 /* Main.storyboard */,
 				DAF623311FCD14F200B68D22 /* Assets.xcassets */,
 				DAF623331FCD14F200B68D22 /* LaunchScreen.storyboard */,
 				DAF623361FCD14F200B68D22 /* Info.plist */,
@@ -124,8 +152,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAF623351FCD14F200B68D22 /* LaunchScreen.storyboard in Resources */,
+				DA511BE11FD176910017E940 /* Home.storyboard in Resources */,
 				DAF623321FCD14F200B68D22 /* Assets.xcassets in Resources */,
 				DAF623301FCD14F200B68D22 /* Main.storyboard in Resources */,
+				DA511BD91FD16E070017E940 /* Menu.storyboard in Resources */,
+				DA511BE51FD177700017E940 /* Profile.storyboard in Resources */,
+				DA511BE31FD1774B0017E940 /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
