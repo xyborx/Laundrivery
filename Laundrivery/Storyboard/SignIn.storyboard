@@ -18,6 +18,19 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="wWL-Ll-Fpn">
+            <objects>
+                <navigationController id="5Tp-VM-9ST" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mWX-le-ejZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mnq-nv-F6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="1257"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="QFl-A1-N38">
             <objects>
@@ -81,7 +94,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="05E-i6-gcq" kind="show" id="qKD-Ih-Xmz"/>
+                                            <segue destination="05E-i6-gcq" kind="show" id="fFG-Rb-WcD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EW0-gx-nyQ">
@@ -91,7 +104,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="gUL-xV-uct" kind="show" id="RQf-Eb-Mte"/>
+                                            <segue destination="gUL-xV-uct" kind="show" id="lE8-SL-n9B"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -127,6 +140,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sQb-gI-Lss"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hb6-HJ-FLJ"/>
                     <connections>
                         <segue destination="9P4-Hh-so7" kind="show" identifier="successHistory" id="cWv-et-5WJ"/>
                         <segue destination="lhl-t1-RYM" kind="show" identifier="successProfile" id="QN5-jq-M9S"/>

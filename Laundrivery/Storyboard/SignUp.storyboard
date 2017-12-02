@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7k-fd-GZ8">
-                                <rect key="frame" x="37.5" y="143" width="300" height="401"/>
+                                <rect key="frame" x="37.5" y="164" width="300" height="359"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2w-SB-Pd3">
                                         <rect key="frame" x="98.5" y="0.0" width="104" height="39"/>
@@ -86,16 +86,6 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIo-Sh-GlW">
-                                        <rect key="frame" x="72" y="371" width="156" height="30"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="13"/>
-                                        <state key="normal" title="Already have an account?">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="rOX-FP-rX0" kind="show" id="7kV-Ro-zsl"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psq-IP-9I5">
                                         <rect key="frame" x="112" y="243" width="76" height="14"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
@@ -113,16 +103,14 @@
                                     <constraint firstItem="edQ-BN-5kA" firstAttribute="top" secondItem="HK4-PQ-Xv1" secondAttribute="bottom" constant="12" id="18q-R7-eBl"/>
                                     <constraint firstItem="y35-LP-ZM8" firstAttribute="top" secondItem="v2w-SB-Pd3" secondAttribute="bottom" constant="24" id="4KG-kH-fTH"/>
                                     <constraint firstItem="Psq-IP-9I5" firstAttribute="centerX" secondItem="W7k-fd-GZ8" secondAttribute="centerX" id="7ye-gu-KKd"/>
+                                    <constraint firstAttribute="bottom" secondItem="MmY-pX-Twt" secondAttribute="bottom" id="AD8-fw-hiG"/>
                                     <constraint firstItem="edQ-BN-5kA" firstAttribute="top" secondItem="HK4-PQ-Xv1" secondAttribute="bottom" constant="12" id="Dpl-pP-8Aj"/>
                                     <constraint firstItem="v2w-SB-Pd3" firstAttribute="top" secondItem="W7k-fd-GZ8" secondAttribute="top" id="E9j-IZ-QrS"/>
                                     <constraint firstItem="g4v-yD-Y4j" firstAttribute="width" secondItem="W7k-fd-GZ8" secondAttribute="width" id="HkT-o6-y0z"/>
-                                    <constraint firstItem="uIo-Sh-GlW" firstAttribute="top" secondItem="MmY-pX-Twt" secondAttribute="bottom" constant="12" id="KI9-VB-g86"/>
-                                    <constraint firstAttribute="bottom" secondItem="uIo-Sh-GlW" secondAttribute="bottom" id="LUm-Kg-GHb"/>
                                     <constraint firstItem="g4v-yD-Y4j" firstAttribute="top" secondItem="edQ-BN-5kA" secondAttribute="bottom" constant="4" id="P5h-sh-fhT"/>
                                     <constraint firstItem="v2w-SB-Pd3" firstAttribute="centerX" secondItem="W7k-fd-GZ8" secondAttribute="centerX" id="QAG-M2-nyL"/>
                                     <constraint firstItem="wBg-7z-8cY" firstAttribute="width" secondItem="W7k-fd-GZ8" secondAttribute="width" id="WKA-m2-BgL"/>
                                     <constraint firstItem="hIl-BR-Qeh" firstAttribute="width" secondItem="W7k-fd-GZ8" secondAttribute="width" id="Z9m-6x-fNU"/>
-                                    <constraint firstItem="uIo-Sh-GlW" firstAttribute="centerX" secondItem="W7k-fd-GZ8" secondAttribute="centerX" id="ade-9F-PaF"/>
                                     <constraint firstItem="jU5-wI-CYx" firstAttribute="centerX" secondItem="W7k-fd-GZ8" secondAttribute="centerX" id="amJ-Ak-MAm"/>
                                     <constraint firstItem="wBg-7z-8cY" firstAttribute="centerX" secondItem="W7k-fd-GZ8" secondAttribute="centerX" id="bJB-5W-nss"/>
                                     <constraint firstItem="HK4-PQ-Xv1" firstAttribute="top" secondItem="jU5-wI-CYx" secondAttribute="bottom" constant="4" id="bwm-7o-yW2"/>
@@ -173,14 +161,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAd-yW-Vez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2544" y="1330"/>
-        </scene>
-        <!--SignIn-->
-        <scene sceneID="7eR-Mn-Ttp">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SignIn" id="rOX-FP-rX0" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KKx-k9-nwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2001" y="1663"/>
         </scene>
     </scenes>
 </document>
