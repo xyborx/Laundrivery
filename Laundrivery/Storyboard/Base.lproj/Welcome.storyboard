@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Laundrivery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="Laundrivery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,7 +69,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="0We-1L-3iK" kind="show" identifier="" id="hiO-gk-vSu"/>
+                                            <segue destination="jIi-s4-fLi" kind="show" id="2Dc-Na-QXx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -100,7 +100,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="qRM-eU-iQg" kind="show" identifier="skipTutorial" animates="NO" id="8eR-XD-Eyr"/>
+                        <segue destination="qRM-eU-iQg" kind="show" identifier="doneAuth" animates="NO" id="8eR-XD-Eyr"/>
+                        <segue destination="fjO-PN-o0h" kind="show" identifier="skipTutorial" id="8Sc-Su-XAs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -113,7 +114,7 @@
                 <viewControllerPlaceholder storyboardName="Menu" id="lLH-oe-UfS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBo-sL-bCJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669" y="58"/>
+            <point key="canvasLocation" x="669" y="24"/>
         </scene>
         <!--Menu-->
         <scene sceneID="SWB-Yy-03c">
@@ -121,15 +122,23 @@
                 <viewControllerPlaceholder storyboardName="Menu" id="qRM-eU-iQg" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38i-bC-sWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669" y="133"/>
+            <point key="canvasLocation" x="741" y="89"/>
         </scene>
-        <!--Menu-->
-        <scene sceneID="YMy-Jl-I95">
+        <!--MenuDemo-->
+        <scene sceneID="YxL-69-qzC">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="a" storyboardName="Menu" id="0We-1L-3iK" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GPl-s9-tEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="MenuDemo" id="jIi-s4-fLi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zzh-aX-oBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669" y="210"/>
+            <point key="canvasLocation" x="697" y="255"/>
+        </scene>
+        <!--MenuDemo-->
+        <scene sceneID="5nf-oo-RcH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MenuDemo" id="fjO-PN-o0h" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Grf-Mg-L6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="769" y="182"/>
         </scene>
     </scenes>
     <resources>

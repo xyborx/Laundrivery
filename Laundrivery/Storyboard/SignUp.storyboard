@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Sign UpVC-->
         <scene sceneID="7D7-TW-rST">
             <objects>
-                <viewController id="Y29-SM-bFi" sceneMemberID="viewController">
+                <viewController id="Y29-SM-bFi" customClass="SignUpVC" customModule="Laundrivery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rQi-uk-ypy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,6 +85,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signUpDidTapped:" destination="Y29-SM-bFi" eventType="touchUpInside" id="NrT-Ff-FTb"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psq-IP-9I5">
                                         <rect key="frame" x="112" y="243" width="76" height="14"/>
@@ -138,29 +141,24 @@
                         <viewLayoutGuide key="safeArea" id="7XC-Nx-IFw"/>
                     </view>
                     <connections>
-                        <segue destination="yus-vE-I1C" kind="show" identifier="successHistory" id="MHa-Dk-M8w"/>
-                        <segue destination="3OK-Cp-LIQ" kind="show" identifier="successProfile" id="Drd-Xs-9uN"/>
+                        <outlet property="emailTF" destination="HK4-PQ-Xv1" id="mrd-lS-xVo"/>
+                        <outlet property="nameTF" destination="wBg-7z-8cY" id="JJv-rb-1S0"/>
+                        <outlet property="passwordTF" destination="g4v-yD-Y4j" id="mVa-Bs-6g4"/>
+                        <outlet property="repeatPasswordTF" destination="hIl-BR-Qeh" id="jdT-ig-j2E"/>
+                        <segue destination="3OK-Cp-LIQ" kind="showDetail" identifier="doneAuth" action="showViewController:sender:" id="Drd-Xs-9uN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bz6-1E-7RS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2001" y="1257"/>
         </scene>
-        <!--History-->
-        <scene sceneID="K0R-S4-g7O">
-            <objects>
-                <viewControllerPlaceholder storyboardName="History" id="yus-vE-I1C" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cja-iq-Z5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2548" y="1171"/>
-        </scene>
-        <!--Profile-->
+        <!--Menu-->
         <scene sceneID="VGH-gf-B5S">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="3OK-Cp-LIQ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Menu" id="3OK-Cp-LIQ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAd-yW-Vez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2544" y="1330"/>
+            <point key="canvasLocation" x="2547" y="1256"/>
         </scene>
     </scenes>
 </document>
