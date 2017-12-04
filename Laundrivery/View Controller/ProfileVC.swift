@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreData
 
 class ProfileVC: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
@@ -20,16 +21,11 @@ class ProfileVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if let currentUser = Auth.auth().currentUser {
-            let uid = currentUser.uid
-            DatabaseService.shared.profile.child(uid).observe(.value, with: { (snapshot) in
-                print(snapshot)
-                guard let snapDict = snapshot.value as? [String: Any] else {return}
-                let user = UserData(user: currentUser, dict: snapDict)
-                self.nameLabel.text = user?.displayName
-                self.emailLabel.text = user?.email
-                self.phoneLabel.text = user?.phone
-                self.streetLabel.text = user?.address
-            })
+            let user = DatabaseService.shared.getUser(uid: currentUser.uid)
+            nameLabel.text = user.displayName
+            emailLabel.text = user.email
+            phoneLabel.text = user.phone
+            streetLabel.text = user.address
             profileView.isHidden = false
             sorryView.isHidden = true
         }

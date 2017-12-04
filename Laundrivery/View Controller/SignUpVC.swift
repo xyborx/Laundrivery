@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreData
 
 class SignUpVC: UIViewController {
     @IBOutlet weak var nameTF: UITextField!
@@ -20,9 +21,9 @@ class SignUpVC: UIViewController {
             let name = nameTF.text, name != "",
             let email = emailTF.text, email != "",
             let password = passwordTF.text, password != ""
-            else {
-                AlertController.showAlert(self, title: "Missing Information", message: "Please fill out all fields")
-                return
+        else {
+            AlertController.showAlert(self, title: "Missing Information", message: "Please fill out all fields")
+            return
         }
         
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
@@ -38,6 +39,8 @@ class SignUpVC: UIViewController {
                     return
             }
             
+            let newUser = UserData(userId: user.uid, displayName: name, email: email, phone: "", address: "")
+            
             let changeRequest = user.createProfileChangeRequest()
             changeRequest.displayName = name
             changeRequest.commitChanges(completion: { (error) in
@@ -48,13 +51,9 @@ class SignUpVC: UIViewController {
                         return
                 }
                 
-                let parameters = ["address"    : "Jl. Gn. Salak 15, Sentul, Bogor",
-                                  "name"     : name,
-                                  "phone"        : "+6282234036659"]
+                DatabaseService.shared.addUser(user: newUser)
+                DatabaseService.shared.saveUserToCloud(uid: newUser.userId, phone: newUser.phone, address: newUser.address)
                 
-                DatabaseService.shared.profile.child(user.uid).setValue(parameters)
-                
-                UserDefaults.standard.set(true, forKey: "loggedIn")
                 self.navigationController?.popToRootViewController(animated: true)
             })
         }

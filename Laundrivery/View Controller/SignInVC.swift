@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreData
 
 class SignInVC: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
@@ -31,16 +32,18 @@ class SignInVC: UIViewController {
             }
             
             guard
-                let user = user
+                let users = user
                 else {
                     return
             }
             
-            print(user.email ?? "Missing email")
-            print(user.displayName ?? "Missing display name")
-            print(user.uid)
+            DatabaseService.shared.profile.child(users.uid).observe(.value, with: { (snapshot) in
+                print(snapshot)
+                guard let snapDict = snapshot.value as? [String: Any] else {return}
+                let userData = UserData(user: users, dict: snapDict)
+                DatabaseService.shared.addUser(user: userData!)
+            })
             
-            UserDefaults.standard.set(true, forKey: "loggedIn")
             self.navigationController?.popToRootViewController(animated: true)
         }
     }

@@ -16,7 +16,7 @@ class UserData {
     let phone: String
     let address: String
 
-    init? (user: User, dict: [String: Any]) {
+    init?(user: Firebase.User, dict: [String: Any]) {
         self.userId = user.uid
         self.displayName = user.displayName ?? "Not set"
         self.email = user.email ?? "Not set"
@@ -28,5 +28,21 @@ class UserData {
         }
         self.phone = phone
         self.address = address
+    }
+    
+    init(userId: String, displayName: String, email: String, phone: String, address: String) {
+        self.userId = userId
+        self.displayName = displayName
+        self.email = email
+        self.phone = phone
+        self.address = address
+    }
+    
+    init() {
+        self.userId = ""
+        self.displayName = ""
+        self.email = ""
+        self.phone = ""
+        self.address = ""
     }
 }
