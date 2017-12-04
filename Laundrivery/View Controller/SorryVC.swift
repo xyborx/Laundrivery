@@ -10,11 +10,5 @@ import UIKit
 
 class SorryVC: UIViewController {
 
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-    }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.shadowImage = UINavigationBar.appearance().shadowImage
-    }
 }

@@ -41,7 +41,7 @@ class SignInVC: UIViewController {
             print(user.uid)
             
             UserDefaults.standard.set(true, forKey: "loggedIn")
-            self.performSegue(withIdentifier: "doneAuth", sender: nil)
+            self.navigationController?.popToRootViewController(animated: true)
         }
     }
 }

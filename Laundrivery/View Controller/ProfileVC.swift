@@ -15,11 +15,29 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var streetLabel: UILabel!
     
+    @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var sorryView: UIView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if Auth.auth().currentUser == nil {
+            self.navigationController?.isNavigationBarHidden = true
+            profileView.isHidden = true
+            sorryView.isHidden = false
+        }
+        else {
+            guard let name = Auth.auth().currentUser?.displayName else {return}
+            guard let email = Auth.auth().currentUser?.email else {return}
+            nameLabel.text = name
+            emailLabel.text = email
+            profileView.isHidden = false
+            sorryView.isHidden = true
+        }
+    }
+    
     @IBAction func signOutDidTapped(_ sender: Any) {
         do {
             try Auth.auth().signOut()
-            UserDefaults.standard.set(false, forKey: "loggedIn")
-            performSegue(withIdentifier: "signOutSegue", sender: nil)
+            self.viewWillAppear(true)
         }
         catch {
             print(error)
@@ -30,9 +48,11 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        guard let name = Auth.auth().currentUser?.displayName else {return}
-        guard let email = Auth.auth().currentUser?.email else {return}
-        nameLabel.text = name
-        emailLabel.text = email
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if Auth.auth().currentUser == nil {
+            self.navigationController?.isNavigationBarHidden = false
+        }
     }
 }

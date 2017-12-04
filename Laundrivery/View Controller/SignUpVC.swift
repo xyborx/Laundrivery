@@ -47,8 +47,15 @@ class SignUpVC: UIViewController {
                         AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
                         return
                 }
+                
+                let parameters = ["address"    : "Jl. Gn. Salak 15, Sentul, Bogor",
+                                  "name"     : name,
+                                  "phone"        : "+6282234036659"]
+                
+                DatabaseService.shared.profile.child(user.uid).setValue(parameters)
+                
                 UserDefaults.standard.set(true, forKey: "loggedIn")
-                self.performSegue(withIdentifier: "doneAuth", sender: nil)
+                self.navigationController?.popToRootViewController(animated: true)
             })
         }
     }

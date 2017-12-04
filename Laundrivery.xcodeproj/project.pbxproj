@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA175EBE1FD4EC0300A72F30 /* SorryHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EBD1FD4EC0300A72F30 /* SorryHistory.storyboard */; };
 		DA175EC11FD4EC1D00A72F30 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EBF1FD4EC1C00A72F30 /* Welcome.storyboard */; };
-		DA175EC21FD4EC1D00A72F30 /* MenuDemo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC01FD4EC1D00A72F30 /* MenuDemo.storyboard */; };
 		DA175EC41FD4F06E00A72F30 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC31FD4F06E00A72F30 /* EditProfile.storyboard */; };
 		DA175EC61FD4F21800A72F30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC51FD4F21700A72F30 /* GoogleService-Info.plist */; };
 		DA175EE61FD50DDE00A72F30 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA175EE51FD50DDE00A72F30 /* AlertController.swift */; };
+		DA175EE91FD51D2500A72F30 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA175EE81FD51D2500A72F30 /* DatabaseService.swift */; };
 		DA26D1301FD23A920054EDAB /* LocalData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA26D12E1FD23A920054EDAB /* LocalData.xcdatamodeld */; };
 		DA511BD91FD16E070017E940 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BD81FD16E070017E940 /* Menu.storyboard */; };
 		DA511BE11FD176910017E940 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BE01FD176910017E940 /* Home.storyboard */; };
@@ -33,8 +32,6 @@
 		DAD85F5E1FD2D53D0036E3A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD85F5D1FD2D53D0036E3A1 /* LaunchScreen.storyboard */; };
 		DAF6232B1FCD14F200B68D22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6232A1FCD14F200B68D22 /* AppDelegate.swift */; };
 		DAF623321FCD14F200B68D22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF623311FCD14F200B68D22 /* Assets.xcassets */; };
-		DAF79C931FD3ED6A00E44A86 /* SorryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF79C921FD3ED6A00E44A86 /* SorryVC.swift */; };
-		DAF79C971FD40F7A00E44A86 /* SorryProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF79C961FD40F7A00E44A86 /* SorryProfile.storyboard */; };
 		EBB12403F8BABC580B76EDA8 /* Pods_Laundrivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDD64B2D223D9C2E1EEBE67 /* Pods_Laundrivery.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,12 +39,11 @@
 		6EDD64B2D223D9C2E1EEBE67 /* Pods_Laundrivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Laundrivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCEB5DC498826BB5045CAA4 /* Pods-Laundrivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.release.xcconfig"; sourceTree = "<group>"; };
 		8EEFB0AA050B881880FBBDE9 /* Pods-Laundrivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.debug.xcconfig"; sourceTree = "<group>"; };
-		DA175EBD1FD4EC0300A72F30 /* SorryHistory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SorryHistory.storyboard; sourceTree = "<group>"; };
 		DA175EBF1FD4EC1C00A72F30 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
-		DA175EC01FD4EC1D00A72F30 /* MenuDemo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuDemo.storyboard; sourceTree = "<group>"; };
 		DA175EC31FD4F06E00A72F30 /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		DA175EC51FD4F21700A72F30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA175EE51FD50DDE00A72F30 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		DA175EE81FD51D2500A72F30 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		DA26D12F1FD23A920054EDAB /* LocalData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalData.xcdatamodel; sourceTree = "<group>"; };
 		DA511BD81FD16E070017E940 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		DA511BE01FD176910017E940 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -70,8 +66,6 @@
 		DAF6232A1FCD14F200B68D22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF623311FCD14F200B68D22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAF623361FCD14F200B68D22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAF79C921FD3ED6A00E44A86 /* SorryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryVC.swift; sourceTree = "<group>"; };
-		DAF79C961FD40F7A00E44A86 /* SorryProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SorryProfile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				DA175EE51FD50DDE00A72F30 /* AlertController.swift */,
+				DA175EE81FD51D2500A72F30 /* DatabaseService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,10 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				DA175EBF1FD4EC1C00A72F30 /* Welcome.storyboard */,
-				DA175EC01FD4EC1D00A72F30 /* MenuDemo.storyboard */,
 				DA511BD81FD16E070017E940 /* Menu.storyboard */,
-				DA175EBD1FD4EC0300A72F30 /* SorryHistory.storyboard */,
-				DAF79C961FD40F7A00E44A86 /* SorryProfile.storyboard */,
 				DA511BE01FD176910017E940 /* Home.storyboard */,
 				DA6C136A1FD445990076011A /* Cart.storyboard */,
 				DA511BE21FD1774B0017E940 /* History.storyboard */,
@@ -133,7 +125,6 @@
 				DACE50E41FD393A9005C835B /* SignInVC.swift */,
 				DACE50E61FD393B8005C835B /* SignUpVC.swift */,
 				DACE50E81FD393C6005C835B /* ForgetPasswordVC.swift */,
-				DAF79C921FD3ED6A00E44A86 /* SorryVC.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -245,9 +236,6 @@
 			files = (
 				DA511C2B1FD1BE5D0017E940 /* SignIn.storyboard in Resources */,
 				DA511C2F1FD1BFC40017E940 /* ForgetPassword.storyboard in Resources */,
-				DAF79C971FD40F7A00E44A86 /* SorryProfile.storyboard in Resources */,
-				DA175EC21FD4EC1D00A72F30 /* MenuDemo.storyboard in Resources */,
-				DA175EBE1FD4EC0300A72F30 /* SorryHistory.storyboard in Resources */,
 				DA175EC11FD4EC1D00A72F30 /* Welcome.storyboard in Resources */,
 				DA175EC41FD4F06E00A72F30 /* EditProfile.storyboard in Resources */,
 				DA511C2D1FD1BF3A0017E940 /* SignUp.storyboard in Resources */,
@@ -337,7 +325,7 @@
 				DACE50E11FD392EE005C835B /* HistoryVC.swift in Sources */,
 				DACE50DF1FD392D8005C835B /* HomeVC.swift in Sources */,
 				DACE50E51FD393A9005C835B /* SignInVC.swift in Sources */,
-				DAF79C931FD3ED6A00E44A86 /* SorryVC.swift in Sources */,
+				DA175EE91FD51D2500A72F30 /* DatabaseService.swift in Sources */,
 				DA6C136D1FD448630076011A /* CartVC.swift in Sources */,
 				DA26D1301FD23A920054EDAB /* LocalData.xcdatamodeld in Sources */,
 				DAF6232B1FCD14F200B68D22 /* AppDelegate.swift in Sources */,
