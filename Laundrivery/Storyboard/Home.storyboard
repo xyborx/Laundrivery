@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iQv-Z4-KRO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="Rv8-Jk-GrM">
+            <objects>
+                <navigationController id="iQv-Z4-KRO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="ZQi-mi-qVK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gm5-2i-92C">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PBQ-mO-L69" kind="relationship" relationship="rootViewController" id="dqW-Kb-DVx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7cP-K2-gdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822" y="-284"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="P4n-bN-LYv">
+            <objects>
+                <viewController id="PBQ-mO-L69" customClass="HomeVC" customModule="Laundrivery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FwA-V1-Kit">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.20392156862745098" green="0.24705882352941178" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Jo7-Yp-KL2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="Ki1-KT-tmN">
+                        <barButtonItem key="rightBarButtonItem" title="Cart" id="oMB-GB-MYJ">
+                            <connections>
+                                <segue destination="mYF-ak-ZgE" kind="show" id="A32-3M-imG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VJ8-Zn-j5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2753" y="-285"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="nIh-Ao-c9t">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Cart" id="mYF-ak-ZgE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C62-PH-B1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3377" y="-285"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SHd-lF-jDb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Light</string>
+            <string>Avenir-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Profile-->
+        <scene sceneID="Vse-eV-oYc">
+            <objects>
+                <navigationController id="SHd-lF-jDb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="FsV-Ld-wnD"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oip-E7-1BG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iQf-NQ-wGW" kind="relationship" relationship="rootViewController" id="0FB-fQ-o8V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p0g-MK-MvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1348" y="133"/>
+        </scene>
+        <!--SorryVC-->
+        <scene sceneID="1IT-Re-A9d">
+            <objects>
+                <viewController id="iQf-NQ-wGW" customClass="SorryVC" customModule="Laundrivery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KnP-CS-yHh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMg-x0-Cbz">
+                                <rect key="frame" x="37.5" y="128" width="300" height="426"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're Sorry" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcF-N9-bai">
+                                        <rect key="frame" x="72" y="0.0" width="156" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To access your profile, please sign in." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFi-S0-qBY">
+                                        <rect key="frame" x="11" y="330.5" width="278.5" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYI-Gd-mOM">
+                                        <rect key="frame" x="107.5" y="382" width="85" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="16" minY="10" maxX="16" maxY="10"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="smc-FW-kKB" kind="show" id="9el-Dh-dVy"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U0L-dE-gqC">
+                                        <rect key="frame" x="0.0" y="50.5" width="300" height="256"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="256" id="xtN-Yt-0op"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mFi-S0-qBY" firstAttribute="centerX" secondItem="BMg-x0-Cbz" secondAttribute="centerX" id="2iQ-ES-amz"/>
+                                    <constraint firstItem="U0L-dE-gqC" firstAttribute="top" secondItem="rcF-N9-bai" secondAttribute="bottom" constant="12" id="DF8-Pp-uXg"/>
+                                    <constraint firstItem="sYI-Gd-mOM" firstAttribute="centerX" secondItem="BMg-x0-Cbz" secondAttribute="centerX" id="SGo-KE-qdL"/>
+                                    <constraint firstItem="sYI-Gd-mOM" firstAttribute="top" secondItem="mFi-S0-qBY" secondAttribute="bottom" constant="28" id="bdA-8G-h2j"/>
+                                    <constraint firstItem="mFi-S0-qBY" firstAttribute="top" secondItem="U0L-dE-gqC" secondAttribute="bottom" constant="24" id="gDh-xh-z9a"/>
+                                    <constraint firstItem="U0L-dE-gqC" firstAttribute="centerX" secondItem="BMg-x0-Cbz" secondAttribute="centerX" id="gSr-6y-dGf"/>
+                                    <constraint firstItem="rcF-N9-bai" firstAttribute="centerX" secondItem="BMg-x0-Cbz" secondAttribute="centerX" id="iPC-bm-R9n"/>
+                                    <constraint firstItem="U0L-dE-gqC" firstAttribute="width" secondItem="BMg-x0-Cbz" secondAttribute="width" id="nEy-SS-6eo"/>
+                                    <constraint firstItem="rcF-N9-bai" firstAttribute="top" secondItem="BMg-x0-Cbz" secondAttribute="top" id="oWt-9G-th1"/>
+                                    <constraint firstAttribute="bottom" secondItem="sYI-Gd-mOM" secondAttribute="bottom" id="vsc-O6-6Ek"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BMg-x0-Cbz" firstAttribute="width" secondItem="KnP-CS-yHh" secondAttribute="width" multiplier="0.8" id="g00-c1-Hhn"/>
+                            <constraint firstItem="BMg-x0-Cbz" firstAttribute="centerY" secondItem="QBJ-dD-kiz" secondAttribute="centerY" id="g0Z-0l-xkP"/>
+                            <constraint firstItem="BMg-x0-Cbz" firstAttribute="centerX" secondItem="QBJ-dD-kiz" secondAttribute="centerX" id="iQF-cW-m68"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QBJ-dD-kiz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5Oj-my-jMs"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bkn-Oc-Z4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2255" y="133"/>
+        </scene>
+        <!--SignIn-->
+        <scene sceneID="4a4-PP-rK7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignIn" id="smc-FW-kKB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7M1-Ud-64F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2254" y="529"/>
+        </scene>
+    </scenes>
+</document>
