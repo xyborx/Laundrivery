@@ -21,21 +21,14 @@ class ProfileVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if let currentUser = Auth.auth().currentUser {
             let uid = currentUser.uid
-            guard let name = currentUser.displayName else {return}
-            guard let email = currentUser.email else {return}
             DatabaseService.shared.profile.child(uid).observe(.value, with: { (snapshot) in
                 print(snapshot)
-                guard
-                    let data = snapshot.value as? [String: Any],
-                    let address = data["address"] as? String,
-                    let phone = data["phone"] as? String
-                else {
-                    return
-                }
-                self.nameLabel.text = name
-                self.emailLabel.text = email
-                self.phoneLabel.text = phone
-                self.streetLabel.text = address
+                guard let snapDict = snapshot.value as? [String: Any] else {return}
+                let user = UserData(user: currentUser, dict: snapDict)
+                self.nameLabel.text = user?.displayName
+                self.emailLabel.text = user?.email
+                self.phoneLabel.text = user?.phone
+                self.streetLabel.text = user?.address
             })
             profileView.isHidden = false
             sorryView.isHidden = true

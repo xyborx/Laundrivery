@@ -12,6 +12,7 @@
 		DA175EC61FD4F21800A72F30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC51FD4F21700A72F30 /* GoogleService-Info.plist */; };
 		DA175EE61FD50DDE00A72F30 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA175EE51FD50DDE00A72F30 /* AlertController.swift */; };
 		DA175EE91FD51D2500A72F30 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA175EE81FD51D2500A72F30 /* DatabaseService.swift */; };
+		DA175EEB1FD54B7000A72F30 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA175EEA1FD54B7000A72F30 /* UserData.swift */; };
 		DA26D1301FD23A920054EDAB /* LocalData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA26D12E1FD23A920054EDAB /* LocalData.xcdatamodeld */; };
 		DA511BD91FD16E070017E940 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BD81FD16E070017E940 /* Menu.storyboard */; };
 		DA511BE11FD176910017E940 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BE01FD176910017E940 /* Home.storyboard */; };
@@ -44,6 +45,7 @@
 		DA175EC51FD4F21700A72F30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA175EE51FD50DDE00A72F30 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		DA175EE81FD51D2500A72F30 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		DA175EEA1FD54B7000A72F30 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		DA26D12F1FD23A920054EDAB /* LocalData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalData.xcdatamodel; sourceTree = "<group>"; };
 		DA511BD81FD16E070017E940 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		DA511BE01FD176910017E940 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				DA175EE51FD50DDE00A72F30 /* AlertController.swift */,
 				DA175EE81FD51D2500A72F30 /* DatabaseService.swift */,
+				DA175EEA1FD54B7000A72F30 /* UserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA175EEB1FD54B7000A72F30 /* UserData.swift in Sources */,
 				DACE50E71FD393B8005C835B /* SignUpVC.swift in Sources */,
 				DACE50E91FD393C6005C835B /* ForgetPasswordVC.swift in Sources */,
 				DACE50E31FD392FB005C835B /* ProfileVC.swift in Sources */,
