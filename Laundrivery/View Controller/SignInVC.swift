@@ -7,11 +7,41 @@
 //
 
 import UIKit
+import Firebase
 
 class SignInVC: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
     @IBAction func signInDidTapped(_ sender: Any) {
+        guard
+            let email = emailTF.text, email != "",
+            let password = passwordTF.text, password != ""
+            else {
+                AlertController.showAlert(self, title: "Missing Information", message: "Please fill out all fields")
+                return
+        }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            guard
+                error == nil
+                else {
+                    AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
+                    return
+            }
+            
+            guard
+                let user = user
+                else {
+                    return
+            }
+            
+            print(user.email ?? "Missing email")
+            print(user.displayName ?? "Missing display name")
+            print(user.uid)
+            
+            AlertController.showAlert(self, title: "Success", message: "Good")
+//            self.performSegue(withIdentifier: "signInSegue", sender: nil)
+        }
     }
 }
