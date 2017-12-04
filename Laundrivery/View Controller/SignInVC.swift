@@ -40,8 +40,8 @@ class SignInVC: UIViewController {
             print(user.displayName ?? "Missing display name")
             print(user.uid)
             
-            AlertController.showAlert(self, title: "Success", message: "Good")
-//            self.performSegue(withIdentifier: "signInSegue", sender: nil)
+            UserDefaults.standard.set(true, forKey: "loggedIn")
+            self.performSegue(withIdentifier: "doneAuth", sender: nil)
         }
     }
 }

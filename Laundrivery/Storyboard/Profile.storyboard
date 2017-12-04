@@ -38,7 +38,7 @@
         <!--Profile-->
         <scene sceneID="MpB-xa-X6M">
             <objects>
-                <viewController id="lut-EZ-n0e" sceneMemberID="viewController">
+                <viewController id="lut-EZ-n0e" customClass="ProfileVC" customModule="Laundrivery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wI1-g6-CSw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +115,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signOutDidTapped:" destination="lut-EZ-n0e" eventType="touchUpInside" id="BUq-5V-F1y"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -166,10 +169,25 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="ntd-Ht-4qY" id="M7u-Gz-Nqd"/>
+                        <outlet property="nameLabel" destination="mWQ-Jp-JuF" id="lFG-z2-MQ7"/>
+                        <outlet property="phoneLabel" destination="y3o-f0-yGv" id="y3m-7G-tpR"/>
+                        <outlet property="streetLabel" destination="qQo-AB-TGh" id="uA3-IR-WPX"/>
+                        <segue destination="IFW-2n-UTT" kind="showDetail" identifier="signOutSegue" id="8SG-pU-lQJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56c-YL-1DK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="90" y="490"/>
+        </scene>
+        <!--MenuDemo-->
+        <scene sceneID="VHc-kX-DuD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MenuDemo" id="IFW-2n-UTT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5U-uf-g9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="89" y="869"/>
         </scene>
         <!--EditProfile-->
         <scene sceneID="ArN-kP-WAm">

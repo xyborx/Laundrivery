@@ -37,8 +37,6 @@ class SignUpVC: UIViewController {
                 else {
                     return
             }
-            print(user.email ?? "Missing email")
-            print(user.uid)
             
             let changeRequest = user.createProfileChangeRequest()
             changeRequest.displayName = name
@@ -49,8 +47,8 @@ class SignUpVC: UIViewController {
                         AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
                         return
                 }
-//                self.performSegue(withIdentifier: "signUpSegue", sender: nil)
-                AlertController.showAlert(self, title: "Success", message: "Good")
+                UserDefaults.standard.set(true, forKey: "loggedIn")
+                self.performSegue(withIdentifier: "doneAuth", sender: nil)
             })
         }
     }
