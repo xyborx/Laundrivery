@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA175EBC1FD4E79700A72F30 /* MenuDemo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EBA1FD4E79700A72F30 /* MenuDemo.storyboard */; };
+		DA26D1301FD23A920054EDAB /* LocalData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA26D12E1FD23A920054EDAB /* LocalData.xcdatamodeld */; };
 		DA511BD91FD16E070017E940 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BD81FD16E070017E940 /* Menu.storyboard */; };
 		DA511BE11FD176910017E940 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BE01FD176910017E940 /* Home.storyboard */; };
 		DA511BE31FD1774B0017E940 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BE21FD1774B0017E940 /* History.storyboard */; };
@@ -25,16 +27,16 @@
 		DACE50E71FD393B8005C835B /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE50E61FD393B8005C835B /* SignUpVC.swift */; };
 		DACE50E91FD393C6005C835B /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE50E81FD393C6005C835B /* ForgetPasswordVC.swift */; };
 		DAD85F5E1FD2D53D0036E3A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD85F5D1FD2D53D0036E3A1 /* LaunchScreen.storyboard */; };
-		DA26D1301FD23A920054EDAB /* LocalData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA26D12E1FD23A920054EDAB /* LocalData.xcdatamodeld */; };
 		DAF6232B1FCD14F200B68D22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6232A1FCD14F200B68D22 /* AppDelegate.swift */; };
 		DAF623301FCD14F200B68D22 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF6232E1FCD14F200B68D22 /* Welcome.storyboard */; };
 		DAF623321FCD14F200B68D22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF623311FCD14F200B68D22 /* Assets.xcassets */; };
 		DAF79C931FD3ED6A00E44A86 /* SorryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF79C921FD3ED6A00E44A86 /* SorryVC.swift */; };
 		DAF79C971FD40F7A00E44A86 /* SorryProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF79C961FD40F7A00E44A86 /* SorryProfile.storyboard */; };
-		DAF79C9A1FD4101C00E44A86 /* MenuDemo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF79C981FD4101C00E44A86 /* MenuDemo.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA175EBB1FD4E79700A72F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Laundrivery/Storyboard/Base.lproj/MenuDemo.storyboard; sourceTree = "<group>"; };
+		DA26D12F1FD23A920054EDAB /* LocalData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalData.xcdatamodel; sourceTree = "<group>"; };
 		DA511BD81FD16E070017E940 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		DA511BE01FD176910017E940 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		DA511BE21FD1774B0017E940 /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
@@ -53,7 +55,6 @@
 		DACE50E61FD393B8005C835B /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		DACE50E81FD393C6005C835B /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		DAD85F5D1FD2D53D0036E3A1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DA26D12F1FD23A920054EDAB /* LocalData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalData.xcdatamodel; sourceTree = "<group>"; };
 		DAF623271FCD14F200B68D22 /* Laundrivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Laundrivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF6232A1FCD14F200B68D22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF6232F1FCD14F200B68D22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Welcome.storyboard; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		DAF623361FCD14F200B68D22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF79C921FD3ED6A00E44A86 /* SorryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryVC.swift; sourceTree = "<group>"; };
 		DAF79C961FD40F7A00E44A86 /* SorryProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SorryProfile.storyboard; sourceTree = "<group>"; };
-		DAF79C991FD4101C00E44A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Laundrivery/Storyboard/Base.lproj/MenuDemo.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 			children = (
 				DAF6232E1FCD14F200B68D22 /* Welcome.storyboard */,
 				DA511BD81FD16E070017E940 /* Menu.storyboard */,
-				DAF79C981FD4101C00E44A86 /* MenuDemo.storyboard */,
+				DA175EBA1FD4E79700A72F30 /* MenuDemo.storyboard */,
 				DA6C13651FD42E0F0076011A /* SorryHistory.storyboard */,
 				DAF79C961FD40F7A00E44A86 /* SorryProfile.storyboard */,
 				DA511BE01FD176910017E940 /* Home.storyboard */,
@@ -199,7 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAF79C9A1FD4101C00E44A86 /* MenuDemo.storyboard in Resources */,
+				DA175EBC1FD4E79700A72F30 /* MenuDemo.storyboard in Resources */,
 				DA511C2B1FD1BE5D0017E940 /* SignIn.storyboard in Resources */,
 				DA511C2F1FD1BFC40017E940 /* ForgetPassword.storyboard in Resources */,
 				DAF79C971FD40F7A00E44A86 /* SorryProfile.storyboard in Resources */,
@@ -240,6 +240,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		DA175EBA1FD4E79700A72F30 /* MenuDemo.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA175EBB1FD4E79700A72F30 /* Base */,
+			);
+			name = MenuDemo.storyboard;
+			sourceTree = "<group>";
+		};
 		DA6C13651FD42E0F0076011A /* SorryHistory.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -254,14 +262,6 @@
 				DAF6232F1FCD14F200B68D22 /* Base */,
 			);
 			name = Welcome.storyboard;
-			sourceTree = "<group>";
-		};
-		DAF79C981FD4101C00E44A86 /* MenuDemo.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DAF79C991FD4101C00E44A86 /* Base */,
-			);
-			name = MenuDemo.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
