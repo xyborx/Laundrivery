@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="1822" y="-284"/>
         </scene>
-        <!--HomeVC-->
+        <!--Home-->
         <scene sceneID="P4n-bN-LYv">
             <objects>
                 <viewController id="PBQ-mO-L69" customClass="HomeVC" customModule="Laundrivery" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,10 +37,10 @@
                         <color key="backgroundColor" red="0.20392156862745098" green="0.24705882352941178" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Jo7-Yp-KL2"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ki1-KT-tmN">
+                    <navigationItem key="navigationItem" title="Home" id="Ki1-KT-tmN">
                         <barButtonItem key="rightBarButtonItem" title="Cart" id="oMB-GB-MYJ">
                             <connections>
-                                <segue destination="LFB-iQ-4qH" kind="show" id="52W-9t-0vi"/>
+                                <segue destination="mYF-ak-ZgE" kind="show" id="A32-3M-imG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -49,20 +49,13 @@
             </objects>
             <point key="canvasLocation" x="2753" y="-285"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="YN1-nd-y5K">
+        <!--Cart-->
+        <scene sceneID="nIh-Ao-c9t">
             <objects>
-                <viewController id="LFB-iQ-4qH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IzJ-pj-TpH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="Nea-WC-G7s"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5La-La-xIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Cart" id="mYF-ak-ZgE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C62-PH-B1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3639" y="-285"/>
+            <point key="canvasLocation" x="3377" y="-285"/>
         </scene>
     </scenes>
 </document>

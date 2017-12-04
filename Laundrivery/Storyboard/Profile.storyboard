@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lut-EZ-n0e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BxE-0r-qpk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,6 +18,24 @@
     </customFonts>
     <scenes>
         <!--Profile-->
+        <scene sceneID="122-cV-wat">
+            <objects>
+                <navigationController id="BxE-0r-qpk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="qk6-fH-R7x"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NrK-0f-jmN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lut-EZ-n0e" kind="relationship" relationship="rootViewController" id="4Pi-AB-JTI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IeG-wn-Ucu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-836" y="490"/>
+        </scene>
+        <!--Profile-->
         <scene sceneID="MpB-xa-X6M">
             <objects>
                 <viewController id="lut-EZ-n0e" sceneMemberID="viewController">
@@ -26,50 +44,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Bb4-ix-zCf">
-                                <rect key="frame" x="102" y="60" width="172" height="172"/>
+                                <rect key="frame" x="102" y="104" width="172" height="172"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="172" id="ihx-nk-M40"/>
                                     <constraint firstAttribute="width" constant="172" id="kcS-kc-pvT"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfL-Uh-3qt">
-                                <rect key="frame" x="38" y="256" width="300" height="14"/>
+                                <rect key="frame" x="38" y="300" width="300" height="14"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWQ-Jp-JuF">
-                                <rect key="frame" x="38" y="274" width="300" height="24"/>
+                                <rect key="frame" x="38" y="318" width="300" height="24"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tP8-xf-KEP">
-                                <rect key="frame" x="37.5" y="309.5" width="300" height="14"/>
+                                <rect key="frame" x="37.5" y="353.5" width="300" height="14"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="someone@example.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntd-Ht-4qY">
-                                <rect key="frame" x="37.5" y="327.5" width="300" height="24"/>
+                                <rect key="frame" x="37.5" y="371.5" width="300" height="24"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1d-CY-vfV">
-                                <rect key="frame" x="0.0" y="417.5" width="375" height="14"/>
+                                <rect key="frame" x="0.0" y="461.5" width="375" height="14"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Street, City, Province" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQo-AB-TGh">
-                                <rect key="frame" x="0.0" y="435.5" width="375" height="24"/>
+                                <rect key="frame" x="0.0" y="479.5" width="375" height="24"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l48-MI-xdA">
-                                <rect key="frame" x="137.5" y="487.5" width="100" height="44"/>
+                                <rect key="frame" x="137.5" y="531.5" width="100" height="44"/>
                                 <color key="backgroundColor" red="0.91544596349999996" green="0.28809902209999999" blue="0.384765625" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="10" maxX="16" maxY="10"/>
@@ -84,13 +102,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea0-xj-cMa">
-                                <rect key="frame" x="0.0" y="363.5" width="375" height="14"/>
+                                <rect key="frame" x="0.0" y="407.5" width="375" height="14"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+6281234567890" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3o-f0-yGv">
-                                <rect key="frame" x="0.0" y="381.5" width="375" height="24"/>
+                                <rect key="frame" x="0.0" y="425.5" width="375" height="24"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -131,8 +149,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oGC-bE-SbQ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="G6r-G3-dj5"/>
-                    <navigationItem key="navigationItem" id="f8w-8f-ebt">
+                    <navigationItem key="navigationItem" title="Profile" id="f8w-8f-ebt">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="nfm-NA-YNK"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

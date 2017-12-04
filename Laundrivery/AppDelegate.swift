@@ -23,12 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Navigation Bar Background Color
         UINavigationBar.appearance().barTintColor = UIColor(red: 52.0/255.0, green: 63.0/255.0, blue: 75.0/255.0, alpha: 1)
         
-        //Navigation Bar Text Color
+        //Navigation Bar Title Color
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        
+        //Navigation Bar Side Button Color
         UINavigationBar.appearance().tintColor = UIColor.white
         
-        //Navigation Bar Remove Shadow
+        //Navigation Bar Remove Background Color
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().shadowImage = UIImage()
         
         //Tab Bar Text Color
         UITabBar.appearance().tintColor = UIColor.white

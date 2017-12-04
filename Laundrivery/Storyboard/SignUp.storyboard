@@ -12,13 +12,12 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
-            <string>Avenir-Heavy</string>
             <string>Avenir-Light</string>
             <string>Avenir-Medium</string>
         </array>
     </customFonts>
     <scenes>
-        <!--Sign UpVC-->
+        <!--Sign Up-->
         <scene sceneID="7D7-TW-rST">
             <objects>
                 <viewController id="Y29-SM-bFi" customClass="SignUpVC" customModule="Laundrivery" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,52 +26,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7k-fd-GZ8">
-                                <rect key="frame" x="37.5" y="164" width="300" height="359"/>
+                                <rect key="frame" x="37.5" y="195.5" width="300" height="296"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2w-SB-Pd3">
-                                        <rect key="frame" x="98.5" y="0.0" width="104" height="39"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jU5-wI-CYx">
-                                        <rect key="frame" x="135.5" y="123" width="28" height="14"/>
+                                        <rect key="frame" x="135.5" y="60" width="28" height="14"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="someone@example.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HK4-PQ-Xv1">
-                                        <rect key="frame" x="-0.5" y="141" width="300" height="30"/>
+                                        <rect key="frame" x="-0.5" y="78" width="300" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y35-LP-ZM8">
-                                        <rect key="frame" x="127" y="63" width="46" height="14"/>
+                                        <rect key="frame" x="127" y="0.0" width="46" height="14"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Doe" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wBg-7z-8cY">
-                                        <rect key="frame" x="0.0" y="81" width="300" height="30"/>
+                                        <rect key="frame" x="0.0" y="18" width="300" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edQ-BN-5kA">
-                                        <rect key="frame" x="129" y="183" width="42" height="14"/>
+                                        <rect key="frame" x="129" y="120" width="42" height="14"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="********" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g4v-yD-Y4j">
-                                        <rect key="frame" x="0.0" y="201" width="300.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="138" width="300.5" height="30"/>
                                         <color key="textColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmY-pX-Twt">
-                                        <rect key="frame" x="103.5" y="315" width="93" height="44"/>
+                                        <rect key="frame" x="103.5" y="252" width="93" height="44"/>
                                         <color key="backgroundColor" red="0.0" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <inset key="contentEdgeInsets" minX="16" minY="10" maxX="16" maxY="10"/>
@@ -90,13 +83,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psq-IP-9I5">
-                                        <rect key="frame" x="112" y="243" width="76" height="14"/>
+                                        <rect key="frame" x="112" y="180" width="76" height="14"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="********" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hIl-BR-Qeh">
-                                        <rect key="frame" x="-0.5" y="261" width="300" height="30"/>
+                                        <rect key="frame" x="-0.5" y="198" width="300" height="30"/>
                                         <color key="textColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
@@ -104,14 +97,12 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="edQ-BN-5kA" firstAttribute="top" secondItem="HK4-PQ-Xv1" secondAttribute="bottom" constant="12" id="18q-R7-eBl"/>
-                                    <constraint firstItem="y35-LP-ZM8" firstAttribute="top" secondItem="v2w-SB-Pd3" secondAttribute="bottom" constant="24" id="4KG-kH-fTH"/>
                                     <constraint firstItem="Psq-IP-9I5" firstAttribute="centerX" secondItem="W7k-fd-GZ8" secondAttribute="centerX" id="7ye-gu-KKd"/>
                                     <constraint firstAttribute="bottom" secondItem="MmY-pX-Twt" secondAttribute="bottom" id="AD8-fw-hiG"/>
                                     <constraint firstItem="edQ-BN-5kA" firstAttribute="top" secondItem="HK4-PQ-Xv1" secondAttribute="bottom" constant="12" id="Dpl-pP-8Aj"/>
-                                    <constraint firstItem="v2w-SB-Pd3" firstAttribute="top" secondItem="W7k-fd-GZ8" secondAttribute="top" id="E9j-IZ-QrS"/>
                                     <constraint firstItem="g4v-yD-Y4j" firstAttribute="width" secondItem="W7k-fd-GZ8" secondAttribute="width" id="HkT-o6-y0z"/>
                                     <constraint firstItem="g4v-yD-Y4j" firstAttribute="top" secondItem="edQ-BN-5kA" secondAttribute="bottom" constant="4" id="P5h-sh-fhT"/>
-                                    <constraint firstItem="v2w-SB-Pd3" firstAttribute="centerX" secondItem="W7k-fd-GZ8" secondAttribute="centerX" id="QAG-M2-nyL"/>
+                                    <constraint firstItem="y35-LP-ZM8" firstAttribute="top" secondItem="W7k-fd-GZ8" secondAttribute="top" id="QLV-tV-uFJ"/>
                                     <constraint firstItem="wBg-7z-8cY" firstAttribute="width" secondItem="W7k-fd-GZ8" secondAttribute="width" id="WKA-m2-BgL"/>
                                     <constraint firstItem="hIl-BR-Qeh" firstAttribute="width" secondItem="W7k-fd-GZ8" secondAttribute="width" id="Z9m-6x-fNU"/>
                                     <constraint firstItem="jU5-wI-CYx" firstAttribute="centerX" secondItem="W7k-fd-GZ8" secondAttribute="centerX" id="amJ-Ak-MAm"/>
@@ -140,6 +131,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7XC-Nx-IFw"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Sign Up" id="Gef-3H-dpf"/>
                     <connections>
                         <outlet property="emailTF" destination="HK4-PQ-Xv1" id="mrd-lS-xVo"/>
                         <outlet property="nameTF" destination="wBg-7z-8cY" id="JJv-rb-1S0"/>
