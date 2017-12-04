@@ -11,6 +11,7 @@
 		DA175EC11FD4EC1D00A72F30 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EBF1FD4EC1C00A72F30 /* Welcome.storyboard */; };
 		DA175EC21FD4EC1D00A72F30 /* MenuDemo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC01FD4EC1D00A72F30 /* MenuDemo.storyboard */; };
 		DA175EC41FD4F06E00A72F30 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC31FD4F06E00A72F30 /* EditProfile.storyboard */; };
+		DA175EC61FD4F21800A72F30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC51FD4F21700A72F30 /* GoogleService-Info.plist */; };
 		DA26D1301FD23A920054EDAB /* LocalData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA26D12E1FD23A920054EDAB /* LocalData.xcdatamodeld */; };
 		DA511BD91FD16E070017E940 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BD81FD16E070017E940 /* Menu.storyboard */; };
 		DA511BE11FD176910017E940 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511BE01FD176910017E940 /* Home.storyboard */; };
@@ -40,6 +41,7 @@
 		DA175EBF1FD4EC1C00A72F30 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		DA175EC01FD4EC1D00A72F30 /* MenuDemo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuDemo.storyboard; sourceTree = "<group>"; };
 		DA175EC31FD4F06E00A72F30 /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
+		DA175EC51FD4F21700A72F30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA26D12F1FD23A920054EDAB /* LocalData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalData.xcdatamodel; sourceTree = "<group>"; };
 		DA511BD81FD16E070017E940 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		DA511BE01FD176910017E940 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				DAF623311FCD14F200B68D22 /* Assets.xcassets */,
 				DAD85F5D1FD2D53D0036E3A1 /* LaunchScreen.storyboard */,
 				DAF623361FCD14F200B68D22 /* Info.plist */,
+				DA175EC51FD4F21700A72F30 /* GoogleService-Info.plist */,
 				DA26D12E1FD23A920054EDAB /* LocalData.xcdatamodeld */,
 			);
 			path = Laundrivery;
@@ -211,6 +214,7 @@
 				DA175EC41FD4F06E00A72F30 /* EditProfile.storyboard in Resources */,
 				DA511C2D1FD1BF3A0017E940 /* SignUp.storyboard in Resources */,
 				DA511BE11FD176910017E940 /* Home.storyboard in Resources */,
+				DA175EC61FD4F21800A72F30 /* GoogleService-Info.plist in Resources */,
 				DA6C136B1FD445990076011A /* Cart.storyboard in Resources */,
 				DAF623321FCD14F200B68D22 /* Assets.xcassets in Resources */,
 				DA511BD91FD16E070017E940 /* Menu.storyboard in Resources */,
