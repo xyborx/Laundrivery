@@ -22,17 +22,18 @@ class DatabaseService {
     
     func getUser(uid: String) -> UserData {
         let container = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
         request.predicate = NSPredicate(format: "uid == %@", uid)
         request.returnsObjectsAsFaults = false
         do {
-            let data = try container.fetch(request) as! [NSManagedObject]
+            let result = try container.fetch(request)
             guard
-                let userId = data[0].value(forKey: "uid") as? String,
-                let name = data[0].value(forKey: "name") as? String,
-                let email = data[0].value(forKey: "email") as? String,
-                let phone = data[0].value(forKey: "phone") as? String,
-                let address = data[0].value(forKey: "address") as? String
+                let data = result[0] as? NSManagedObject,
+                let userId = data.value(forKey: "uid") as? String,
+                let name = data.value(forKey: "name") as? String,
+                let email = data.value(forKey: "email") as? String,
+                let phone = data.value(forKey: "phone") as? String,
+                let address = data.value(forKey: "address") as? String
             else {
                 return UserData()
             }
@@ -46,7 +47,7 @@ class DatabaseService {
     func getUsers() -> [UserData] {
         var userData: [UserData] = [UserData]()
         let container = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
         request.returnsObjectsAsFaults = false
         do {
             let result = try container.fetch(request)
@@ -70,7 +71,7 @@ class DatabaseService {
     
     func addUser(user: UserData) {
         let container = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Users", in: container)
+        let entity = NSEntityDescription.entity(forEntityName: "Profile", in: container)
         let newUser = NSManagedObject(entity: entity!, insertInto: container)
         newUser.setValue(user.userId, forKey: "uid")
         newUser.setValue(user.displayName, forKey: "name")
@@ -85,8 +86,20 @@ class DatabaseService {
     }
     
     func saveUserToCloud(uid: String, phone: String, address: String) {
-        let parameters = ["phone"    : phone,
-                          "address"        : address]
+        let parameters = ["phone"   : phone,
+                          "address" : address]
         profile.child(uid).setValue(parameters)
+    }
+    
+    func deleteUsers() {
+        let container = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            try container.execute(batchDeleteRequest)
+            
+        } catch {
+            print("Failed")
+        }
     }
 }

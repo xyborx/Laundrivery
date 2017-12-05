@@ -39,7 +39,7 @@ class SignUpVC: UIViewController {
                     return
             }
             
-            let newUser = UserData(userId: user.uid, displayName: name, email: email, phone: "", address: "")
+            let newUser = UserData(userId: user.uid, displayName: name, email: email, phone: "Not Set", address: "Not Set")
             
             let changeRequest = user.createProfileChangeRequest()
             changeRequest.displayName = name

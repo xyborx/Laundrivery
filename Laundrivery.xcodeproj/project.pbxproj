@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B471BCC3CFB66BDFBD67765 /* Pods_Laundrivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9784DECD311C7B14C7CE8D1 /* Pods_Laundrivery.framework */; };
 		DA175EC11FD4EC1D00A72F30 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EBF1FD4EC1C00A72F30 /* Welcome.storyboard */; };
 		DA175EC41FD4F06E00A72F30 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC31FD4F06E00A72F30 /* EditProfile.storyboard */; };
 		DA175EC61FD4F21800A72F30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC51FD4F21700A72F30 /* GoogleService-Info.plist */; };
@@ -23,6 +24,10 @@
 		DA511C2F1FD1BFC40017E940 /* ForgetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA511C2E1FD1BFC40017E940 /* ForgetPassword.storyboard */; };
 		DA6C136B1FD445990076011A /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA6C136A1FD445990076011A /* Cart.storyboard */; };
 		DA6C136D1FD448630076011A /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6C136C1FD448630076011A /* CartVC.swift */; };
+		DACA4E5A1FD646ED00D36713 /* ActiveHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA4E591FD646ED00D36713 /* ActiveHistoryVC.swift */; };
+		DACA4E5C1FD646FF00D36713 /* PastHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA4E5B1FD646FF00D36713 /* PastHistoryVC.swift */; };
+		DACA4E5E1FD649BE00D36713 /* ActiveHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA4E5D1FD649BE00D36713 /* ActiveHistory.storyboard */; };
+		DACA4E601FD649E300D36713 /* PastHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA4E5F1FD649E300D36713 /* PastHistory.storyboard */; };
 		DACE50DD1FD392C4005C835B /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE50DC1FD392C4005C835B /* WelcomeVC.swift */; };
 		DACE50DF1FD392D8005C835B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE50DE1FD392D8005C835B /* HomeVC.swift */; };
 		DACE50E11FD392EE005C835B /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE50E01FD392EE005C835B /* HistoryVC.swift */; };
@@ -33,13 +38,11 @@
 		DAD85F5E1FD2D53D0036E3A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD85F5D1FD2D53D0036E3A1 /* LaunchScreen.storyboard */; };
 		DAF6232B1FCD14F200B68D22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6232A1FCD14F200B68D22 /* AppDelegate.swift */; };
 		DAF623321FCD14F200B68D22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF623311FCD14F200B68D22 /* Assets.xcassets */; };
-		EBB12403F8BABC580B76EDA8 /* Pods_Laundrivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDD64B2D223D9C2E1EEBE67 /* Pods_Laundrivery.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6EDD64B2D223D9C2E1EEBE67 /* Pods_Laundrivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Laundrivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DCEB5DC498826BB5045CAA4 /* Pods-Laundrivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.release.xcconfig"; sourceTree = "<group>"; };
-		8EEFB0AA050B881880FBBDE9 /* Pods-Laundrivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.debug.xcconfig"; sourceTree = "<group>"; };
+		39EC2C1566CB531C198912A8 /* Pods-Laundrivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.release.xcconfig"; sourceTree = "<group>"; };
+		9B9E86634E379B506F826906 /* Pods-Laundrivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.debug.xcconfig"; sourceTree = "<group>"; };
 		DA175EBF1FD4EC1C00A72F30 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		DA175EC31FD4F06E00A72F30 /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		DA175EC51FD4F21700A72F30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -56,6 +59,10 @@
 		DA511C2E1FD1BFC40017E940 /* ForgetPassword.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ForgetPassword.storyboard; sourceTree = "<group>"; };
 		DA6C136A1FD445990076011A /* Cart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		DA6C136C1FD448630076011A /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		DACA4E591FD646ED00D36713 /* ActiveHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveHistoryVC.swift; sourceTree = "<group>"; };
+		DACA4E5B1FD646FF00D36713 /* PastHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastHistoryVC.swift; sourceTree = "<group>"; };
+		DACA4E5D1FD649BE00D36713 /* ActiveHistory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActiveHistory.storyboard; sourceTree = "<group>"; };
+		DACA4E5F1FD649E300D36713 /* PastHistory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PastHistory.storyboard; sourceTree = "<group>"; };
 		DACE50DC1FD392C4005C835B /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		DACE50DE1FD392D8005C835B /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		DACE50E01FD392EE005C835B /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 		DAF6232A1FCD14F200B68D22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF623311FCD14F200B68D22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAF623361FCD14F200B68D22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9784DECD311C7B14C7CE8D1 /* Pods_Laundrivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Laundrivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,17 +83,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB12403F8BABC580B76EDA8 /* Pods_Laundrivery.framework in Frameworks */,
+				8B471BCC3CFB66BDFBD67765 /* Pods_Laundrivery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0093078E64FF9A5AF619C9DE /* Frameworks */ = {
+		730747BA369EAF8535236622 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6EDD64B2D223D9C2E1EEBE67 /* Pods_Laundrivery.framework */,
+				9B9E86634E379B506F826906 /* Pods-Laundrivery.debug.xcconfig */,
+				39EC2C1566CB531C198912A8 /* Pods-Laundrivery.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		83A69DD93B13E04ACAD0833D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9784DECD311C7B14C7CE8D1 /* Pods_Laundrivery.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -108,6 +125,8 @@
 				DA511BE01FD176910017E940 /* Home.storyboard */,
 				DA6C136A1FD445990076011A /* Cart.storyboard */,
 				DA511BE21FD1774B0017E940 /* History.storyboard */,
+				DACA4E5F1FD649E300D36713 /* PastHistory.storyboard */,
+				DACA4E5D1FD649BE00D36713 /* ActiveHistory.storyboard */,
 				DA511BE41FD177700017E940 /* Profile.storyboard */,
 				DA175EC31FD4F06E00A72F30 /* EditProfile.storyboard */,
 				DA511C2A1FD1BE5D0017E940 /* SignIn.storyboard */,
@@ -124,6 +143,8 @@
 				DACE50DE1FD392D8005C835B /* HomeVC.swift */,
 				DA6C136C1FD448630076011A /* CartVC.swift */,
 				DACE50E01FD392EE005C835B /* HistoryVC.swift */,
+				DACA4E591FD646ED00D36713 /* ActiveHistoryVC.swift */,
+				DACA4E5B1FD646FF00D36713 /* PastHistoryVC.swift */,
 				DACE50E21FD392FB005C835B /* ProfileVC.swift */,
 				DACE50E41FD393A9005C835B /* SignInVC.swift */,
 				DACE50E61FD393B8005C835B /* SignUpVC.swift */,
@@ -137,8 +158,8 @@
 			children = (
 				DAF623291FCD14F200B68D22 /* Laundrivery */,
 				DAF623281FCD14F200B68D22 /* Products */,
-				E43D4142EFF1C989500F955B /* Pods */,
-				0093078E64FF9A5AF619C9DE /* Frameworks */,
+				730747BA369EAF8535236622 /* Pods */,
+				83A69DD93B13E04ACAD0833D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,15 +187,6 @@
 			path = Laundrivery;
 			sourceTree = "<group>";
 		};
-		E43D4142EFF1C989500F955B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8EEFB0AA050B881880FBBDE9 /* Pods-Laundrivery.debug.xcconfig */,
-				7DCEB5DC498826BB5045CAA4 /* Pods-Laundrivery.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,12 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAF623391FCD14F200B68D22 /* Build configuration list for PBXNativeTarget "Laundrivery" */;
 			buildPhases = (
-				BEDA275396890FF0EB2DD0B0 /* [CP] Check Pods Manifest.lock */,
+				AAE92B1271A93252A168BBAC /* [CP] Check Pods Manifest.lock */,
 				DAF623231FCD14F200B68D22 /* Sources */,
 				DAF623241FCD14F200B68D22 /* Frameworks */,
 				DAF623251FCD14F200B68D22 /* Resources */,
-				21B082DEFE4180412A03D12A /* [CP] Embed Pods Frameworks */,
-				DF5EA7058D873F2B9632181E /* [CP] Copy Pods Resources */,
+				52C88F55910DB4CA97442C71 /* [CP] Embed Pods Frameworks */,
+				81FCDE85EA9B9D53B775D4A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA511C2B1FD1BE5D0017E940 /* SignIn.storyboard in Resources */,
+				DACA4E5E1FD649BE00D36713 /* ActiveHistory.storyboard in Resources */,
 				DA511C2F1FD1BFC40017E940 /* ForgetPassword.storyboard in Resources */,
 				DA175EC11FD4EC1D00A72F30 /* Welcome.storyboard in Resources */,
 				DA175EC41FD4F06E00A72F30 /* EditProfile.storyboard in Resources */,
@@ -250,13 +263,14 @@
 				DA511BE51FD177700017E940 /* Profile.storyboard in Resources */,
 				DAD85F5E1FD2D53D0036E3A1 /* LaunchScreen.storyboard in Resources */,
 				DA511BE31FD1774B0017E940 /* History.storyboard in Resources */,
+				DACA4E601FD649E300D36713 /* PastHistory.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21B082DEFE4180412A03D12A /* [CP] Embed Pods Frameworks */ = {
+		52C88F55910DB4CA97442C71 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -265,6 +279,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -272,6 +287,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -280,7 +296,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BEDA275396890FF0EB2DD0B0 /* [CP] Check Pods Manifest.lock */ = {
+		81FCDE85EA9B9D53B775D4A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAE92B1271A93252A168BBAC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -298,21 +329,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DF5EA7058D873F2B9632181E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -321,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA175EEB1FD54B7000A72F30 /* UserData.swift in Sources */,
+				DACA4E5A1FD646ED00D36713 /* ActiveHistoryVC.swift in Sources */,
 				DACE50E71FD393B8005C835B /* SignUpVC.swift in Sources */,
 				DACE50E91FD393C6005C835B /* ForgetPasswordVC.swift in Sources */,
 				DACE50E31FD392FB005C835B /* ProfileVC.swift in Sources */,
@@ -330,6 +347,7 @@
 				DACE50DF1FD392D8005C835B /* HomeVC.swift in Sources */,
 				DACE50E51FD393A9005C835B /* SignInVC.swift in Sources */,
 				DA175EE91FD51D2500A72F30 /* DatabaseService.swift in Sources */,
+				DACA4E5C1FD646FF00D36713 /* PastHistoryVC.swift in Sources */,
 				DA6C136D1FD448630076011A /* CartVC.swift in Sources */,
 				DA26D1301FD23A920054EDAB /* LocalData.xcdatamodeld in Sources */,
 				DAF6232B1FCD14F200B68D22 /* AppDelegate.swift in Sources */,
@@ -448,15 +466,15 @@
 		};
 		DAF6233A1FCD14F200B68D22 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EEFB0AA050B881880FBBDE9 /* Pods-Laundrivery.debug.xcconfig */;
+			baseConfigurationReference = 9B9E86634E379B506F826906 /* Pods-Laundrivery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5VCKER55Z5;
 				INFOPLIST_FILE = Laundrivery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.difasanditya.Laundrivery;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.binus.laundrivery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -466,15 +484,15 @@
 		};
 		DAF6233B1FCD14F200B68D22 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DCEB5DC498826BB5045CAA4 /* Pods-Laundrivery.release.xcconfig */;
+			baseConfigurationReference = 39EC2C1566CB531C198912A8 /* Pods-Laundrivery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5VCKER55Z5;
 				INFOPLIST_FILE = Laundrivery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.difasanditya.Laundrivery;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.binus.laundrivery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

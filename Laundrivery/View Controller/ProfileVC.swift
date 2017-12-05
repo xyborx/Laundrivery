@@ -39,6 +39,7 @@ class ProfileVC: UIViewController {
     @IBAction func signOutDidTapped(_ sender: Any) {
         do {
             try Auth.auth().signOut()
+            DatabaseService.shared.deleteUsers()
             self.viewWillAppear(true)
         }
         catch {

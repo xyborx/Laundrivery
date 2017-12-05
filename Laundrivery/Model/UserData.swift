@@ -16,18 +16,14 @@ class UserData {
     let phone: String
     let address: String
 
-    init?(user: Firebase.User, dict: [String: Any]) {
+    init(user: Firebase.User, dict: [String: Any]) {
         self.userId = user.uid
         self.displayName = user.displayName ?? "Not set"
         self.email = user.email ?? "Not set"
-        guard
-            let phone = dict["phone"] as? String,
-            let address = dict["address"] as? String
-        else {
-                return nil
-        }
-        self.phone = phone
-        self.address = address
+        let phone = dict["phone"] as? String
+        let address = dict["address"] as? String
+        self.phone = phone!
+        self.address = address!
     }
     
     init(userId: String, displayName: String, email: String, phone: String, address: String) {

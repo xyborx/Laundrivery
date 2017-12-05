@@ -26,65 +26,65 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5S6-PH-qrQ">
-                                <rect key="frame" x="0.5" y="107.5" width="375" height="472"/>
+                                <rect key="frame" x="38" y="107.5" width="300" height="472"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="9hV-sF-Gkb">
-                                        <rect key="frame" x="101" y="0.0" width="172" height="172"/>
+                                        <rect key="frame" x="63.5" y="0.0" width="172" height="172"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="172" id="kXX-vo-LN1"/>
                                             <constraint firstAttribute="height" constant="172" id="o4N-eX-f7l"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sif-5i-I5v">
-                                        <rect key="frame" x="-17" y="196" width="408" height="14"/>
+                                        <rect key="frame" x="-24.5" y="196" width="348" height="14"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvF-Fy-8VJ">
-                                        <rect key="frame" x="37" y="214" width="300" height="24"/>
+                                        <rect key="frame" x="29.5" y="214" width="240" height="24"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngH-PB-ghY">
-                                        <rect key="frame" x="37" y="250" width="300" height="14"/>
+                                        <rect key="frame" x="29.5" y="250" width="240" height="14"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="someone@example.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrP-Xg-5b3">
-                                        <rect key="frame" x="37" y="268" width="300" height="24"/>
+                                        <rect key="frame" x="29.5" y="268" width="240" height="24"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Am-7B-FCN">
-                                        <rect key="frame" x="0.0" y="358" width="375" height="14"/>
+                                        <rect key="frame" x="0.0" y="358" width="300" height="14"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Street, City, Province" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKs-nS-ic0">
-                                        <rect key="frame" x="0.0" y="376" width="375" height="24"/>
+                                        <rect key="frame" x="0.0" y="376" width="300" height="24"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekp-4P-JKw">
-                                        <rect key="frame" x="0.0" y="304" width="375" height="14"/>
+                                        <rect key="frame" x="0.0" y="304" width="300" height="14"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+6281234567890" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiY-D6-diU">
-                                        <rect key="frame" x="0.0" y="322" width="375" height="24"/>
+                                        <rect key="frame" x="0.0" y="322" width="300" height="24"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5k-ti-tma">
-                                        <rect key="frame" x="116.5" y="428" width="141" height="44"/>
+                                        <rect key="frame" x="79" y="428" width="141" height="44"/>
                                         <color key="backgroundColor" red="0.0" green="0.63529411764705879" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <inset key="contentEdgeInsets" minX="16" minY="10" maxX="16" maxY="10"/>
@@ -135,7 +135,7 @@
                         <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5S6-PH-qrQ" firstAttribute="centerY" secondItem="Ujt-dT-DIo" secondAttribute="centerY" id="5g8-GR-1pI"/>
-                            <constraint firstItem="5S6-PH-qrQ" firstAttribute="width" secondItem="wzU-ef-gX4" secondAttribute="width" id="J0T-YB-Gmm"/>
+                            <constraint firstItem="5S6-PH-qrQ" firstAttribute="width" secondItem="wzU-ef-gX4" secondAttribute="width" multiplier="0.8" id="J0T-YB-Gmm"/>
                             <constraint firstItem="5S6-PH-qrQ" firstAttribute="centerX" secondItem="Ujt-dT-DIo" secondAttribute="centerX" id="Sj5-2b-oCh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ujt-dT-DIo"/>

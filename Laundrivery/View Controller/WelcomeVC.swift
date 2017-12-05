@@ -15,7 +15,10 @@ class WelcomeVC: UIViewController {
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "skipTutorial", sender: nil)
             }
-            
         }
+    }
+    
+    @IBAction func skipTutorialDidTapped(_ sender: Any) {
+        UserDefaults.standard.set(true, forKey: "finishTutorial")
     }
 }
