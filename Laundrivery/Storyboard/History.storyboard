@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -62,6 +63,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2W-O5-B9A">
                                         <rect key="frame" x="107.5" y="382" width="85" height="44"/>
                                         <color key="backgroundColor" red="0.0" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="W2W-O5-B9A" secondAttribute="height" multiplier="85:44" id="cSg-Z1-ZKd"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <inset key="contentEdgeInsets" minX="16" minY="10" maxX="16" maxY="10"/>
                                         <state key="normal" title="Sign In">
@@ -87,6 +91,9 @@
                                 <constraints>
                                     <constraint firstItem="haN-tN-v4v" firstAttribute="top" secondItem="Huh-hj-sSo" secondAttribute="bottom" constant="24" id="06F-6U-CCx"/>
                                     <constraint firstItem="Huh-hj-sSo" firstAttribute="centerX" secondItem="phj-c9-Kxd" secondAttribute="centerX" id="1K4-RM-tOF"/>
+                                    <constraint firstAttribute="bottom" secondItem="W2W-O5-B9A" secondAttribute="bottom" id="5um-KC-Bcb"/>
+                                    <constraint firstItem="W2W-O5-B9A" firstAttribute="leading" secondItem="phj-c9-Kxd" secondAttribute="leading" constant="107.5" id="AeM-9g-6oZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="W2W-O5-B9A" secondAttribute="trailing" constant="107.5" id="ECP-2m-zMP"/>
                                     <constraint firstItem="Huh-hj-sSo" firstAttribute="top" secondItem="kiK-Pq-7Y5" secondAttribute="bottom" constant="12" id="M64-EW-YP8"/>
                                     <constraint firstItem="kiK-Pq-7Y5" firstAttribute="top" secondItem="phj-c9-Kxd" secondAttribute="top" id="T61-au-CRF"/>
                                     <constraint firstItem="haN-tN-v4v" firstAttribute="centerX" secondItem="phj-c9-Kxd" secondAttribute="centerX" id="gtG-ri-BKu"/>
