@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8B471BCC3CFB66BDFBD67765 /* Pods_Laundrivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9784DECD311C7B14C7CE8D1 /* Pods_Laundrivery.framework */; };
+		DA0A5ADF1FD79BE300200033 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA0A5ADE1FD79BE300200033 /* GoogleService-Info.plist */; };
 		DA175EC11FD4EC1D00A72F30 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EBF1FD4EC1C00A72F30 /* Welcome.storyboard */; };
 		DA175EC41FD4F06E00A72F30 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC31FD4F06E00A72F30 /* EditProfile.storyboard */; };
-		DA175EC61FD4F21800A72F30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC51FD4F21700A72F30 /* GoogleService-Info.plist */; };
 		DA175EE61FD50DDE00A72F30 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA175EE51FD50DDE00A72F30 /* AlertController.swift */; };
 		DA175EE91FD51D2500A72F30 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA175EE81FD51D2500A72F30 /* DatabaseService.swift */; };
 		DA175EEB1FD54B7000A72F30 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA175EEA1FD54B7000A72F30 /* UserData.swift */; };
@@ -43,9 +43,9 @@
 /* Begin PBXFileReference section */
 		39EC2C1566CB531C198912A8 /* Pods-Laundrivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.release.xcconfig"; sourceTree = "<group>"; };
 		9B9E86634E379B506F826906 /* Pods-Laundrivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.debug.xcconfig"; sourceTree = "<group>"; };
+		DA0A5ADE1FD79BE300200033 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA175EBF1FD4EC1C00A72F30 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		DA175EC31FD4F06E00A72F30 /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
-		DA175EC51FD4F21700A72F30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA175EE51FD50DDE00A72F30 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		DA175EE81FD51D2500A72F30 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		DA175EEA1FD54B7000A72F30 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 				DAF623311FCD14F200B68D22 /* Assets.xcassets */,
 				DAD85F5D1FD2D53D0036E3A1 /* LaunchScreen.storyboard */,
 				DAF623361FCD14F200B68D22 /* Info.plist */,
-				DA175EC51FD4F21700A72F30 /* GoogleService-Info.plist */,
+				DA0A5ADE1FD79BE300200033 /* GoogleService-Info.plist */,
 				DA26D12E1FD23A920054EDAB /* LocalData.xcdatamodeld */,
 			);
 			path = Laundrivery;
@@ -254,9 +254,9 @@
 				DA511C2F1FD1BFC40017E940 /* ForgetPassword.storyboard in Resources */,
 				DA175EC11FD4EC1D00A72F30 /* Welcome.storyboard in Resources */,
 				DA175EC41FD4F06E00A72F30 /* EditProfile.storyboard in Resources */,
+				DA0A5ADF1FD79BE300200033 /* GoogleService-Info.plist in Resources */,
 				DA511C2D1FD1BF3A0017E940 /* SignUp.storyboard in Resources */,
 				DA511BE11FD176910017E940 /* Home.storyboard in Resources */,
-				DA175EC61FD4F21800A72F30 /* GoogleService-Info.plist in Resources */,
 				DA6C136B1FD445990076011A /* Cart.storyboard in Resources */,
 				DAF623321FCD14F200B68D22 /* Assets.xcassets in Resources */,
 				DA511BD91FD16E070017E940 /* Menu.storyboard in Resources */,
@@ -474,7 +474,7 @@
 				DEVELOPMENT_TEAM = 5VCKER55Z5;
 				INFOPLIST_FILE = Laundrivery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.binus.laundrivery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.difasanditya.laundrivery.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -492,7 +492,7 @@
 				DEVELOPMENT_TEAM = 5VCKER55Z5;
 				INFOPLIST_FILE = Laundrivery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.binus.laundrivery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.difasanditya.laundrivery.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

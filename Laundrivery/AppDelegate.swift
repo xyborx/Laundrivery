@@ -40,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Tab Bar Text Color
         UITabBar.appearance().tintColor = UIColor.white
         
+        let path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)
+        print("App path: \(path)")
+        
         return true
     }
 
