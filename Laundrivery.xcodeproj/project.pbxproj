@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B86EADC1FD7B5F600E0C216 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B86EADB1FD7B5F600E0C216 /* EditProfileVC.swift */; };
 		DA175EC11FD4EC1D00A72F30 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EBF1FD4EC1C00A72F30 /* Welcome.storyboard */; };
 		DA175EC41FD4F06E00A72F30 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC31FD4F06E00A72F30 /* EditProfile.storyboard */; };
 		DA175EC61FD4F21800A72F30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC51FD4F21700A72F30 /* GoogleService-Info.plist */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B86EADB1FD7B5F600E0C216 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		6EDD64B2D223D9C2E1EEBE67 /* Pods_Laundrivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Laundrivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCEB5DC498826BB5045CAA4 /* Pods-Laundrivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.release.xcconfig"; sourceTree = "<group>"; };
 		8EEFB0AA050B881880FBBDE9 /* Pods-Laundrivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				DACE50E41FD393A9005C835B /* SignInVC.swift */,
 				DACE50E61FD393B8005C835B /* SignUpVC.swift */,
 				DACE50E81FD393C6005C835B /* ForgetPasswordVC.swift */,
+				0B86EADB1FD7B5F600E0C216 /* EditProfileVC.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				DACE50E71FD393B8005C835B /* SignUpVC.swift in Sources */,
 				DACE50E91FD393C6005C835B /* ForgetPasswordVC.swift in Sources */,
 				DACE50E31FD392FB005C835B /* ProfileVC.swift in Sources */,
+				0B86EADC1FD7B5F600E0C216 /* EditProfileVC.swift in Sources */,
 				DACE50DD1FD392C4005C835B /* WelcomeVC.swift in Sources */,
 				DA175EE61FD50DDE00A72F30 /* AlertController.swift in Sources */,
 				DACE50E11FD392EE005C835B /* HistoryVC.swift in Sources */,
