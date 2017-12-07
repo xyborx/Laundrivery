@@ -21,7 +21,6 @@ class HistoryVC: ButtonBarPagerTabStripViewController {
             sorryView.isHidden = false
         }
         else {
-//            self.navigationController?.navigationBar.shadowImage = UIImage()
             historyView.isHidden = false
             sorryView.isHidden = true
         }
@@ -37,15 +36,15 @@ class HistoryVC: ButtonBarPagerTabStripViewController {
         settings.style.selectedBarBackgroundColor = .white
         //Selected Bar height
         settings.style.selectedBarHeight = 1.2
-        
+        //Tabs Space
         settings.style.buttonBarMinimumLineSpacing = 0
         settings.style.buttonBarLeftContentInset = 0
         settings.style.buttonBarRightContentInset = 0
+        //Tabs Full Width
         settings.style.buttonBarItemsShouldFillAvailiableWidth = true
         settings.style.buttonBarItemsShouldFillAvailableWidth = true
-//
-//        buttonBarView.layer.borderWidth = 1.0
-//        buttonBarView.layer.borderColor = UIColor.white.cgColor
+        //Tabs Font
+        settings.style.buttonBarItemFont = UIFont(name: "Avenir Light", size: 14)!
         
         super.viewDidLoad()
         buttonBarView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: buttonBarView.frame.height)
@@ -55,7 +54,6 @@ class HistoryVC: ButtonBarPagerTabStripViewController {
         if Auth.auth().currentUser == nil {
             self.navigationController?.isNavigationBarHidden = false
         }
-//        self.navigationController?.navigationBar.shadowImage = UINavigationBar.appearance().shadowImage
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

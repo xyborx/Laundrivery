@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iQv-Z4-KRO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iQv-Z4-KRO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +14,7 @@
         <scene sceneID="Rv8-Jk-GrM">
             <objects>
                 <navigationController id="iQv-Z4-KRO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="ZQi-mi-qVK"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="ZQi-mi-qVK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gm5-2i-92C">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -34,7 +34,34 @@
                     <view key="view" contentMode="scaleToFill" id="FwA-V1-Kit">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YMJ-Ac-r5l" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="64" width="375" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="jja-Ga-VeV"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Wev-lM-RTE">
+                                    <size key="itemSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ly5-tV-ImB">
+                                <rect key="frame" x="0.0" y="106" width="375" height="561"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="0.20392156862745098" green="0.24705882352941178" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ly5-tV-ImB" firstAttribute="leading" secondItem="Jo7-Yp-KL2" secondAttribute="leading" id="4IC-2o-VfY"/>
+                            <constraint firstItem="Jo7-Yp-KL2" firstAttribute="trailing" secondItem="ly5-tV-ImB" secondAttribute="trailing" id="4cX-y0-q9T"/>
+                            <constraint firstItem="YMJ-Ac-r5l" firstAttribute="top" secondItem="Jo7-Yp-KL2" secondAttribute="top" id="PwN-F1-g3M"/>
+                            <constraint firstItem="Jo7-Yp-KL2" firstAttribute="bottom" secondItem="ly5-tV-ImB" secondAttribute="bottom" id="XQ3-Um-jud"/>
+                            <constraint firstItem="Jo7-Yp-KL2" firstAttribute="trailing" secondItem="YMJ-Ac-r5l" secondAttribute="trailing" id="kYQ-St-MfA"/>
+                            <constraint firstItem="ly5-tV-ImB" firstAttribute="top" secondItem="YMJ-Ac-r5l" secondAttribute="bottom" id="rPM-4u-lIB"/>
+                            <constraint firstItem="YMJ-Ac-r5l" firstAttribute="leading" secondItem="Jo7-Yp-KL2" secondAttribute="leading" id="t1x-xN-43N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Jo7-Yp-KL2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Ki1-KT-tmN">
@@ -44,6 +71,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="buttonBarView" destination="YMJ-Ac-r5l" id="1de-hG-Wgy"/>
+                        <outlet property="containerView" destination="ly5-tV-ImB" id="0MZ-T0-LqC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJ8-Zn-j5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,4 +89,7 @@
             <point key="canvasLocation" x="3377" y="-285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home" width="25" height="25"/>
+    </resources>
 </document>
