@@ -26,23 +26,39 @@ class DatabaseService {
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do {
             try container.execute(batchDeleteRequest)
-            let categories: [String: [String: Int]] =   ["Tops"      : ["Shirt": 10000, "Batik": 0, "Blouse": 0, "T-Shirt": 0, "Jacket": 0, "Coat": 0, "Sweater": 0],
-                                                         "Trousers"  : ["Trouser": 0, "Jean": 0, "Short": 0],
-                                                    "Dresses"   : ["Dress": 0, "Skirt": 0, "Kebaya": 0],
-                                                    "Shoes"     : ["Sneaker": 0, "Canvas": 0, "Suede": 0, "Leather": 0, "Hybrid": 0],
-                                                    "Others"    : ["Bag of Clothes": 0, "Bed Sheet": 0, "Blanked": 0, "Bag": 0]]
+            let datas: [TypeItem] = [TypeItem(category: "Tops", type: "Shirt", desc: "", price: 10000),
+                                    TypeItem(category: "Tops", type: "Batik", desc: "", price: 20000),
+                                    TypeItem(category: "Tops", type: "Blouse", desc: "", price: 0),
+                                    TypeItem(category: "Tops", type: "T-Shirt", desc: "", price: 0),
+                                    TypeItem(category: "Tops", type: "Jacket", desc: "", price: 0),
+                                    TypeItem(category: "Tops", type: "Coat", desc: "", price: 0),
+                                    TypeItem(category: "Tops", type: "Sweater", desc: "", price: 0),
+                                    TypeItem(category: "Trousers", type: "Trouser", desc: "", price: 0),
+                                    TypeItem(category: "Trousers", type: "Jean", desc: "", price: 0),
+                                    TypeItem(category: "Trousers", type: "Short", desc: "", price: 0),
+                                    TypeItem(category: "Dresses", type: "Dress", desc: "", price: 0),
+                                    TypeItem(category: "Dresses", type: "Skirt", desc: "", price: 0),
+                                    TypeItem(category: "Dresses", type: "Kebaya", desc: "", price: 0),
+                                    TypeItem(category: "Shoes", type: "Sneaker", desc: "", price: 0),
+                                    TypeItem(category: "Shoes", type: "Canvas", desc: "", price: 0),
+                                    TypeItem(category: "Shoes", type: "Suede", desc: "", price: 0),
+                                    TypeItem(category: "Shoes", type: "Leather", desc: "", price: 0),
+                                    TypeItem(category: "Shoes", type: "Hybrid", desc: "", price: 0),
+                                    TypeItem(category: "Others", type: "Bag of Clothes", desc: "", price: 0),
+                                    TypeItem(category: "Others", type: "Bed Sheet", desc: "", price: 0),
+                                    TypeItem(category: "Others", type: "Blanked", desc: "", price: 0),
+                                    TypeItem(category: "Others", type: "Bag", desc: "", price: 0)]
             let entity = NSEntityDescription.entity(forEntityName: "Category", in: container)
-            for category in categories {
-                for type in category.value {
-                    let newData = NSManagedObject(entity: entity!, insertInto: container)
-                    newData.setValue(category.key, forKey: "category")
-                    newData.setValue(type.key, forKey: "type")
-                    newData.setValue(type.value, forKey: "price")
-                    do {
-                        try container.save()
-                    } catch {
-                        print("Failed saving \(category.key)/\(type.key)/\(type.value)")
-                    }
+            for data in datas {
+                let newData = NSManagedObject(entity: entity!, insertInto: container)
+                newData.setValue(data.category, forKey: "category")
+                newData.setValue(data.type, forKey: "type")
+                newData.setValue(data.desc, forKey: "desc")
+                newData.setValue(data.price, forKey: "price")
+                do {
+                    try container.save()
+                } catch {
+                    print("Failed saving \(data.type)")
                 }
             }
         } catch {
@@ -50,7 +66,56 @@ class DatabaseService {
         }
     }
     
-    func getTypesDetail() -> [String: [String: Int]] {
+    func getAllData() -> [TypeItem] {
+        var allData = [TypeItem]()
+        let container = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try container.fetch(request)
+            for data in result as! [NSManagedObject] {
+                guard
+                    let category = data.value(forKey: "category") as? String,
+                    let type = data.value(forKey: "type") as? String,
+                    let desc = data.value(forKey: "desc") as? String,
+                    let price = data.value(forKey: "price") as? Int
+                    else {
+                        continue
+                }
+                allData.append(TypeItem(category: category, type: type, desc: desc, price: price))
+            }
+        } catch {
+            print("Failed")
+        }
+        return allData
+    }
+    
+    func getAllData(with category: String) -> [TypeItem] {
+        var allData = [TypeItem]()
+        let container = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
+        request.predicate = NSPredicate(format: "category == %@", category)
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try container.fetch(request)
+            for data in result as! [NSManagedObject] {
+                guard
+                    let category = data.value(forKey: "category") as? String,
+                    let type = data.value(forKey: "type") as? String,
+                    let desc = data.value(forKey: "desc") as? String,
+                    let price = data.value(forKey: "price") as? Int
+                    else {
+                        continue
+                }
+                allData.append(TypeItem(category: category, type: type, desc: desc, price: price))
+            }
+        } catch {
+            print("Failed")
+        }
+        return allData
+    }
+    
+    func getCategoriesAndTypes() -> [String: [String: Int]] {
         var allData = [String: [String: Int]]()
         let container = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")

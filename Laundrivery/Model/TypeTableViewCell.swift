@@ -10,10 +10,11 @@ import UIKit
 
 class TypeTableViewCell: UITableViewCell {
     @IBOutlet weak var img: UIImageView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var type: UILabel!
+    @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var price: UILabel!
     
     @IBAction func buttonDidTapped(_ sender: Any) {
-        let text = label.text! as String
-        print(text)
+        
     }
 }
