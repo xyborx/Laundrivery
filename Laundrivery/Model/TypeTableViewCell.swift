@@ -13,7 +13,7 @@ class TypeTableViewCell: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     
     @IBAction func buttonDidTapped(_ sender: Any) {
-        let text = label.text as! String
+        let text = label.text! as String
         print(text)
     }
 }

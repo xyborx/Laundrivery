@@ -10,6 +10,11 @@ import UIKit
 
 class WelcomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
+        let notFirstLaunch = UserDefaults.standard.bool(forKey: "firstLaunch")
+        if !notFirstLaunch {
+            DatabaseService.shared.initiate()
+            UserDefaults.standard.set(true, forKey: "firstLaunch")
+        }
         let finishTutorial = UserDefaults.standard.bool(forKey: "finishTutorial")
         if finishTutorial {
             DispatchQueue.main.async {

@@ -13,7 +13,7 @@ class CategoryVC: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var typeTable: UITableView!
     
     var category = ""
-    var type: [String] = ["difa", "sanditya", "alifian", "dsa255"] //[String]()
+    var type: [String] = [String]()
     let itemsPerRow: CGFloat = 1
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -21,10 +21,12 @@ class CategoryVC: UIViewController, IndicatorInfoProvider {
     }
 
     override func viewDidLoad() {
+        type = DatabaseService.shared.getTypes(category: category)
+        
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
-        typeTable.rowHeight = UITableViewAutomaticDimension
-        typeTable.separatorStyle = UITableViewCellSeparatorStyle.none
+//        typeTable.separatorStyle = UITableViewCellSeparatorStyle.none
         typeTable.separatorInset = UIEdgeInsets.zero
         typeTable.layoutMargins = UIEdgeInsets.zero
     }

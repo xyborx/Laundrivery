@@ -9,11 +9,20 @@
 import UIKit
 import XLPagerTabStrip
 
-class HomeVC: ButtonBarPagerTabStripViewController {
+class HomeVC: ButtonBarPagerTabStripViewController, UISearchBarDelegate {
     
-    let category = ["Tops", "Laundry", "Suits", "Trousers", "Dresses"]
-
+    var category = [String]()
+    
+    @IBAction func searchDidTapped(_ sender: Any) {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        
+        present(searchController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
+        category = DatabaseService.shared.getCategories()
+        
         //Tabs Settings
         //Tabs Background
         settings.style.buttonBarBackgroundColor = UIColor(red: 52.0/255.0, green: 63.0/255.0, blue: 75.0/255.0, alpha: 1)
@@ -35,6 +44,7 @@ class HomeVC: ButtonBarPagerTabStripViewController {
         settings.style.buttonBarItemFont = UIFont(name: "Avenir Light", size: 14)!
         
         super.viewDidLoad()
+        
         buttonBarView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: buttonBarView.frame.height)
     }
     
