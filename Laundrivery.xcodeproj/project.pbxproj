@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B471BCC3CFB66BDFBD67765 /* Pods_Laundrivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9784DECD311C7B14C7CE8D1 /* Pods_Laundrivery.framework */; };
+		0B86EADC1FD7B5F600E0C216 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B86EADB1FD7B5F600E0C216 /* EditProfileVC.swift */; };
+		71AE1A6101B5EB16A872DD00 /* Pods_Laundrivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0A13A2FAA27A48618A3468 /* Pods_Laundrivery.framework */; };
 		DA0A5ADF1FD79BE300200033 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA0A5ADE1FD79BE300200033 /* GoogleService-Info.plist */; };
 		DA0A5AE31FD7A96E00200033 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0A5AE21FD7A96E00200033 /* Category.storyboard */; };
 		DA0A5AE51FD7A9B200200033 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A5AE41FD7A9B200200033 /* CategoryVC.swift */; };
-		0B86EADC1FD7B5F600E0C216 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B86EADB1FD7B5F600E0C216 /* EditProfileVC.swift */; };
 		DA175EC11FD4EC1D00A72F30 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EBF1FD4EC1C00A72F30 /* Welcome.storyboard */; };
 		DA175EC41FD4F06E00A72F30 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA175EC31FD4F06E00A72F30 /* EditProfile.storyboard */; };
 		DA175EE61FD50DDE00A72F30 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA175EE51FD50DDE00A72F30 /* AlertController.swift */; };
@@ -48,13 +48,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		39EC2C1566CB531C198912A8 /* Pods-Laundrivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.release.xcconfig"; sourceTree = "<group>"; };
-		9B9E86634E379B506F826906 /* Pods-Laundrivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.debug.xcconfig"; sourceTree = "<group>"; };
+		09F4640F99366922398B1FCE /* Pods-Laundrivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.debug.xcconfig"; sourceTree = "<group>"; };
+		0B86EADB1FD7B5F600E0C216 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		24CE467133FE89ACE9B72186 /* Pods-Laundrivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Laundrivery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery.release.xcconfig"; sourceTree = "<group>"; };
+		6B0A13A2FAA27A48618A3468 /* Pods_Laundrivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Laundrivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0A5ADE1FD79BE300200033 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA0A5AE21FD7A96E00200033 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		DA0A5AE41FD7A9B200200033 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
-		0B86EADB1FD7B5F600E0C216 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
-		6EDD64B2D223D9C2E1EEBE67 /* Pods_Laundrivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Laundrivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA175EBF1FD4EC1C00A72F30 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		DA175EC31FD4F06E00A72F30 /* EditProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		DA175EE51FD50DDE00A72F30 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -90,7 +90,6 @@
 		DAF623311FCD14F200B68D22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAF623361FCD14F200B68D22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF936C11FD93BE3007DB2CF /* TypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTableViewCell.swift; sourceTree = "<group>"; };
-		E9784DECD311C7B14C7CE8D1 /* Pods_Laundrivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Laundrivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,28 +97,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B471BCC3CFB66BDFBD67765 /* Pods_Laundrivery.framework in Frameworks */,
+				71AE1A6101B5EB16A872DD00 /* Pods_Laundrivery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		730747BA369EAF8535236622 /* Pods */ = {
+		05D4AA3B4B251C1824F84024 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9B9E86634E379B506F826906 /* Pods-Laundrivery.debug.xcconfig */,
-				39EC2C1566CB531C198912A8 /* Pods-Laundrivery.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		83A69DD93B13E04ACAD0833D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E9784DECD311C7B14C7CE8D1 /* Pods_Laundrivery.framework */,
+				6B0A13A2FAA27A48618A3468 /* Pods_Laundrivery.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1BB6D44E17548934B45511A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				09F4640F99366922398B1FCE /* Pods-Laundrivery.debug.xcconfig */,
+				24CE467133FE89ACE9B72186 /* Pods-Laundrivery.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		DA175EE71FD50DFC00A72F30 /* Model */ = {
@@ -180,8 +179,8 @@
 			children = (
 				DAF623291FCD14F200B68D22 /* Laundrivery */,
 				DAF623281FCD14F200B68D22 /* Products */,
-				730747BA369EAF8535236622 /* Pods */,
-				83A69DD93B13E04ACAD0833D /* Frameworks */,
+				1BB6D44E17548934B45511A2 /* Pods */,
+				05D4AA3B4B251C1824F84024 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,12 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAF623391FCD14F200B68D22 /* Build configuration list for PBXNativeTarget "Laundrivery" */;
 			buildPhases = (
-				AAE92B1271A93252A168BBAC /* [CP] Check Pods Manifest.lock */,
+				B163B64CAF1FE1E82F620805 /* [CP] Check Pods Manifest.lock */,
 				DAF623231FCD14F200B68D22 /* Sources */,
 				DAF623241FCD14F200B68D22 /* Frameworks */,
 				DAF623251FCD14F200B68D22 /* Resources */,
-				52C88F55910DB4CA97442C71 /* [CP] Embed Pods Frameworks */,
-				81FCDE85EA9B9D53B775D4A4 /* [CP] Copy Pods Resources */,
+				6F68C51B5FAC87F02DC0AA49 /* [CP] Embed Pods Frameworks */,
+				AADBFBDBEA8BBF269C58727C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,7 +292,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		52C88F55910DB4CA97442C71 /* [CP] Embed Pods Frameworks */ = {
+		6F68C51B5FAC87F02DC0AA49 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -319,7 +318,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		81FCDE85EA9B9D53B775D4A4 /* [CP] Copy Pods Resources */ = {
+		AADBFBDBEA8BBF269C58727C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -334,7 +333,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Laundrivery/Pods-Laundrivery-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AAE92B1271A93252A168BBAC /* [CP] Check Pods Manifest.lock */ = {
+		B163B64CAF1FE1E82F620805 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -495,7 +494,7 @@
 		};
 		DAF6233A1FCD14F200B68D22 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B9E86634E379B506F826906 /* Pods-Laundrivery.debug.xcconfig */;
+			baseConfigurationReference = 09F4640F99366922398B1FCE /* Pods-Laundrivery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -513,7 +512,7 @@
 		};
 		DAF6233B1FCD14F200B68D22 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39EC2C1566CB531C198912A8 /* Pods-Laundrivery.release.xcconfig */;
+			baseConfigurationReference = 24CE467133FE89ACE9B72186 /* Pods-Laundrivery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

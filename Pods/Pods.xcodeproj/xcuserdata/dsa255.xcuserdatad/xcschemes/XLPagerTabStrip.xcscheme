@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C052BEBFBD0AB5218CC64BA3450F6547"
-               BuildableName = "GTMSessionFetcher.framework"
-               BlueprintName = "GTMSessionFetcher"
+               BlueprintIdentifier = "D63312F54A58A8CEF558C4760EEC4A6C"
+               BuildableName = "XLPagerTabStrip.framework"
+               BlueprintName = "XLPagerTabStrip"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C052BEBFBD0AB5218CC64BA3450F6547"
-            BuildableName = "GTMSessionFetcher.framework"
-            BlueprintName = "GTMSessionFetcher"
+            BlueprintIdentifier = "D63312F54A58A8CEF558C4760EEC4A6C"
+            BuildableName = "XLPagerTabStrip.framework"
+            BlueprintName = "XLPagerTabStrip"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
