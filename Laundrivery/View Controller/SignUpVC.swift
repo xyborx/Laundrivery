@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import CoreData
 
-class SignUpVC: UIViewController {
+class SignUpVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
@@ -53,4 +53,69 @@ class SignUpVC: UIViewController {
             })
         }
     }
+    
+    override var canBecomeFirstResponder: Bool{
+        return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.becomeFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField==nameTF {
+            emailTF.becomeFirstResponder()
+        }
+        else if textField==emailTF{
+            passwordTF.becomeFirstResponder()
+        }
+        else if textField==passwordTF{
+            repeatPasswordTF.becomeFirstResponder()
+        }
+        else{
+            self.becomeFirstResponder()
+            self.signUpDidTapped(textField)
+        }
+        return false
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
