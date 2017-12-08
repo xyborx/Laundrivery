@@ -33,6 +33,7 @@ extension CartVC: UITableViewDataSource {
         cell.itemName.text = cart[indexPath.row].type
         cell.quantity.text = "\(cart[indexPath.row].quantity)"
         cell.total.text = "Rp \(cart[indexPath.row].quantity * cart[indexPath.row].price)"
+        cell.price = cart[indexPath.row].price
         return cell
     }
     

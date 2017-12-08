@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class WelcomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {

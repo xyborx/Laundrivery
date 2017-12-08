@@ -24,7 +24,6 @@ class CategoryVC: UIViewController, IndicatorInfoProvider {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        typeTable.estimatedRowHeight = 180
         typeTable.separatorInset = UIEdgeInsets.zero
         typeTable.layoutMargins = UIEdgeInsets.zero
     }
@@ -37,7 +36,7 @@ extension CategoryVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = typeTable.dequeueReusableCell(withIdentifier: "typeCell", for: indexPath) as! TypeTableViewCell
-        cell.img.image = UIImage(named: "background")
+        cell.img.image = UIImage(named: data[indexPath.row].type)
         cell.type.text = data[indexPath.row].type
         cell.price.text = "\(data[indexPath.row].getStringPrice()) per piece"
         cell.quantity.text = "\(0)"

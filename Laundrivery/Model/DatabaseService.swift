@@ -46,7 +46,7 @@ class DatabaseService {
                                     TypeItem(category: "Shoes", type: "Hybrid", price: 80000),
                                     TypeItem(category: "Others", type: "Bag of Clothes", price: 15000),
                                     TypeItem(category: "Others", type: "Bed Sheet", price: 15000),
-                                    TypeItem(category: "Others", type: "Blanked", price: 20000),
+                                    TypeItem(category: "Others", type: "Blanket", price: 20000),
                                     TypeItem(category: "Others", type: "Bag", price: 30000)]
             let entity = NSEntityDescription.entity(forEntityName: "Category", in: container)
             for data in datas {
@@ -247,8 +247,7 @@ class DatabaseService {
     
     func getUser(uid: String) -> UserData {
         let container = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
-        request.predicate = NSPredicate(format: "uid == %@", uid)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserProfile")
         request.returnsObjectsAsFaults = false
         do {
             let result = try container.fetch(request)
@@ -272,7 +271,7 @@ class DatabaseService {
     func getUsers() -> [UserData] {
         var userData: [UserData] = [UserData]()
         let container = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserProfile")
         request.returnsObjectsAsFaults = false
         do {
             let result = try container.fetch(request)
@@ -296,7 +295,7 @@ class DatabaseService {
     
     func addUser(user: UserData) {
         let container = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Profile", in: container)
+        let entity = NSEntityDescription.entity(forEntityName: "UserProfile", in: container)
         let newUser = NSManagedObject(entity: entity!, insertInto: container)
         newUser.setValue(user.userId, forKey: "uid")
         newUser.setValue(user.displayName, forKey: "name")
@@ -318,7 +317,7 @@ class DatabaseService {
     
     func deleteUsers() {
         let container = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserProfile")
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do {
             try container.execute(batchDeleteRequest)
