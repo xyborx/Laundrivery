@@ -33,13 +33,10 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                     AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
                     return
             }
-            guard
-                let user = user
-                else {
-                    return
-            }
+            guard let user = user else {return}
             
-            let newUser = UserData(userId: user.uid, displayName: name, email: email, phone: "", address: "")
+            let newUser = UserData(userId: user.uid, displayName: name, email: email, phone: "Not Set", address: "Not Set")
+            DatabaseService.shared.addUser(user: newUser)
             
             let changeRequest = user.createProfileChangeRequest()
             changeRequest.displayName = name
@@ -50,10 +47,8 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                         AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
                         return
                 }
-                
-                DatabaseService.shared.addUser(user: newUser)
+
                 DatabaseService.shared.saveUserToCloud(uid: newUser.userId, phone: newUser.phone, address: newUser.address)
-                
                 self.navigationController?.popToRootViewController(animated: true)
             })
         }

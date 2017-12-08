@@ -29,32 +29,32 @@
                                 <rect key="frame" x="0.0" y="107" width="375" height="473"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="9hV-sF-Gkb">
-                                        <rect key="frame" x="101" y="0.0" width="172" height="172"/>
+                                        <rect key="frame" x="63.5" y="0.0" width="172" height="172"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="172" id="kXX-vo-LN1"/>
                                             <constraint firstAttribute="height" constant="172" id="o4N-eX-f7l"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sif-5i-I5v">
-                                        <rect key="frame" x="-17" y="196" width="408" height="14"/>
+                                        <rect key="frame" x="-24.5" y="196" width="348" height="14"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngH-PB-ghY">
-                                        <rect key="frame" x="37" y="250" width="300" height="14"/>
+                                        <rect key="frame" x="29.5" y="250" width="240" height="14"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Am-7B-FCN">
-                                        <rect key="frame" x="0.0" y="358" width="375" height="14"/>
+                                        <rect key="frame" x="0.0" y="358" width="300" height="14"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekp-4P-JKw">
-                                        <rect key="frame" x="0.0" y="304" width="375" height="14"/>
+                                        <rect key="frame" x="0.0" y="304" width="300" height="14"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -152,7 +152,7 @@
                             <constraint firstAttribute="bottom" secondItem="d5k-ti-tma" secondAttribute="bottom" constant="87" id="0ZH-zr-eqr"/>
                             <constraint firstItem="d5k-ti-tma" firstAttribute="centerX" secondItem="wzU-ef-gX4" secondAttribute="centerX" id="13q-MV-CTm"/>
                             <constraint firstItem="5S6-PH-qrQ" firstAttribute="centerY" secondItem="Ujt-dT-DIo" secondAttribute="centerY" id="5g8-GR-1pI"/>
-                            <constraint firstItem="5S6-PH-qrQ" firstAttribute="width" secondItem="wzU-ef-gX4" secondAttribute="width" id="J0T-YB-Gmm"/>
+                            <constraint firstItem="5S6-PH-qrQ" firstAttribute="width" secondItem="wzU-ef-gX4" secondAttribute="width" multiplier="0.8" id="J0T-YB-Gmm"/>
                             <constraint firstItem="5S6-PH-qrQ" firstAttribute="centerX" secondItem="Ujt-dT-DIo" secondAttribute="centerX" id="Sj5-2b-oCh"/>
                             <constraint firstItem="d5k-ti-tma" firstAttribute="top" secondItem="2y4-r5-4lY" secondAttribute="bottom" constant="25" id="jEl-96-aIS"/>
                         </constraints>

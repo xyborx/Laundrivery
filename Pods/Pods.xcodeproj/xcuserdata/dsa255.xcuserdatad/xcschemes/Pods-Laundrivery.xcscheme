@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0910"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5CB38B257E648FA2D43C01978222D5B9"
+               BlueprintIdentifier = "8FF74D2A0D71C09789DC97C5D2741AAB"
                BuildableName = "Pods_Laundrivery.framework"
                BlueprintName = "Pods-Laundrivery"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5CB38B257E648FA2D43C01978222D5B9"
+            BlueprintIdentifier = "8FF74D2A0D71C09789DC97C5D2741AAB"
             BuildableName = "Pods_Laundrivery.framework"
             BlueprintName = "Pods-Laundrivery"
             ReferencedContainer = "container:Pods.xcodeproj">

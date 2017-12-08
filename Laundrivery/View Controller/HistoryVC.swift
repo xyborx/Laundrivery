@@ -8,30 +8,57 @@
 
 import UIKit
 import Firebase
+import XLPagerTabStrip
 
-class HistoryVC: UIViewController {
+class HistoryVC: ButtonBarPagerTabStripViewController {
+    @IBOutlet weak var historyView: UIView!
     @IBOutlet weak var sorryView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
         if Auth.auth().currentUser == nil {
             self.navigationController?.isNavigationBarHidden = true
+            historyView.isHidden = true
             sorryView.isHidden = false
         }
         else {
-            
+            historyView.isHidden = false
             sorryView.isHidden = true
         }
     }
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        //Tabs Settings
+        //Tabs Background
+        settings.style.buttonBarBackgroundColor = UIColor(red: 52.0/255.0, green: 63.0/255.0, blue: 75.0/255.0, alpha: 1)
+        //Tabs Button Background
+        settings.style.buttonBarItemBackgroundColor = UIColor(red: 52.0/255.0, green: 63.0/255.0, blue: 75.0/255.0, alpha: 1)
+        //Selected Bar Color
+        settings.style.selectedBarBackgroundColor = .white
+        //Selected Bar height
+        settings.style.selectedBarHeight = 1.2
+        //Tabs Space
+        settings.style.buttonBarMinimumLineSpacing = 0
+        settings.style.buttonBarLeftContentInset = 0
+        settings.style.buttonBarRightContentInset = 0
+        //Tabs Full Width
+        settings.style.buttonBarItemsShouldFillAvailiableWidth = true
+        settings.style.buttonBarItemsShouldFillAvailableWidth = true
+        //Tabs Font
+        settings.style.buttonBarItemFont = UIFont(name: "Avenir Light", size: 14)!
         
-        // Do any additional setup after loading the view.
+        super.viewDidLoad()
+        buttonBarView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: buttonBarView.frame.height)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         if Auth.auth().currentUser == nil {
             self.navigationController?.isNavigationBarHidden = false
         }
+    }
+    
+    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        let active = UIStoryboard(name: "ActiveHistory", bundle: nil).instantiateViewController(withIdentifier: "activeHistory")
+        let past = UIStoryboard(name: "PastHistory", bundle: nil).instantiateViewController(withIdentifier: "pastHistory")
+        return [active, past]
     }
 }
