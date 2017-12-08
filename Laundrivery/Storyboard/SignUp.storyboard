@@ -137,20 +137,11 @@
                         <outlet property="nameTF" destination="wBg-7z-8cY" id="JJv-rb-1S0"/>
                         <outlet property="passwordTF" destination="g4v-yD-Y4j" id="mVa-Bs-6g4"/>
                         <outlet property="repeatPasswordTF" destination="hIl-BR-Qeh" id="jdT-ig-j2E"/>
-                        <segue destination="3OK-Cp-LIQ" kind="showDetail" identifier="doneAuth" action="showViewController:sender:" id="Drd-Xs-9uN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bz6-1E-7RS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2001" y="1257"/>
-        </scene>
-        <!--Menu-->
-        <scene sceneID="VGH-gf-B5S">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Menu" id="3OK-Cp-LIQ" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EAd-yW-Vez" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2547" y="1256"/>
         </scene>
     </scenes>
 </document>

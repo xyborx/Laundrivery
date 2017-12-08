@@ -12,6 +12,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
+            <string>Avenir-Heavy</string>
             <string>Avenir-Light</string>
             <string>Avenir-Medium</string>
         </array>
@@ -38,7 +39,7 @@
         <!--Profile-->
         <scene sceneID="MpB-xa-X6M">
             <objects>
-                <viewController id="lut-EZ-n0e" sceneMemberID="viewController">
+                <viewController id="lut-EZ-n0e" customClass="ProfileVC" customModule="Laundrivery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wI1-g6-CSw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +116,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signOutDidTapped:" destination="lut-EZ-n0e" eventType="touchUpInside" id="BUq-5V-F1y"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -149,12 +153,68 @@
                                     <constraint firstItem="qQo-AB-TGh" firstAttribute="centerX" secondItem="oWG-us-huq" secondAttribute="centerX" id="z0y-pr-yog"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zk8-R3-zzj">
+                                <rect key="frame" x="37.5" y="128" width="300" height="426"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're Sorry" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ms3-Qm-fog">
+                                        <rect key="frame" x="72" y="0.0" width="156" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To access your profile, please sign in." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NC6-Fg-Ubd">
+                                        <rect key="frame" x="11" y="330.5" width="278.5" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7r-mq-4Q8">
+                                        <rect key="frame" x="107.5" y="382" width="85" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="16" minY="10" maxX="16" maxY="10"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="tDC-fn-ySE" kind="show" id="We9-eU-AcW"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pdf-AL-fNz">
+                                        <rect key="frame" x="0.0" y="50.5" width="300" height="256"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="256" id="IqU-Tu-nFt"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Y7r-mq-4Q8" firstAttribute="centerX" secondItem="Zk8-R3-zzj" secondAttribute="centerX" id="6GJ-ID-SfW"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y7r-mq-4Q8" secondAttribute="bottom" id="IHv-DD-06l"/>
+                                    <constraint firstItem="Y7r-mq-4Q8" firstAttribute="top" secondItem="NC6-Fg-Ubd" secondAttribute="bottom" constant="28" id="YeG-DD-oBJ"/>
+                                    <constraint firstItem="pdf-AL-fNz" firstAttribute="top" secondItem="Ms3-Qm-fog" secondAttribute="bottom" constant="12" id="aqM-T3-bnX"/>
+                                    <constraint firstItem="Ms3-Qm-fog" firstAttribute="centerX" secondItem="Zk8-R3-zzj" secondAttribute="centerX" id="cR9-tz-4vl"/>
+                                    <constraint firstItem="NC6-Fg-Ubd" firstAttribute="top" secondItem="pdf-AL-fNz" secondAttribute="bottom" constant="24" id="czW-1e-0xb"/>
+                                    <constraint firstItem="Ms3-Qm-fog" firstAttribute="top" secondItem="Zk8-R3-zzj" secondAttribute="top" id="l0u-Fp-tdF"/>
+                                    <constraint firstItem="pdf-AL-fNz" firstAttribute="width" secondItem="Zk8-R3-zzj" secondAttribute="width" id="peS-Z6-Yvd"/>
+                                    <constraint firstItem="pdf-AL-fNz" firstAttribute="centerX" secondItem="Zk8-R3-zzj" secondAttribute="centerX" id="tF0-u5-AWD"/>
+                                    <constraint firstItem="NC6-Fg-Ubd" firstAttribute="centerX" secondItem="Zk8-R3-zzj" secondAttribute="centerX" id="x1d-VQ-kLJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.20392156862745098" green="0.24705882352941178" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Zk8-R3-zzj" firstAttribute="width" secondItem="wI1-g6-CSw" secondAttribute="width" multiplier="0.8" id="0cP-ps-1KM"/>
                             <constraint firstItem="oWG-us-huq" firstAttribute="centerX" secondItem="oGC-bE-SbQ" secondAttribute="centerX" id="2N1-Y1-QB6"/>
                             <constraint firstItem="oWG-us-huq" firstAttribute="centerY" secondItem="oGC-bE-SbQ" secondAttribute="centerY" id="Hwp-fX-xvo"/>
+                            <constraint firstItem="Zk8-R3-zzj" firstAttribute="centerX" secondItem="oGC-bE-SbQ" secondAttribute="centerX" id="ZTN-vx-Yxz"/>
                             <constraint firstItem="oWG-us-huq" firstAttribute="width" secondItem="wI1-g6-CSw" secondAttribute="width" id="bFa-UO-X3e"/>
+                            <constraint firstItem="Zk8-R3-zzj" firstAttribute="centerY" secondItem="oGC-bE-SbQ" secondAttribute="centerY" id="ySZ-kp-f6i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oGC-bE-SbQ"/>
                     </view>
@@ -166,10 +226,26 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="ntd-Ht-4qY" id="M7u-Gz-Nqd"/>
+                        <outlet property="nameLabel" destination="mWQ-Jp-JuF" id="lFG-z2-MQ7"/>
+                        <outlet property="phoneLabel" destination="y3o-f0-yGv" id="y3m-7G-tpR"/>
+                        <outlet property="profileView" destination="oWG-us-huq" id="Qdv-GN-IZ2"/>
+                        <outlet property="sorryView" destination="Zk8-R3-zzj" id="HOX-GS-qE7"/>
+                        <outlet property="streetLabel" destination="qQo-AB-TGh" id="uA3-IR-WPX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56c-YL-1DK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="90" y="490"/>
+        </scene>
+        <!--SignIn-->
+        <scene sceneID="bQa-CP-mpA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignIn" id="tDC-fn-ySE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="szS-P6-WPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="89" y="882"/>
         </scene>
         <!--EditProfile-->
         <scene sceneID="ArN-kP-WAm">

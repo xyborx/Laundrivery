@@ -9,20 +9,7 @@
 import UIKit
 
 class WelcomeVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
-        let loggedIn = UserDefaults.standard.bool(forKey: "loggedIn")
-        if loggedIn {
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "doneAuth", sender: nil)
-            }
-        }
         let finishTutorial = UserDefaults.standard.bool(forKey: "finishTutorial")
         if finishTutorial {
             DispatchQueue.main.async {

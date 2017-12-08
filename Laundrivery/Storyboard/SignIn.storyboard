@@ -126,22 +126,11 @@
                     <connections>
                         <outlet property="emailTF" destination="yfu-NC-vr4" id="7sR-th-ApO"/>
                         <outlet property="passwordTF" destination="dHe-XE-bvI" id="3xr-fW-8Bg"/>
-                        <segue destination="r1a-vh-Yq8" kind="showDetail" identifier="doneAuth" id="03s-SG-caD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kd4-Xe-36A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1084" y="1258"/>
-        </scene>
-        <!--Menu-->
-        <scene sceneID="bzu-IL-U52">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Menu" id="r1a-vh-Yq8" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="23W-vV-ZLO"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8zg-wX-Glh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1642" y="1257"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="s9r-k0-9uG">
