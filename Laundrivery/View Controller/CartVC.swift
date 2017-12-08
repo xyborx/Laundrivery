@@ -21,6 +21,10 @@ class CartVC: UIViewController {
         cartTable.separatorInset = UIEdgeInsets.zero
         cartTable.layoutMargins = UIEdgeInsets.zero
     }
+    
+    @IBAction func checkOutDidTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "checkOutSegue", sender: nil)
+    }
 }
 
 extension CartVC: UITableViewDataSource {

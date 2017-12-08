@@ -150,15 +150,28 @@
                         <viewLayoutGuide key="safeArea" id="Nea-WC-G7s"/>
                     </view>
                     <navigationItem key="navigationItem" title="Cart" id="Ys7-iA-FxR">
-                        <barButtonItem key="rightBarButtonItem" title="Check Out" id="m5r-1p-Zc9"/>
+                        <barButtonItem key="rightBarButtonItem" title="Check Out" id="m5r-1p-Zc9">
+                            <connections>
+                                <action selector="checkOutDidTapped:" destination="LFB-iQ-4qH" id="Ns3-m5-51N"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cartTable" destination="KJe-Hr-dLs" id="vOx-8e-h6Y"/>
+                        <segue destination="6tp-Ln-tS4" kind="showDetail" identifier="checkOutSegue" id="W5C-Bg-0D4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5La-La-xIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3637.5999999999999" y="-285.60719640179911"/>
+        </scene>
+        <!--CheckOut-->
+        <scene sceneID="xES-Oz-aTa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CheckOut" id="6tp-Ln-tS4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lhb-90-29F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4208" y="-286"/>
         </scene>
     </scenes>
 </document>
