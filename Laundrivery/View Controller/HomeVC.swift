@@ -22,7 +22,6 @@ class HomeVC: ButtonBarPagerTabStripViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         category = DatabaseService.shared.getCategories()
-        
         //Tabs Settings
         //Tabs Background
         settings.style.buttonBarBackgroundColor = UIColor(red: 52.0/255.0, green: 63.0/255.0, blue: 75.0/255.0, alpha: 1)

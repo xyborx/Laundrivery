@@ -8,15 +8,11 @@
 
 import Foundation
 
-class CartItem {
-    let type: String
-    let price: Int
+class CartItem: TypeItem {
     var quantity: Int
     
     init(type: String, quantity: Int) {
-        let price = DatabaseService.shared.getPrice(type: type)
-        self.type = type
-        self.price = price
         self.quantity = quantity
+        super.init(type: type, price: DatabaseService.shared.getPrice(type: type))
     }
 }

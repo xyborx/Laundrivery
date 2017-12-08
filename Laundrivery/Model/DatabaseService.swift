@@ -26,34 +26,33 @@ class DatabaseService {
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do {
             try container.execute(batchDeleteRequest)
-            let datas: [TypeItem] = [TypeItem(category: "Tops", type: "Shirt", desc: "", price: 10000),
-                                    TypeItem(category: "Tops", type: "Batik", desc: "", price: 20000),
-                                    TypeItem(category: "Tops", type: "Blouse", desc: "", price: 0),
-                                    TypeItem(category: "Tops", type: "T-Shirt", desc: "", price: 0),
-                                    TypeItem(category: "Tops", type: "Jacket", desc: "", price: 0),
-                                    TypeItem(category: "Tops", type: "Coat", desc: "", price: 0),
-                                    TypeItem(category: "Tops", type: "Sweater", desc: "", price: 0),
-                                    TypeItem(category: "Trousers", type: "Trouser", desc: "", price: 0),
-                                    TypeItem(category: "Trousers", type: "Jean", desc: "", price: 0),
-                                    TypeItem(category: "Trousers", type: "Short", desc: "", price: 0),
-                                    TypeItem(category: "Dresses", type: "Dress", desc: "", price: 0),
-                                    TypeItem(category: "Dresses", type: "Skirt", desc: "", price: 0),
-                                    TypeItem(category: "Dresses", type: "Kebaya", desc: "", price: 0),
-                                    TypeItem(category: "Shoes", type: "Sneaker", desc: "", price: 0),
-                                    TypeItem(category: "Shoes", type: "Canvas", desc: "", price: 0),
-                                    TypeItem(category: "Shoes", type: "Suede", desc: "", price: 0),
-                                    TypeItem(category: "Shoes", type: "Leather", desc: "", price: 0),
-                                    TypeItem(category: "Shoes", type: "Hybrid", desc: "", price: 0),
-                                    TypeItem(category: "Others", type: "Bag of Clothes", desc: "", price: 0),
-                                    TypeItem(category: "Others", type: "Bed Sheet", desc: "", price: 0),
-                                    TypeItem(category: "Others", type: "Blanked", desc: "", price: 0),
-                                    TypeItem(category: "Others", type: "Bag", desc: "", price: 0)]
+            let datas: [TypeItem] = [TypeItem(category: "Tops", type: "Shirt", price: 20000),
+                                    TypeItem(category: "Tops", type: "Batik", price: 25000),
+                                    TypeItem(category: "Tops", type: "Blouse", price: 20000),
+                                    TypeItem(category: "Tops", type: "T-Shirt", price: 20000),
+                                    TypeItem(category: "Tops", type: "Jacket", price: 20000),
+                                    TypeItem(category: "Tops", type: "Coat", price: 30000),
+                                    TypeItem(category: "Tops", type: "Sweater", price: 20000),
+                                    TypeItem(category: "Trousers", type: "Trouser", price: 25000),
+                                    TypeItem(category: "Trousers", type: "Jeans", price: 20000),
+                                    TypeItem(category: "Trousers", type: "Short", price: 20000),
+                                    TypeItem(category: "Dresses", type: "Dress", price: 15000),
+                                    TypeItem(category: "Dresses", type: "Skirt", price: 25000),
+                                    TypeItem(category: "Dresses", type: "Kebaya", price: 30000),
+                                    TypeItem(category: "Shoes", type: "Sneaker", price: 50000),
+                                    TypeItem(category: "Shoes", type: "Canvas", price: 60000),
+                                    TypeItem(category: "Shoes", type: "Suede", price: 60000),
+                                    TypeItem(category: "Shoes", type: "Leather", price: 70000),
+                                    TypeItem(category: "Shoes", type: "Hybrid", price: 80000),
+                                    TypeItem(category: "Others", type: "Bag of Clothes", price: 15000),
+                                    TypeItem(category: "Others", type: "Bed Sheet", price: 15000),
+                                    TypeItem(category: "Others", type: "Blanked", price: 20000),
+                                    TypeItem(category: "Others", type: "Bag", price: 30000)]
             let entity = NSEntityDescription.entity(forEntityName: "Category", in: container)
             for data in datas {
                 let newData = NSManagedObject(entity: entity!, insertInto: container)
                 newData.setValue(data.category, forKey: "category")
                 newData.setValue(data.type, forKey: "type")
-                newData.setValue(data.desc, forKey: "desc")
                 newData.setValue(data.price, forKey: "price")
                 do {
                     try container.save()
@@ -77,12 +76,11 @@ class DatabaseService {
                 guard
                     let category = data.value(forKey: "category") as? String,
                     let type = data.value(forKey: "type") as? String,
-                    let desc = data.value(forKey: "desc") as? String,
                     let price = data.value(forKey: "price") as? Int
                     else {
                         continue
                 }
-                allData.append(TypeItem(category: category, type: type, desc: desc, price: price))
+                allData.append(TypeItem(category: category, type: type, price: price))
             }
         } catch {
             print("Failed")
@@ -102,12 +100,11 @@ class DatabaseService {
                 guard
                     let category = data.value(forKey: "category") as? String,
                     let type = data.value(forKey: "type") as? String,
-                    let desc = data.value(forKey: "desc") as? String,
                     let price = data.value(forKey: "price") as? Int
                     else {
                         continue
                 }
-                allData.append(TypeItem(category: category, type: type, desc: desc, price: price))
+                allData.append(TypeItem(category: category, type: type, price: price))
             }
         } catch {
             print("Failed")
@@ -139,6 +136,23 @@ class DatabaseService {
             print("Failed")
         }
         return allData
+    }
+    
+    func getCategory(of type: String) -> String {
+        let container = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
+        request.predicate = NSPredicate(format: "type == %@", type)
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try container.fetch(request)
+            for data in result as! [NSManagedObject] {
+                guard let category = data.value(forKey: "category") as? String else {continue}
+                return category
+            }
+        } catch {
+            print("Failed")
+        }
+        return String()
     }
     
     func getCategories() -> [String] {

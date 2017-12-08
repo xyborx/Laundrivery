@@ -14,8 +14,6 @@ class CartVC: UIViewController {
     var cart: [CartItem] = [CartItem]()
 
     override func viewDidLoad() {
-//        DatabaseService.shared.addToCart(type: "Shirt", quantity: 5)
-//        DatabaseService.shared.addToCart(type: "Batik", quantity: 7)
         cart = DatabaseService.shared.getCartItems()
         super.viewDidLoad()
 

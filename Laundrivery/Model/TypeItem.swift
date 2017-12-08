@@ -11,13 +11,21 @@ import Foundation
 class TypeItem {
     let category: String
     let type: String
-    let desc: String
     let price: Int
     
-    init(category: String, type: String, desc: String, price: Int) {
+    init(category: String, type: String, price: Int) {
         self.category = category
         self.type = type
-        self.desc = desc
         self.price = price
+    }
+    
+    init(type: String, price: Int) {
+        self.category = DatabaseService.shared.getCategory(of: type)
+        self.type = type
+        self.price = price
+    }
+    
+    func getStringPrice() -> String {
+        return "Rp \(price)"
     }
 }
