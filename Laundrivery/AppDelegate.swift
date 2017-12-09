@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     private let googleAPIKey = "AIzaSyCxC_vVH9lO1i1g_qqt211qGfBuAdsvYqo"
+    
+    let backgroundColor = UIColor(red: 52.0/255.0, green: 63.0/255.0, blue: 75.0/255.0, alpha: 1)
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -34,8 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = false
         
         //Navigation Bar Background Color
-        UINavigationBar.appearance().barTintColor = UIColor(red: 52.0/255.0, green: 63.0/255.0, blue: 75.0/255.0, alpha: 1)
-        UISearchBar.appearance().backgroundColor = UIColor(red: 52.0/255.0, green: 63.0/255.0, blue: 75.0/255.0, alpha: 1)
+        UINavigationBar.appearance().barTintColor = backgroundColor
+        UISearchBar.appearance().backgroundColor = backgroundColor
         
         //Navigation Bar Title Color
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]

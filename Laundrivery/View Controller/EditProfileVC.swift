@@ -8,8 +8,9 @@
 
 import UIKit
 import GooglePlacePicker
+import TGCameraViewController
 
-class EditProfileVC: UIViewController, UITextFieldDelegate, GMSPlacePickerViewControllerDelegate {
+class EditProfileVC: UIViewController, UITextFieldDelegate, GMSPlacePickerViewControllerDelegate, TGCameraDelegate {
     
     @IBOutlet weak var imgButton: UIButton!
     @IBOutlet weak var fullNameTF: UITextField!
@@ -28,10 +29,12 @@ class EditProfileVC: UIViewController, UITextFieldDelegate, GMSPlacePickerViewCo
         imgButton.layer.cornerRadius = 0.5 * imgButton.bounds.size.width
         imgButton.clipsToBounds = true
         imgButton.contentMode = .center
+        TGCameraColor.setTint(.white)
     }
     
     @IBAction func imgDidTapped(_ sender: Any) {
-        
+        let navigationController = TGCameraNavigationController.new(with: self)
+        present(navigationController!, animated: true, completion: nil)
     }
     
     @IBAction func addressDidTapped(_ sender: Any) {
@@ -47,5 +50,19 @@ class EditProfileVC: UIViewController, UITextFieldDelegate, GMSPlacePickerViewCo
     
     func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
         viewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func cameraDidCancel() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func cameraDidTakePhoto(_ image: UIImage!) {
+        imgButton.setImage(image, for: .normal)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func cameraDidSelectAlbumPhoto(_ image: UIImage!) {
+        imgButton.setImage(image, for: .normal)
+        dismiss(animated: true, completion: nil)
     }
 }
