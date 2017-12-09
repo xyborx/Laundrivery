@@ -9,12 +9,15 @@
 import UIKit
 import CoreData
 import Firebase
+import GooglePlaces
+import GoogleMaps
+import GooglePlacePicker
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    private let googleAPIKey = "AIzaSyCxC_vVH9lO1i1g_qqt211qGfBuAdsvYqo"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,11 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
         
+        GMSPlacesClient.provideAPIKey(googleAPIKey)
+        GMSServices.provideAPIKey(googleAPIKey)
+        
         //Status Bar Text Color
         UIApplication.shared.statusBarStyle = .lightContent
         
+        UINavigationBar.appearance().isTranslucent = false
+        
         //Navigation Bar Background Color
         UINavigationBar.appearance().barTintColor = UIColor(red: 52.0/255.0, green: 63.0/255.0, blue: 75.0/255.0, alpha: 1)
+        UISearchBar.appearance().backgroundColor = UIColor(red: 52.0/255.0, green: 63.0/255.0, blue: 75.0/255.0, alpha: 1)
         
         //Navigation Bar Title Color
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]

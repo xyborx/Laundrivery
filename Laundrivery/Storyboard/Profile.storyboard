@@ -24,7 +24,7 @@
                 <navigationController id="BxE-0r-qpk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="profle" selectedImage="profle" id="qk6-fH-R7x"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NrK-0f-jmN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="NrK-0f-jmN">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -41,11 +41,11 @@
             <objects>
                 <viewController id="lut-EZ-n0e" customClass="ProfileVC" customModule="Laundrivery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wI1-g6-CSw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWG-us-huq">
-                                <rect key="frame" x="0.5" y="105" width="375" height="472"/>
+                                <rect key="frame" x="0.5" y="41" width="375" height="472"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Bb4-ix-zCf">
                                         <rect key="frame" x="101.5" y="0.0" width="172" height="172"/>
@@ -154,7 +154,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zk8-R3-zzj">
-                                <rect key="frame" x="37.5" y="128" width="300" height="426"/>
+                                <rect key="frame" x="37.5" y="64" width="300" height="426"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're Sorry" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ms3-Qm-fog">
                                         <rect key="frame" x="72" y="0.0" width="156" height="38.5"/>

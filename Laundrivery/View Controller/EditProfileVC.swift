@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import GooglePlacePicker
 
-class EditProfileVC: UIViewController,UITextFieldDelegate {
+class EditProfileVC: UIViewController, UITextFieldDelegate, GMSPlacePickerViewControllerDelegate {
     
+    @IBOutlet weak var imgButton: UIButton!
     @IBOutlet weak var fullNameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var addressLabel: UIButton!
+    
     @IBAction func saveChangesDidTapped(){
         
     }
@@ -22,22 +25,27 @@ class EditProfileVC: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        imgButton.layer.cornerRadius = 0.5 * imgButton.bounds.size.width
+        imgButton.clipsToBounds = true
+        imgButton.contentMode = .center
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func imgDidTapped(_ sender: Any) {
+        
     }
-    */
-
+    
+    @IBAction func addressDidTapped(_ sender: Any) {
+        let config = GMSPlacePickerConfig(viewport: nil)
+        let placePicker = GMSPlacePickerViewController(config: config)
+        placePicker.delegate = self
+        present(placePicker, animated: true, completion: nil)
+    }
+    
+    func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
+        viewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
+        viewController.dismiss(animated: true, completion: nil)
+    }
 }
