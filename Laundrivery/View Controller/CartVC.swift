@@ -23,6 +23,10 @@ class CartVC: UIViewController {
     }
     
     @IBAction func checkOutDidTapped(_ sender: Any) {
+        if cart.isEmpty {
+            UtilitiesFunction.showAlert(self, title: "Error", message: "Please add something into your cart first")
+            return
+        }
         self.performSegue(withIdentifier: "checkOutSegue", sender: nil)
     }
 }
@@ -34,10 +38,11 @@ extension CartVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = cartTable.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! CartTableViewCell
-        cell.itemName.text = cart[indexPath.row].type
-        cell.quantity.text = "\(cart[indexPath.row].quantity)"
-        cell.total.text = "Rp \(cart[indexPath.row].quantity * cart[indexPath.row].price)"
-        cell.price = cart[indexPath.row].price
+        let item = cart[indexPath.row]
+        cell.itemName.text = item.detail.type
+        cell.quantity.text = "\(item.quantity)"
+        cell.total.text = "\(UtilitiesFunction.getStringPrice(item.quantity * item.detail.price))"
+        cell.price = item.detail.price
         return cell
     }
     

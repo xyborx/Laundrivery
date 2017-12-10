@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import CoreData
 
 class ProfileVC: UIViewController {
@@ -20,12 +19,11 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var sorryView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
-        if let currentUser = Auth.auth().currentUser {
-            let user = DatabaseService.shared.getUser(uid: currentUser.uid)
+        if let user = DatabaseService.shared.getUser() {
             nameLabel.text = user.displayName
             emailLabel.text = user.email
-            phoneLabel.text = user.phone
-            streetLabel.text = user.address
+            phoneLabel.text = user.phone ?? "Not Set"
+            streetLabel.text = user.address ?? "Not Set"
             profileView.isHidden = false
             sorryView.isHidden = true
         }
@@ -37,6 +35,7 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func signOutDidTapped(_ sender: Any) {
+        /*
         do {
             try Auth.auth().signOut()
             DatabaseService.shared.deleteUsers()
@@ -44,7 +43,7 @@ class ProfileVC: UIViewController {
         }
         catch {
             print(error)
-        }
+        }*/
     }
     
     override func viewDidLoad() {
@@ -54,7 +53,7 @@ class ProfileVC: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        if Auth.auth().currentUser == nil {
+        if DatabaseService.shared.getUser() == nil {
             self.navigationController?.isNavigationBarHidden = false
         }
     }

@@ -22,7 +22,7 @@ class ForgetPasswordVC: UIViewController, UITextFieldDelegate{
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField==emailTF {
+        if textField == emailTF {
             self.becomeFirstResponder()
             self.resetPasswordDidTapped(textField)
         }

@@ -11,17 +11,25 @@ import Firebase
 
 class WelcomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
-        DatabaseService.shared.initiate()
-        
-        /*let notFirstLaunch = UserDefaults.standard.bool(forKey: "firstLaunch")
-        if !notFirstLaunch {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            
+        }
+        let launched = UserDefaults.standard.bool(forKey: "launched")
+        if !launched {
             DatabaseService.shared.initiate()
-            UserDefaults.standard.set(true, forKey: "firstLaunch")
-        }*/
+            UserDefaults.standard.set(true, forKey: "launched")
+        }
+        else{
+            DatabaseService.shared.initiateLaunched()
+        }
         let finishTutorial = UserDefaults.standard.bool(forKey: "finishTutorial")
         if finishTutorial {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Menu", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "menuSB")
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "skipTutorial", sender: nil)
+                self.present(newViewController, animated: false, completion: nil)
             }
         }
     }

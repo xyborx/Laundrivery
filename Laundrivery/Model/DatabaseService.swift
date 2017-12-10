@@ -15,215 +15,145 @@ class DatabaseService {
     static let shared = DatabaseService()
     private init() {}
     
-    let profile = Database.database().reference().child("profile")
+    let cart = Database.database().reference().child("cart")
     let history = Database.database().reference().child("history")
+    let profile = Database.database().reference().child("profile")
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    private let localData = ["Cart", "History", "UserProfile"]
+    
+    private let categories = ["Tops", "Trousers", "Dresses", "Shoes", "Others"]
+    
+    private let laundryItems: [LaundryItem] = [LaundryItem(category: "Tops", type: "Shirt", price: 20000),
+                                      LaundryItem(category: "Tops", type: "Batik", price: 25000),
+                                      LaundryItem(category: "Tops", type: "Blouse", price: 20000),
+                                      LaundryItem(category: "Tops", type: "T-Shirt", price: 20000),
+                                      LaundryItem(category: "Tops", type: "Jacket", price: 20000),
+                                      LaundryItem(category: "Tops", type: "Coat", price: 30000),
+                                      LaundryItem(category: "Tops", type: "Sweater", price: 20000),
+                                      LaundryItem(category: "Trousers", type: "Trouser", price: 25000),
+                                      LaundryItem(category: "Trousers", type: "Jeans", price: 20000),
+                                      LaundryItem(category: "Trousers", type: "Short", price: 20000),
+                                      LaundryItem(category: "Dresses", type: "Dress", price: 15000),
+                                      LaundryItem(category: "Dresses", type: "Skirt", price: 25000),
+                                      LaundryItem(category: "Dresses", type: "Kebaya", price: 30000),
+                                      LaundryItem(category: "Shoes", type: "Sneaker", price: 50000),
+                                      LaundryItem(category: "Shoes", type: "Canvas", price: 60000),
+                                      LaundryItem(category: "Shoes", type: "Suede", price: 60000),
+                                      LaundryItem(category: "Shoes", type: "Leather", price: 70000),
+                                      LaundryItem(category: "Shoes", type: "Hybrid", price: 80000),
+                                      LaundryItem(category: "Others", type: "Bag of Clothes", price: 15000),
+                                      LaundryItem(category: "Others", type: "Bed Sheet", price: 15000),
+                                      LaundryItem(category: "Others", type: "Blanket", price: 20000),
+                                      LaundryItem(category: "Others", type: "Bag", price: 30000)]
+    
+    private var userData: UserInfo?
+    private var cartItems = [CartItem]()
+    
     func initiate() {
-        let container = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
-        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do {
-            try container.execute(batchDeleteRequest)
-            let datas: [TypeItem] = [TypeItem(category: "Tops", type: "Shirt", price: 20000),
-                                    TypeItem(category: "Tops", type: "Batik", price: 25000),
-                                    TypeItem(category: "Tops", type: "Blouse", price: 20000),
-                                    TypeItem(category: "Tops", type: "T-Shirt", price: 20000),
-                                    TypeItem(category: "Tops", type: "Jacket", price: 20000),
-                                    TypeItem(category: "Tops", type: "Coat", price: 30000),
-                                    TypeItem(category: "Tops", type: "Sweater", price: 20000),
-                                    TypeItem(category: "Trousers", type: "Trouser", price: 25000),
-                                    TypeItem(category: "Trousers", type: "Jeans", price: 20000),
-                                    TypeItem(category: "Trousers", type: "Short", price: 20000),
-                                    TypeItem(category: "Dresses", type: "Dress", price: 15000),
-                                    TypeItem(category: "Dresses", type: "Skirt", price: 25000),
-                                    TypeItem(category: "Dresses", type: "Kebaya", price: 30000),
-                                    TypeItem(category: "Shoes", type: "Sneaker", price: 50000),
-                                    TypeItem(category: "Shoes", type: "Canvas", price: 60000),
-                                    TypeItem(category: "Shoes", type: "Suede", price: 60000),
-                                    TypeItem(category: "Shoes", type: "Leather", price: 70000),
-                                    TypeItem(category: "Shoes", type: "Hybrid", price: 80000),
-                                    TypeItem(category: "Others", type: "Bag of Clothes", price: 15000),
-                                    TypeItem(category: "Others", type: "Bed Sheet", price: 15000),
-                                    TypeItem(category: "Others", type: "Blanket", price: 20000),
-                                    TypeItem(category: "Others", type: "Bag", price: 30000)]
-            let entity = NSEntityDescription.entity(forEntityName: "Category", in: container)
-            for data in datas {
-                let newData = NSManagedObject(entity: entity!, insertInto: container)
-                newData.setValue(data.category, forKey: "category")
-                newData.setValue(data.type, forKey: "type")
-                newData.setValue(data.price, forKey: "price")
-                do {
-                    try container.save()
-                } catch {
-                    print("Failed saving \(data.type)")
-                }
-            }
+            wipeOut()
+            try Auth.auth().signOut()
         } catch {
-            print("Failed deleting")
+            print("Failed sign out")
         }
     }
     
-    func getAllData() -> [TypeItem] {
-        var allData = [TypeItem]()
-        let container = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try container.fetch(request)
-            for data in result as! [NSManagedObject] {
-                guard
-                    let category = data.value(forKey: "category") as? String,
-                    let type = data.value(forKey: "type") as? String,
-                    let price = data.value(forKey: "price") as? Int
-                    else {
-                        continue
-                }
-                allData.append(TypeItem(category: category, type: type, price: price))
-            }
-        } catch {
-            print("Failed")
+    func initiateLaunched() {
+        self.cartItems = fetchCartLocally()
+        if Auth.auth().currentUser != nil {
+            self.userData = self.fetchUserLocal()
         }
-        return allData
     }
     
-    func getAllData(with category: String) -> [TypeItem] {
-        var allData = [TypeItem]()
-        let container = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
-        request.predicate = NSPredicate(format: "category == %@", category)
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try container.fetch(request)
-            for data in result as! [NSManagedObject] {
-                guard
-                    let category = data.value(forKey: "category") as? String,
-                    let type = data.value(forKey: "type") as? String,
-                    let price = data.value(forKey: "price") as? Int
-                    else {
-                        continue
-                }
-                allData.append(TypeItem(category: category, type: type, price: price))
-            }
-        } catch {
-            print("Failed")
-        }
-        return allData
+    /*
+     LAUNDRY ITEM MANAGEMENT
+    */
+    
+    func getLaundryItems() -> [LaundryItem] {
+        return laundryItems
     }
     
-    func getCategoriesAndTypes() -> [String: [String: Int]] {
-        var allData = [String: [String: Int]]()
-        let container = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try container.fetch(request)
-            for data in result as! [NSManagedObject] {
-                guard
-                    let category = data.value(forKey: "category") as? String,
-                    let type = data.value(forKey: "type") as? String,
-                    let price = data.value(forKey: "price") as? Int
-                else {
-                    continue
-                }
-                if !allData.keys.contains(category) {
-                    allData[category] = [String: Int]()
-                }
-                allData[category]![type] = price
+    func getLaundryItems(category: String) -> [LaundryItem] {
+        var data = [LaundryItem]()
+        for item in laundryItems {
+            if item.category == category {
+                data.append(item)
             }
-        } catch {
-            print("Failed")
         }
-        return allData
+        return data
     }
     
-    func getCategory(of type: String) -> String {
-        let container = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
-        request.predicate = NSPredicate(format: "type == %@", type)
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try container.fetch(request)
-            for data in result as! [NSManagedObject] {
-                guard let category = data.value(forKey: "category") as? String else {continue}
-                return category
+    func getLaundryItems(type: String) -> [LaundryItem] {
+        var data = [LaundryItem]()
+        for item in laundryItems {
+            if item.type == type {
+                data.append(item)
             }
-        } catch {
-            print("Failed")
         }
-        return String()
+        return data
+    }
+    
+    func getLaundryItem(named type: String) -> LaundryItem? {
+        for item in laundryItems {
+            if item.type == type {
+                return item
+            }
+        }
+        return nil
     }
     
     func getCategories() -> [String] {
-        var categories = [String]()
-        let container = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try container.fetch(request)
-            for data in result as! [NSManagedObject] {
-                guard let category = data.value(forKey: "category") as? String else {continue}
-                if !categories.contains(category) {
-                    categories.append(category)
-                }
-            }
-        } catch {
-            print("Failed")
-        }
         return categories
     }
     
-    func getTypes(category: String) -> [String] {
-        var types = [String]()
-        let container = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
-        request.predicate = NSPredicate(format: "category == %@", category)
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try container.fetch(request)
-            for data in result as! [NSManagedObject] {
-                guard let type = data.value(forKey: "type") as? String else {continue}
-                types.append(type)
-            }
-        } catch {
-            print("Failed")
+    func getPrice(of type: String) -> Int? {
+        if let item = self.getLaundryItem(named: type) {
+            return item.price
         }
-        return types
+        return nil
     }
     
-    func getPrice(type: String) -> Int {
-        var price = -1
-        let container = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
-        request.predicate = NSPredicate(format: "type == %@", type)
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try container.fetch(request)
-            for data in result as! [NSManagedObject] {
-                guard let prices = data.value(forKey: "price") as? Int else {continue}
-                price = prices
-            }
-        } catch {
-            print("Failed")
-        }
-        return price
-    }
+    /*
+     CART MANAGEMENT
+    */
     
     func addToCart(type: String, quantity: Int) {
-        let container = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Cart", in: container)
-        let newItem = NSManagedObject(entity: entity!, insertInto: container)
-        newItem.setValue(type, forKey: "type")
-        newItem.setValue(quantity, forKey: "quantity")
-        do {
-            try container.save()
-        } catch {
-            print("Failed saving")
+        if cartItems.isEmpty {
+            self.cartItems.append(CartItem(named: type, quantity: quantity))
+        }
+        else {
+            for ind in 0..<cartItems.count {
+                if cartItems[ind].detail.type == type {
+                    cartItems[ind].quantity += quantity
+                    break
+                }
+                else if ind == cartItems.count - 1 {
+                    self.cartItems.append(CartItem(named: type, quantity: quantity))
+                }
+            }
+        }
+        saveCartLocally(cartItems: self.cartItems)
+        if userData != nil {
+            saveCartToCloud(cartItems: self.cartItems)
         }
     }
     
     func getCartItems() -> [CartItem] {
+        return cartItems
+    }
+    
+    func getCartItem(type: String) -> CartItem? {
+        for item in cartItems {
+            if item.detail.type == type {
+                return item
+            }
+        }
+        return nil
+    }
+    
+    func fetchCartLocally() -> [CartItem] {
         var cartItem = [CartItem]()
         let container = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
@@ -237,7 +167,7 @@ class DatabaseService {
                     else {
                         continue
                 }
-                cartItem.append(CartItem(type: type, quantity: quantity))
+                cartItem.append(CartItem(named: type, quantity: quantity))
             }
         } catch {
             print("Failed")
@@ -245,7 +175,68 @@ class DatabaseService {
         return cartItem
     }
     
-    func getUser(uid: String) -> UserData {
+    func saveCartLocally(cartItems: [CartItem]) {
+        deleteLocalData(named: "Cart")
+        let container = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Cart", in: container)
+        for item in cartItems {
+            let newItem = NSManagedObject(entity: entity!, insertInto: container)
+            newItem.setValue(item.detail.type, forKey: "type")
+            newItem.setValue(item.quantity, forKey: "quantity")
+            do {
+                try container.save()
+            } catch {
+                print("Failed saving")
+            }
+        }
+    }
+    
+    func saveCartToCloud(cartItems: [CartItem]) {
+        for item in cartItems {
+            let parameters = [item.detail.type: item.quantity]
+            cart.child(self.userData!.userId).setValue(parameters)
+        }
+    }
+    
+    /*
+     USER MANAGEMENT
+     */
+    
+    func userSignIn(user: User) {
+        let users = UserInfo(userId: user.uid, displayName: user.displayName!, email: user.email!)
+        self.userData = fetchUserDetails(user: users)
+        saveUserLocally()
+    }
+    
+    func userSignUp() {
+        if let user = fetchUserInfo() {
+            self.userData = user
+            saveUserLocally()
+        }
+    }
+    
+    func fetchUserInfo() -> UserInfo? {
+        if let user = Auth.auth().currentUser {
+            return UserInfo(userId: user.uid, displayName: user.displayName!, email: (user.email)!)
+        }
+        return nil
+    }
+    
+    func fetchUserDetails(user: UserInfo) -> UserInfo {
+        var detailedUser = user
+        self.profile.child(user.userId).observeSingleEvent(of: .value, with: { (snapshot) in
+            guard
+                let snapDict = snapshot.value as? [String: Any],
+                let phone = snapDict["phone"] as? String,
+                let address = snapDict["address"] as? String
+            else {return}
+            detailedUser.phone = phone
+            detailedUser.address = address
+        })
+        return detailedUser
+    }
+    
+    func fetchUserLocal() -> UserInfo? {
         let container = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserProfile")
         request.returnsObjectsAsFaults = false
@@ -258,72 +249,64 @@ class DatabaseService {
                 let email = data.value(forKey: "email") as? String,
                 let phone = data.value(forKey: "phone") as? String,
                 let address = data.value(forKey: "address") as? String
-            else {
-                return UserData()
+                else {
+                    return nil
             }
-            return UserData(userId: userId, displayName: name, email: email, phone: phone, address: address)
+            return UserInfo(userId: userId, image: UIImage(), displayName: name, email: email, phone: phone, address: address)
         } catch {
             print("Failed")
         }
-        return UserData()
+        return nil
     }
     
-    func getUsers() -> [UserData] {
-        var userData: [UserData] = [UserData]()
-        let container = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserProfile")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try container.fetch(request)
-            for data in result as! [NSManagedObject] {
-                guard
-                    let userId = data.value(forKey: "uid") as? String,
-                    let name = data.value(forKey: "name") as? String,
-                    let email = data.value(forKey: "email") as? String,
-                    let phone = data.value(forKey: "phone") as? String,
-                    let address = data.value(forKey: "address") as? String
-                else {
-                    continue
-                }
-                userData.append(UserData(userId: userId, displayName: name, email: email, phone: phone, address: address))
-            }
-        } catch {
-            print("Failed")
-        }
+    func getUser() -> UserInfo? {
         return userData
     }
     
-    func addUser(user: UserData) {
-        let container = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "UserProfile", in: container)
-        let newUser = NSManagedObject(entity: entity!, insertInto: container)
-        newUser.setValue(user.userId, forKey: "uid")
-        newUser.setValue(user.displayName, forKey: "name")
-        newUser.setValue(user.email, forKey: "email")
-        newUser.setValue(user.phone, forKey: "phone")
-        newUser.setValue(user.address, forKey: "address")
-        do {
-            try container.save()
-        } catch {
-            print("Failed saving")
+    func saveUserLocally() {
+        if let user = self.userData {
+            deleteLocalData(named: "UserProfile")
+            let container = appDelegate.persistentContainer.viewContext
+            let entity = NSEntityDescription.entity(forEntityName: "UserProfile", in: container)
+            let newUser = NSManagedObject(entity: entity!, insertInto: container)
+            newUser.setValue(user.userId, forKey: "uid")
+            newUser.setValue(user.displayName, forKey: "name")
+            newUser.setValue(user.email, forKey: "email")
+            newUser.setValue(user.phone, forKey: "phone")
+            newUser.setValue(user.address, forKey: "address")
+            do {
+                try container.save()
+            } catch {
+                print("Failed saving")
+            }
         }
     }
     
-    func saveUserToCloud(uid: String, phone: String, address: String) {
-        let parameters = ["phone"   : phone,
-                          "address" : address]
-        profile.child(uid).setValue(parameters)
+    func saveUserToCloud(user: UserInfo) {
+        let parameters = ["phone"   : user.phone!,
+                          "address" : user.address!]
+        profile.child(user.userId).setValue(parameters)
     }
     
-    func deleteUsers() {
+    /*
+     DELETE DATA
+     */
+    
+    func deleteLocalData(named: String) {
         let container = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserProfile")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: named)
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do {
             try container.execute(batchDeleteRequest)
             
         } catch {
             print("Failed")
+        }
+    }
+    
+    func wipeOut() {
+        for data in localData {
+            deleteLocalData(named: data)
         }
     }
 }

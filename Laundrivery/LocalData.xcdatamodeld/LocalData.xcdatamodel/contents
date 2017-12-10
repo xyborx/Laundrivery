@@ -4,11 +4,6 @@
         <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
-        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <entity name="History" representedClassName="History" syncable="YES" codeGenerationType="class">
         <attribute name="order" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="orderId" optional="YES" attributeType="String" syncable="YES"/>
@@ -24,7 +19,6 @@
     </entity>
     <elements>
         <element name="Cart" positionX="-54" positionY="-9" width="128" height="75"/>
-        <element name="Category" positionX="-36" positionY="9" width="128" height="90"/>
         <element name="History" positionX="-45" positionY="18" width="128" height="105"/>
         <element name="UserProfile" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>

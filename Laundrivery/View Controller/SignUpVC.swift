@@ -22,7 +22,14 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
             let email = emailTF.text, email != "",
             let password = passwordTF.text, password != ""
         else {
-            AlertController.showAlert(self, title: "Missing Information", message: "Please fill out all fields")
+            UtilitiesFunction.showAlert(self, title: "Missing Information", message: "Please fill out all fields")
+            return
+        }
+        
+        guard
+            let repeatPassword = passwordTF.text, repeatPassword == password
+        else {
+            UtilitiesFunction.showAlert(self, title: "Password Mismatch", message: "Password must be the same")
             return
         }
         
@@ -30,13 +37,10 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
             guard
                 error == nil
                 else {
-                    AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
+                    UtilitiesFunction.showAlert(self, title: "Error", message: error!.localizedDescription)
                     return
             }
             guard let user = user else {return}
-            
-            let newUser = UserData(userId: user.uid, displayName: name, email: email, phone: "Not Set", address: "Not Set")
-            DatabaseService.shared.addUser(user: newUser)
             
             let changeRequest = user.createProfileChangeRequest()
             changeRequest.displayName = name
@@ -44,11 +48,10 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                 guard
                     error == nil
                     else {
-                        AlertController.showAlert(self, title: "Error", message: error!.localizedDescription)
+                        UtilitiesFunction.showAlert(self, title: "Error", message: error!.localizedDescription)
                         return
                 }
-
-                DatabaseService.shared.saveUserToCloud(uid: newUser.userId, phone: newUser.phone, address: newUser.address)
+                DatabaseService.shared.userSignUp()
                 self.navigationController?.popToRootViewController(animated: true)
             })
         }
@@ -57,21 +60,22 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     override var canBecomeFirstResponder: Bool{
         return true
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.becomeFirstResponder()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField==nameTF {
+        if textField == nameTF {
             emailTF.becomeFirstResponder()
         }
-        else if textField==emailTF{
+        else if textField == emailTF {
             passwordTF.becomeFirstResponder()
         }
-        else if textField==passwordTF{
+        else if textField == passwordTF {
             repeatPasswordTF.becomeFirstResponder()
         }
-        else{
+        else {
             self.becomeFirstResponder()
             self.signUpDidTapped(textField)
         }

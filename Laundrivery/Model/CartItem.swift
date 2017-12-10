@@ -8,11 +8,12 @@
 
 import Foundation
 
-class CartItem: TypeItem {
+struct CartItem {
+    let detail: LaundryItem
     var quantity: Int
     
-    init(type: String, quantity: Int) {
+    init(named item: String, quantity: Int) {
+        self.detail = DatabaseService.shared.getLaundryItem(named: item)!
         self.quantity = quantity
-        super.init(type: type, price: DatabaseService.shared.getPrice(type: type))
     }
 }

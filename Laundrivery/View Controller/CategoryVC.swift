@@ -13,19 +13,17 @@ class CategoryVC: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var typeTable: UITableView!
     
     var category = ""
-    var data: [TypeItem] = [TypeItem]()
+    var data: [LaundryItem] = [LaundryItem]()
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: category)
     }
 
     override func viewDidLoad() {
-        data = DatabaseService.shared.getAllData(with: category)
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        data = DatabaseService.shared.getLaundryItems(category: category)
         typeTable.separatorInset = UIEdgeInsets.zero
         typeTable.layoutMargins = UIEdgeInsets.zero
+        super.viewDidLoad()
     }
 }
 
@@ -38,7 +36,7 @@ extension CategoryVC: UITableViewDataSource {
         let cell = typeTable.dequeueReusableCell(withIdentifier: "typeCell", for: indexPath) as! TypeTableViewCell
         cell.img.image = UIImage(named: data[indexPath.row].type)
         cell.type.text = data[indexPath.row].type
-        cell.price.text = "\(data[indexPath.row].getStringPrice()) per piece"
+        cell.price.text = "\(UtilitiesFunction.getStringPrice(data[indexPath.row].price)) per piece"
         cell.quantity.text = "\(0)"
         cell.layoutMargins = UIEdgeInsets.zero
         return cell

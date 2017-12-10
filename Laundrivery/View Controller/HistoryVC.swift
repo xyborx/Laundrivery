@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import XLPagerTabStrip
 
 class HistoryVC: ButtonBarPagerTabStripViewController {
@@ -15,7 +14,7 @@ class HistoryVC: ButtonBarPagerTabStripViewController {
     @IBOutlet weak var sorryView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
-        if Auth.auth().currentUser == nil {
+        if DatabaseService.shared.getUser() == nil {
             self.navigationController?.isNavigationBarHidden = true
             historyView.isHidden = true
             sorryView.isHidden = false
@@ -51,7 +50,7 @@ class HistoryVC: ButtonBarPagerTabStripViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        if Auth.auth().currentUser == nil {
+        if DatabaseService.shared.getUser() == nil {
             self.navigationController?.isNavigationBarHidden = false
         }
     }
