@@ -10,12 +10,18 @@ import UIKit
 
 class CartVC: UIViewController {
     @IBOutlet weak var cartTable: UITableView!
+    @IBOutlet weak var total: UILabel!
     
     var cart: [CartItem] = [CartItem]()
 
     override func viewDidLoad() {
         cart = DatabaseService.shared.getCartItems()
         cartTable.separatorStyle = .none
+        var price = 0
+        for item in cart {
+            price += item.quantity * item.detail.price
+        }
+        total.text = UtilitiesFunction.getStringPrice(price)
         super.viewDidLoad()
     }
     

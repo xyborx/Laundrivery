@@ -65,11 +65,6 @@
                         <viewLayoutGuide key="safeArea" id="Jo7-Yp-KL2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Ki1-KT-tmN">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="wOA-fB-nIm">
-                            <connections>
-                                <action selector="searchDidTapped:" destination="PBQ-mO-L69" id="cQi-L1-vVa"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Cart" id="oMB-GB-MYJ">
                             <connections>
                                 <segue destination="mYF-ak-ZgE" kind="show" id="A32-3M-imG"/>

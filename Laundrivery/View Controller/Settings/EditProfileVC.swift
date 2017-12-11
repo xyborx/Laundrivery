@@ -47,6 +47,10 @@ class EditProfileVC: UIViewController, UITextFieldDelegate, GMSPlacePickerViewCo
         //Camera setting
         TGCameraColor.setTint(.white)
         super.viewDidLoad()
+        guard let image = UtilitiesFunction.getSavedImage(named: currentUser.userId) else {imgView.image = UIImage(named: "user")
+            return
+        }
+        imgView.image = image
     }
     
     @IBAction func imgDidTapped(_ sender: Any) {

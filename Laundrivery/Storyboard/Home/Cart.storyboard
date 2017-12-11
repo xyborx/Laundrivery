@@ -191,6 +191,7 @@
                     <navigationItem key="navigationItem" title="Cart" id="Ys7-iA-FxR"/>
                     <connections>
                         <outlet property="cartTable" destination="KJe-Hr-dLs" id="vOx-8e-h6Y"/>
+                        <outlet property="total" destination="iLl-An-TzR" id="PaS-vu-iCd"/>
                         <segue destination="6tp-Ln-tS4" kind="showDetail" identifier="checkOutSegue" id="W5C-Bg-0D4"/>
                     </connections>
                 </viewController>

@@ -31,6 +31,10 @@ class ProfileVC: UIViewController {
             streetLabel.text = user.address ?? "Not Set"
             profileView.isHidden = false
             sorryView.isHidden = true
+            guard let image = UtilitiesFunction.getSavedImage(named: user.userId) else {imgView.image = UIImage(named: "user")
+                return
+            }
+            imgView.image = image
         }
         else {
             self.navigationController?.isNavigationBarHidden = true

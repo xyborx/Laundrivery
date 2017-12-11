@@ -23,9 +23,7 @@ class CartTableViewCell: UITableViewCell {
             updateData()
         }
         else {
-            let sp = self.superview?.superview as? CartVC
-            sp?.deleteData(type: self.itemName.text!)
-//            self.superview?.deleteData(self.itemName.text!)
+            
         }
     }
     
