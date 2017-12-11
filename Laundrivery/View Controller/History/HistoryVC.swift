@@ -13,6 +13,8 @@ class HistoryVC: ButtonBarPagerTabStripViewController {
     @IBOutlet weak var historyView: UIView!
     @IBOutlet weak var sorryView: UIView!
     
+    var passParam = ""
+    
     override func viewWillAppear(_ animated: Bool) {
         if DatabaseService.shared.getUser() == nil {
             self.navigationController?.isNavigationBarHidden = true
@@ -59,5 +61,12 @@ class HistoryVC: ButtonBarPagerTabStripViewController {
         let active = UIStoryboard(name: "ActiveHistory", bundle: nil).instantiateViewController(withIdentifier: "activeHistory")
         let past = UIStoryboard(name: "PastHistory", bundle: nil).instantiateViewController(withIdentifier: "pastHistory")
         return [active, past]
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goDetail" {
+            let destination = segue.destination as! HistoryDetailVC
+            destination.orderIds = passParam
+        }
     }
 }

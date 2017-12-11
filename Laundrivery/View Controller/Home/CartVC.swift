@@ -16,7 +16,6 @@ class CartVC: UIViewController {
     override func viewDidLoad() {
         cart = DatabaseService.shared.getCartItems()
         cartTable.separatorStyle = .none
-        
         super.viewDidLoad()
     }
     

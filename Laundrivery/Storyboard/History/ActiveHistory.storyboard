@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fuT-c3-oXP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fuT-c3-oXP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Active HistoryVC-->
         <scene sceneID="aVT-x4-XbQ">
@@ -17,9 +22,65 @@
                     <view key="view" contentMode="scaleToFill" id="WII-RY-PL3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="iwO-j4-q3R">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.20392156862745098" green="0.24705882352941178" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="historyCell" id="Fv2-1x-eL3" customClass="HistoryTableViewCell" customModule="Laundrivery" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fv2-1x-eL3" id="Hyc-ka-5Eb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI3-eS-3DN">
+                                                    <rect key="frame" x="0.0" y="1" width="375" height="40"/>
+                                                    <color key="backgroundColor" red="0.23921568630000001" green="0.2901960784" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="1pr-0v-YRY"/>
+                                                        <constraint firstAttribute="height" constant="40" id="m7X-ub-64G"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="titleEdgeInsets" minX="16" minY="24" maxX="16" maxY="24"/>
+                                                    <state key="normal" title="Order ID #151295139296603">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonDidTapped:" destination="Fv2-1x-eL3" eventType="touchUpInside" id="Y5X-BV-vsi"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.23921568630000001" green="0.2901960784" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="JI3-eS-3DN" firstAttribute="centerX" secondItem="Hyc-ka-5Eb" secondAttribute="centerX" id="36P-er-KfI"/>
+                                                <constraint firstItem="JI3-eS-3DN" firstAttribute="width" secondItem="Hyc-ka-5Eb" secondAttribute="width" id="NtK-rT-wGR"/>
+                                                <constraint firstItem="JI3-eS-3DN" firstAttribute="centerY" secondItem="Hyc-ka-5Eb" secondAttribute="centerY" id="hWv-rs-EsK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="button" destination="JI3-eS-3DN" id="xhS-DY-xcX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="fuT-c3-oXP" id="UUW-gR-1Vf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZPX-3x-oLF" firstAttribute="trailing" secondItem="iwO-j4-q3R" secondAttribute="trailing" id="MIu-2p-GKN"/>
+                            <constraint firstItem="iwO-j4-q3R" firstAttribute="top" secondItem="ZPX-3x-oLF" secondAttribute="top" id="Zkm-d7-7jx"/>
+                            <constraint firstItem="iwO-j4-q3R" firstAttribute="leading" secondItem="ZPX-3x-oLF" secondAttribute="leading" id="a5L-gl-7Wg"/>
+                            <constraint firstItem="ZPX-3x-oLF" firstAttribute="bottom" secondItem="iwO-j4-q3R" secondAttribute="bottom" id="eOX-mo-gqp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZPX-3x-oLF"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="iwO-j4-q3R" id="CoJ-ch-CfO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BtN-Je-U7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

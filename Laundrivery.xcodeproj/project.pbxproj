@@ -44,6 +44,9 @@
 		DA642A5A1FDA7A1A000C0666 /* CheckOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA642A591FDA7A1A000C0666 /* CheckOut.storyboard */; };
 		DA6C136B1FD445990076011A /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA6C136A1FD445990076011A /* Cart.storyboard */; };
 		DA6C136D1FD448630076011A /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6C136C1FD448630076011A /* CartVC.swift */; };
+		DAC0E8A31FDE1CD50005B473 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0E8A21FDE1CD50005B473 /* HistoryTableViewCell.swift */; };
+		DAC0E8A51FDE202E0005B473 /* HistoryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC0E8A41FDE202E0005B473 /* HistoryDetail.storyboard */; };
+		DAC0E8A71FDE228A0005B473 /* HistoryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC0E8A61FDE228A0005B473 /* HistoryDetailVC.swift */; };
 		DACA4E5A1FD646ED00D36713 /* ActiveHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA4E591FD646ED00D36713 /* ActiveHistoryVC.swift */; };
 		DACA4E5C1FD646FF00D36713 /* PastHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACA4E5B1FD646FF00D36713 /* PastHistoryVC.swift */; };
 		DACA4E5E1FD649BE00D36713 /* ActiveHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DACA4E5D1FD649BE00D36713 /* ActiveHistory.storyboard */; };
@@ -101,6 +104,9 @@
 		DA642A591FDA7A1A000C0666 /* CheckOut.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CheckOut.storyboard; sourceTree = "<group>"; };
 		DA6C136A1FD445990076011A /* Cart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		DA6C136C1FD448630076011A /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		DAC0E8A21FDE1CD50005B473 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		DAC0E8A41FDE202E0005B473 /* HistoryDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryDetail.storyboard; sourceTree = "<group>"; };
+		DAC0E8A61FDE228A0005B473 /* HistoryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailVC.swift; sourceTree = "<group>"; };
 		DACA4E591FD646ED00D36713 /* ActiveHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveHistoryVC.swift; sourceTree = "<group>"; };
 		DACA4E5B1FD646FF00D36713 /* PastHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastHistoryVC.swift; sourceTree = "<group>"; };
 		DACA4E5D1FD649BE00D36713 /* ActiveHistory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActiveHistory.storyboard; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 				DA4AF6DD1FDD19A200B92560 /* UtilitiesFunction.swift */,
 				DA4AF6DF1FDD1A7F00B92560 /* UserInfo.swift */,
 				DA4AF7051FDDC2DA00B92560 /* HistoryInfo.swift */,
+				DAC0E8A21FDE1CD50005B473 /* HistoryTableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +178,7 @@
 				DA511BE21FD1774B0017E940 /* History.storyboard */,
 				DACA4E5F1FD649E300D36713 /* PastHistory.storyboard */,
 				DACA4E5D1FD649BE00D36713 /* ActiveHistory.storyboard */,
+				DAC0E8A41FDE202E0005B473 /* HistoryDetail.storyboard */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -225,6 +233,7 @@
 				DACE50E01FD392EE005C835B /* HistoryVC.swift */,
 				DACA4E591FD646ED00D36713 /* ActiveHistoryVC.swift */,
 				DACA4E5B1FD646FF00D36713 /* PastHistoryVC.swift */,
+				DAC0E8A61FDE228A0005B473 /* HistoryDetailVC.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -396,6 +405,7 @@
 				DA511BE51FD177700017E940 /* Profile.storyboard in Resources */,
 				DA4AF6F41FDD7BC600B92560 /* ChangeEmail.storyboard in Resources */,
 				DAD85F5E1FD2D53D0036E3A1 /* LaunchScreen.storyboard in Resources */,
+				DAC0E8A51FDE202E0005B473 /* HistoryDetail.storyboard in Resources */,
 				DA511BE31FD1774B0017E940 /* History.storyboard in Resources */,
 				DA4AF6FA1FDD7C1000B92560 /* Library.storyboard in Resources */,
 				DACA4E601FD649E300D36713 /* PastHistory.storyboard in Resources */,
@@ -485,6 +495,8 @@
 				DA4AF6E01FDD1A7F00B92560 /* UserInfo.swift in Sources */,
 				DA4AF6E21FDD4AAE00B92560 /* CheckOutVC.swift in Sources */,
 				DA4AF7041FDDB72B00B92560 /* CartTableView.swift in Sources */,
+				DAC0E8A31FDE1CD50005B473 /* HistoryTableViewCell.swift in Sources */,
+				DAC0E8A71FDE228A0005B473 /* HistoryDetailVC.swift in Sources */,
 				DA4AF6DE1FDD19A200B92560 /* UtilitiesFunction.swift in Sources */,
 				DACE50E71FD393B8005C835B /* SignUpVC.swift in Sources */,
 				DA4AF7001FDD968A00B92560 /* CheckOutCart.swift in Sources */,

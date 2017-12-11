@@ -66,6 +66,7 @@ class DatabaseService {
         self.histories = fetchHistoryLocally()
         if Auth.auth().currentUser != nil {
             self.userData = self.fetchUserLocal()
+            
         }
     }
     
@@ -240,6 +241,35 @@ class DatabaseService {
         return histories
     }
     
+    func getHistory(id: String) -> HistoryInfo? {
+        for history in histories {
+            if history.orderId == "\(userData!.userId)\(id)" {
+                return history
+            }
+        }
+        return nil
+    }
+    
+    func getPastHistories() -> [HistoryInfo] {
+        var histories = [HistoryInfo]()
+        for history in self.histories {
+            if history.status == "Completed" {
+                histories.append(history)
+            }
+        }
+        return histories
+    }
+    
+    func getActiveHistories() -> [HistoryInfo] {
+        var histories = [HistoryInfo]()
+        for history in self.histories {
+            if history.status != "Completed" {
+                histories.append(history)
+            }
+        }
+        return histories
+    }
+    
     func addHistory(cartItems: [CartItem], pickUpAddres: String, deliveryAddress: String) {
         let date = Date()
         let orderId = userData!.userId + "\(date.timeIntervalSince1970)".replacingOccurrences(of: ".", with: "")
@@ -258,7 +288,7 @@ class DatabaseService {
             var order = ""
             for item in history.order {
                 order += "\(item.detail.type).\(item.quantity)"
-                if item.detail.type != cartItems.last?.detail.type {
+                if item.detail.type != history.order.last?.detail.type {
                     order += ","
                 }
             }
@@ -295,10 +325,12 @@ class DatabaseService {
                 else {
                         continue
                 }
+                print("[Laundrivery]:[\(order)]")
                 let orders = order.components(separatedBy: ",")
                 var cartItems = [CartItem]()
                 for order in orders {
                     let data = order.components(separatedBy: ".")
+                    print(" [Laundrivery]:[\(data)]")
                     cartItems.append(CartItem(named: data[0], quantity: Int(data[1])!))
                 }
                 histories.append(HistoryInfo(date: date, orderId: orderId, order: cartItems, pickUpAddress: pickUpAddress, deliveryAddress: deliveryAddress, status: status))
@@ -313,10 +345,12 @@ class DatabaseService {
         for history in histories {
             let parameters = ["date": "\(history.date)", "deliveryAddress": history.deliveryAddress, "pickUpAdress": history.pickUpAddress, "status": history.status]
             self.history.child(userData!.userId).child(history.orderId).setValue(parameters)
+            var parameter = [String: Any]()
             for item in history.order {
-                let parameters = [item.detail.type: item.quantity]
-                self.history.child(userData!.userId).child(history.orderId).child("orders").setValue(parameters)
+                parameter[item.detail.type] = item.quantity
+//                self.history.child(userData!.userId).child(history.orderId).child("orders").setValue(parameters)
             }
+            self.history.child(userData!.userId).child(history.orderId).child("orders").setValue(parameter)
         }
     }
     

@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Past HistoryVC-->
         <scene sceneID="OH7-oW-Qmp">
@@ -17,9 +22,65 @@
                     <view key="view" contentMode="scaleToFill" id="CpI-nE-vEY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="PhR-T6-7K1">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="historyCell" id="uOZ-kC-uF3" customClass="HistoryTableViewCell" customModule="Laundrivery" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uOZ-kC-uF3" id="izE-8V-zYp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpG-f7-sDX">
+                                                    <rect key="frame" x="0.0" y="1" width="375" height="40"/>
+                                                    <color key="backgroundColor" red="0.23921568630000001" green="0.2901960784" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="KOG-tF-4Wz"/>
+                                                        <constraint firstAttribute="height" constant="40" id="RYU-0I-SN4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="titleEdgeInsets" minX="16" minY="24" maxX="16" maxY="24"/>
+                                                    <state key="normal" title="Order ID #151295139296603">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonDidTapped:" destination="uOZ-kC-uF3" eventType="touchUpInside" id="hgf-Py-xp9"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.23921568630000001" green="0.2901960784" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="IpG-f7-sDX" firstAttribute="centerX" secondItem="izE-8V-zYp" secondAttribute="centerX" id="Aps-jT-Kvp"/>
+                                                <constraint firstItem="IpG-f7-sDX" firstAttribute="width" secondItem="izE-8V-zYp" secondAttribute="width" id="W2s-FH-d7d"/>
+                                                <constraint firstItem="IpG-f7-sDX" firstAttribute="centerY" secondItem="izE-8V-zYp" secondAttribute="centerY" id="aZC-H9-pGQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="button" destination="IpG-f7-sDX" id="Ck5-cR-oC4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3aI-eA-4Nd" id="KmY-pI-pYd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="PhR-T6-7K1" secondAttribute="bottom" id="IbZ-5q-ag6"/>
+                            <constraint firstAttribute="trailing" secondItem="PhR-T6-7K1" secondAttribute="trailing" id="LQY-lV-wJh"/>
+                            <constraint firstItem="PhR-T6-7K1" firstAttribute="leading" secondItem="2Oj-Xb-H7h" secondAttribute="leading" id="gVu-Xv-yoi"/>
+                            <constraint firstItem="PhR-T6-7K1" firstAttribute="top" secondItem="2Oj-Xb-H7h" secondAttribute="top" id="lK6-oi-Y5W"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2Oj-Xb-H7h"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="PhR-T6-7K1" id="zcw-OO-HhO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJh-JW-EfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
