@@ -81,6 +81,13 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         }
         return false
     }
+    
+    override func viewDidLoad() {
+        nameTF.delegate=self
+        emailTF.delegate=self
+        passwordTF.delegate=self
+        repeatPasswordTF.delegate=self
+    }
 }
 
 
