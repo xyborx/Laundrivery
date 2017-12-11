@@ -28,4 +28,8 @@ class ForgetPasswordVC: UIViewController, UITextFieldDelegate{
         }
         return false
     }
+    
+    override func viewDidLoad() {
+        emailTF.delegate=self
+    }
 }
