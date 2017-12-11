@@ -19,8 +19,13 @@ class CartTableViewCell: UITableViewCell {
         let current = Int(quantity.text!)!
         if current > 0 {
             quantity.text = "\(current - 1)"
-//            UIApplication.shared.delegate.get
             total.text = "\(UtilitiesFunction.getStringPrice(price * (current - 1)))"
+            updateData()
+        }
+        else {
+            let sp = self.superview?.superview as? CartVC
+            sp?.deleteData(type: self.itemName.text!)
+//            self.superview?.deleteData(self.itemName.text!)
         }
     }
     
@@ -29,6 +34,13 @@ class CartTableViewCell: UITableViewCell {
         if current < 99 {
             quantity.text = "\(current + 1)"
             total.text = "\(UtilitiesFunction.getStringPrice(price * (current + 1)))"
+            updateData()
         }
+    }
+    
+    func updateData() {
+        let type = self.itemName.text!
+        let quantity = Int(self.quantity.text!)!
+        DatabaseService.shared.updateCartItem(type: type, quantity: quantity)
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class ProfileVC: UIViewController {
+    @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -19,7 +20,11 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var sorryView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
+        //Image view
+        imgView.layer.cornerRadius = 0.5 * imgView.bounds.size.width
+        imgView.clipsToBounds = true
         if let user = DatabaseService.shared.getUser() {
+            imgView.image = user.image ?? UIImage(named: "user")
             nameLabel.text = user.displayName
             emailLabel.text = user.email
             phoneLabel.text = user.phone ?? "Not Set"

@@ -13,14 +13,23 @@ import Firebase
 
 class EditProfileVC: UIViewController, UITextFieldDelegate, GMSPlacePickerViewControllerDelegate, TGCameraDelegate {
     
+    @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var imgButton: UIButton!
     @IBOutlet weak var fullNameTF: UITextField!
-    @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var addressLabel: UIButton!
     
     @IBAction func saveChangesDidTapped(){
-        
+        guard
+            let name = fullNameTF.text, name != "",
+            let phone = phoneTF.text,
+            let address = addressLabel.titleLabel?.text
+        else {
+            return
+        }
+        DatabaseService.shared.updateUser(name: name, phone: phone, address: address == "Not Set" ? "" : address)
+        DatabaseService.shared.updateUserImage(image: imgView.image!)
+        self.navigationController?.popViewController(animated: true)
     }
     
     let currentUser = DatabaseService.shared.getUser()!
@@ -29,15 +38,12 @@ class EditProfileVC: UIViewController, UITextFieldDelegate, GMSPlacePickerViewCo
         //Profile data
         fullNameTF.text = currentUser.displayName
         fullNameTF.placeholder = currentUser.displayName
-        emailTF.text = currentUser.email
-        emailTF.placeholder = currentUser.email
         phoneTF.text = currentUser.phone
         phoneTF.placeholder = currentUser.phone ?? "Not Set"
         addressLabel.setTitle(currentUser.address  ?? "Not Set", for: .normal)
-        //Image button
-        imgButton.layer.cornerRadius = 0.5 * imgButton.bounds.size.width
-        imgButton.clipsToBounds = true
-        imgButton.contentMode = .center
+        //Image view
+        imgView.layer.cornerRadius = 0.5 * imgView.bounds.size.width
+        imgView.clipsToBounds = true
         //Camera setting
         TGCameraColor.setTint(.white)
         super.viewDidLoad()
@@ -74,15 +80,16 @@ class EditProfileVC: UIViewController, UITextFieldDelegate, GMSPlacePickerViewCo
     }
     
     func cameraDidTakePhoto(_ image: UIImage!) {
-        if UtilitiesFunction.saveImage(image: image, named: "") {
-            imgButton.setImage(image, for: .normal)
-        }
-        dismiss(animated: true, completion: nil)
+        saveImage(image: image)
     }
     
     func cameraDidSelectAlbumPhoto(_ image: UIImage!) {
-        if UtilitiesFunction.saveImage(image: image, named: "") {
-            imgButton.setImage(image, for: .normal)
+        saveImage(image: image)
+    }
+    
+    func saveImage(image: UIImage) {
+        if UtilitiesFunction.saveImage(image: image, named: currentUser.userId) {
+            imgView.image = image
         }
         dismiss(animated: true, completion: nil)
     }

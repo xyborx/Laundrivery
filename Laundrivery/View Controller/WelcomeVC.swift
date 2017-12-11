@@ -11,11 +11,6 @@ import Firebase
 
 class WelcomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            
-        }
         let launched = UserDefaults.standard.bool(forKey: "launched")
         if !launched {
             DatabaseService.shared.initiate()

@@ -12,6 +12,7 @@
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
             <string>Avenir-Light</string>
+            <string>Avenir-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -39,15 +40,111 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Order(s)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Moh-he-Tss">
-                                <rect key="frame" x="37" y="86" width="300" height="19.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Order(s)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Moh-he-Tss">
+                                <rect key="frame" x="146.5" y="88" width="81.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick-Up Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGG-0X-un9">
+                                <rect key="frame" x="136" y="175.5" width="102.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvs-Cy-Bw4">
+                                <rect key="frame" x="135" y="263.5" width="105" height="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWP-v6-kBG">
+                                <rect key="frame" x="0.0" y="111.5" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.2901960784" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bKC-kp-xYh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="16" minY="24" maxX="16" maxY="24"/>
+                                <state key="normal" title="00 Order(s) Total Rp 000.000.000">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fmW-z9-nSz" kind="show" id="dDC-N1-m8M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3r-2c-90B">
+                                <rect key="frame" x="0.0" y="199.5" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.2901960784" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nHS-At-cjG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="16" minY="24" maxX="16" maxY="24"/>
+                                <state key="normal" title="Set Pick-Up Address">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="setPickUpDidTapped:" destination="1LF-6o-G8B" eventType="touchUpInside" id="ylm-UV-tsv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaH-MT-2hN">
+                                <rect key="frame" x="0.0" y="287.5" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.2901960784" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QY8-Gt-fKs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="16" minY="24" maxX="16" maxY="24"/>
+                                <state key="normal" title="Set Delivery Address">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="setDeliveryDidTapped:" destination="1LF-6o-G8B" eventType="touchUpInside" id="va3-F5-2Nf"/>
+                                </connections>
+                            </button>
+                            <button autoresizesSubviews="NO" verifyAmbiguity="ignoreSizes" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEf-La-IxQ">
+                                <rect key="frame" x="125.5" y="351.5" width="124" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="10" maxX="16" maxY="10"/>
+                                <state key="normal" title="Place Order">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="placeOrderDidTapped:" destination="1LF-6o-G8B" eventType="touchUpInside" id="h3C-1S-TTb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mvs-Cy-Bw4" firstAttribute="top" secondItem="P3r-2c-90B" secondAttribute="bottom" constant="24" id="0VQ-Ci-LGa"/>
+                            <constraint firstItem="HWP-v6-kBG" firstAttribute="width" secondItem="FOE-lk-Tbf" secondAttribute="width" id="2qq-Bt-rPj"/>
+                            <constraint firstItem="P3r-2c-90B" firstAttribute="width" secondItem="FOE-lk-Tbf" secondAttribute="width" id="3R5-hB-7tu"/>
+                            <constraint firstItem="P3r-2c-90B" firstAttribute="top" secondItem="wGG-0X-un9" secondAttribute="bottom" constant="4" id="7Ga-Nk-i9B"/>
+                            <constraint firstItem="QaH-MT-2hN" firstAttribute="width" secondItem="FOE-lk-Tbf" secondAttribute="width" id="FX0-do-YTk"/>
+                            <constraint firstItem="P3r-2c-90B" firstAttribute="centerX" secondItem="BpN-je-hBP" secondAttribute="centerX" id="P1g-RN-tFg"/>
+                            <constraint firstItem="QaH-MT-2hN" firstAttribute="centerX" secondItem="BpN-je-hBP" secondAttribute="centerX" id="PaW-kn-cS1"/>
+                            <constraint firstItem="wGG-0X-un9" firstAttribute="top" secondItem="HWP-v6-kBG" secondAttribute="bottom" constant="24" id="Qae-mT-LD6"/>
+                            <constraint firstItem="YEf-La-IxQ" firstAttribute="top" secondItem="QaH-MT-2hN" secondAttribute="bottom" constant="24" id="Uxs-Tt-AiS"/>
+                            <constraint firstItem="HWP-v6-kBG" firstAttribute="centerX" secondItem="BpN-je-hBP" secondAttribute="centerX" id="b6L-Ib-SQ1"/>
+                            <constraint firstItem="Moh-he-Tss" firstAttribute="centerX" secondItem="BpN-je-hBP" secondAttribute="centerX" id="bcN-Me-sjM"/>
+                            <constraint firstItem="YEf-La-IxQ" firstAttribute="centerX" secondItem="BpN-je-hBP" secondAttribute="centerX" id="bpk-gw-RZo"/>
+                            <constraint firstItem="HWP-v6-kBG" firstAttribute="top" secondItem="Moh-he-Tss" secondAttribute="bottom" constant="4" id="c8I-D8-1ox"/>
+                            <constraint firstItem="QaH-MT-2hN" firstAttribute="top" secondItem="mvs-Cy-Bw4" secondAttribute="bottom" constant="4" id="d89-oz-hL9"/>
+                            <constraint firstItem="wGG-0X-un9" firstAttribute="centerX" secondItem="BpN-je-hBP" secondAttribute="centerX" id="d8Z-5x-8Nr"/>
+                            <constraint firstItem="Moh-he-Tss" firstAttribute="top" secondItem="BpN-je-hBP" secondAttribute="top" constant="24" id="gIO-CO-82b"/>
+                            <constraint firstItem="mvs-Cy-Bw4" firstAttribute="centerX" secondItem="BpN-je-hBP" secondAttribute="centerX" id="upS-Zi-jQq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BpN-je-hBP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Check Out" id="c51-XI-56f">
@@ -57,10 +154,24 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="button" destination="YEf-La-IxQ" id="h5m-rP-GSi"/>
+                        <outlet property="delivery" destination="QaH-MT-2hN" id="hyf-Je-tP9"/>
+                        <outlet property="order" destination="HWP-v6-kBG" id="UTB-1g-61z"/>
+                        <outlet property="pickUp" destination="P3r-2c-90B" id="1tc-cC-d9Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2md-vu-c7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4837.6000000000004" y="-347.67616191904051"/>
+        </scene>
+        <!--CheckOutCart-->
+        <scene sceneID="ldM-Ti-Qpv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CheckOutCart" id="fmW-z9-nSz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5tJ-pv-E81" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5503" y="-347"/>
         </scene>
     </scenes>
 </document>

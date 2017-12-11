@@ -14,7 +14,9 @@
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
             <string>Avenir-Book</string>
+            <string>Avenir-Heavy</string>
             <string>Avenir-Light</string>
+            <string>Avenir-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -27,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="KJe-Hr-dLs">
-                                <rect key="frame" x="0.0" y="63.5" width="375" height="603.5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="462"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="8" reuseIdentifier="itemCell" rowHeight="52" id="c0H-zW-Fsy" customClass="CartTableViewCell" customModule="Laundrivery" customModuleProvider="target">
@@ -107,7 +109,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.23921568627450979" green="0.29019607843137252" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="Ldo-g4-xrl" firstAttribute="centerY" secondItem="RZN-3c-juF" secondAttribute="centerY" id="EBL-By-48S"/>
                                                 <constraint firstItem="0hg-yw-GoN" firstAttribute="leading" secondItem="Ldo-g4-xrl" secondAttribute="trailing" constant="8" id="Pcg-Ng-HST"/>
@@ -118,6 +120,7 @@
                                                 <constraint firstItem="WNT-G7-cou" firstAttribute="leading" secondItem="RZN-3c-juF" secondAttribute="leadingMargin" id="gUC-9b-jOD"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.23921568630000001" green="0.2901960784" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="itemName" destination="WNT-G7-cou" id="V54-CY-bSW"/>
                                             <outlet property="quantity" destination="mSC-8e-kMv" id="eoj-ss-nCl"/>
@@ -136,26 +139,56 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qU-gu-bHN">
+                                <rect key="frame" x="166" y="538" width="42" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button autoresizesSubviews="NO" verifyAmbiguity="ignoreSizes" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnd-BB-1e1">
+                                <rect key="frame" x="109.5" y="599" width="156" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="10" maxX="16" maxY="10"/>
+                                <state key="normal" title="Check Out Now">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="checkOutDidTapped:" destination="LFB-iQ-4qH" eventType="touchUpInside" id="cMt-TH-UGe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp 0.000.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLl-An-TzR">
+                                <rect key="frame" x="124.5" y="563.5" width="126" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mFp-bb-ORz" firstAttribute="centerX" secondItem="Nea-WC-G7s" secondAttribute="centerX" id="3q6-fP-jec"/>
+                            <constraint firstItem="iLl-An-TzR" firstAttribute="centerX" secondItem="Nea-WC-G7s" secondAttribute="centerX" id="BJa-dh-l5N"/>
                             <constraint firstItem="Nea-WC-G7s" firstAttribute="trailing" secondItem="KJe-Hr-dLs" secondAttribute="trailing" id="DK5-LD-N70"/>
+                            <constraint firstItem="0qU-gu-bHN" firstAttribute="centerX" secondItem="Nea-WC-G7s" secondAttribute="centerX" id="Ew0-uz-b0w"/>
+                            <constraint firstItem="cnd-BB-1e1" firstAttribute="centerX" secondItem="Nea-WC-G7s" secondAttribute="centerX" id="GUC-B5-ybX"/>
                             <constraint firstItem="mFp-bb-ORz" firstAttribute="top" secondItem="Nea-WC-G7s" secondAttribute="top" constant="12" id="IBB-Qu-Wj5"/>
                             <constraint firstItem="KJe-Hr-dLs" firstAttribute="top" secondItem="mFp-bb-ORz" secondAttribute="bottom" constant="12" id="O46-xW-tk1"/>
                             <constraint firstItem="mFp-bb-ORz" firstAttribute="width" secondItem="IzJ-pj-TpH" secondAttribute="width" multiplier="0.8" id="Oax-dF-HSv"/>
                             <constraint firstItem="KJe-Hr-dLs" firstAttribute="leading" secondItem="Nea-WC-G7s" secondAttribute="leading" id="QKi-kR-sTP"/>
-                            <constraint firstItem="Nea-WC-G7s" firstAttribute="bottom" secondItem="KJe-Hr-dLs" secondAttribute="bottom" id="SZF-JP-7v0"/>
+                            <constraint firstItem="cnd-BB-1e1" firstAttribute="top" secondItem="iLl-An-TzR" secondAttribute="bottom" constant="8" id="Sqf-cI-xXM"/>
+                            <constraint firstItem="0qU-gu-bHN" firstAttribute="top" secondItem="KJe-Hr-dLs" secondAttribute="bottom" constant="12" id="ebp-2J-Tuw"/>
+                            <constraint firstItem="Nea-WC-G7s" firstAttribute="bottom" secondItem="cnd-BB-1e1" secondAttribute="bottom" constant="24" id="rSt-Uz-aU6"/>
+                            <constraint firstItem="iLl-An-TzR" firstAttribute="top" secondItem="0qU-gu-bHN" secondAttribute="bottom" constant="2" id="yEq-DV-7cp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nea-WC-G7s"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Cart" id="Ys7-iA-FxR">
-                        <barButtonItem key="rightBarButtonItem" title="Check Out" id="m5r-1p-Zc9">
-                            <connections>
-                                <action selector="checkOutDidTapped:" destination="LFB-iQ-4qH" id="Ns3-m5-51N"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Cart" id="Ys7-iA-FxR"/>
                     <connections>
                         <outlet property="cartTable" destination="KJe-Hr-dLs" id="vOx-8e-h6Y"/>
                         <segue destination="6tp-Ln-tS4" kind="showDetail" identifier="checkOutSegue" id="W5C-Bg-0D4"/>

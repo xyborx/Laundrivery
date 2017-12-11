@@ -76,7 +76,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phj-c9-Kxd">
-                                <rect key="frame" x="37" y="128" width="300" height="426"/>
+                                <rect key="frame" x="37" y="186" width="300" height="310"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're Sorry" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiK-Pq-7Y5">
                                         <rect key="frame" x="72" y="0.0" width="156" height="38.5"/>
@@ -85,13 +85,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To access your history, please sign in." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haN-tN-v4v">
-                                        <rect key="frame" x="11" y="330.5" width="278.5" height="23.5"/>
+                                        <rect key="frame" x="11" y="214.5" width="278.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2W-O5-B9A">
-                                        <rect key="frame" x="107.5" y="382" width="85" height="44"/>
+                                        <rect key="frame" x="107.5" y="266" width="85" height="44"/>
                                         <color key="backgroundColor" red="0.0" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="W2W-O5-B9A" secondAttribute="height" multiplier="85:44" id="cSg-Z1-ZKd"/>
@@ -112,9 +112,9 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stop" translatesAutoresizingMaskIntoConstraints="NO" id="Huh-hj-sSo">
-                                        <rect key="frame" x="0.0" y="50.5" width="300" height="256"/>
+                                        <rect key="frame" x="0.0" y="62.5" width="300" height="128"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="256" id="8Am-v5-0Oi"/>
+                                            <constraint firstAttribute="height" constant="128" id="8Am-v5-0Oi"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -124,7 +124,7 @@
                                     <constraint firstAttribute="bottom" secondItem="W2W-O5-B9A" secondAttribute="bottom" id="5um-KC-Bcb"/>
                                     <constraint firstItem="W2W-O5-B9A" firstAttribute="leading" secondItem="phj-c9-Kxd" secondAttribute="leading" constant="107.5" id="AeM-9g-6oZ"/>
                                     <constraint firstAttribute="trailing" secondItem="W2W-O5-B9A" secondAttribute="trailing" constant="107.5" id="ECP-2m-zMP"/>
-                                    <constraint firstItem="Huh-hj-sSo" firstAttribute="top" secondItem="kiK-Pq-7Y5" secondAttribute="bottom" constant="12" id="M64-EW-YP8"/>
+                                    <constraint firstItem="Huh-hj-sSo" firstAttribute="top" secondItem="kiK-Pq-7Y5" secondAttribute="bottom" constant="24" id="M64-EW-YP8"/>
                                     <constraint firstItem="kiK-Pq-7Y5" firstAttribute="top" secondItem="phj-c9-Kxd" secondAttribute="top" id="T61-au-CRF"/>
                                     <constraint firstItem="haN-tN-v4v" firstAttribute="centerX" secondItem="phj-c9-Kxd" secondAttribute="centerX" id="gtG-ri-BKu"/>
                                     <constraint firstItem="Huh-hj-sSo" firstAttribute="width" secondItem="phj-c9-Kxd" secondAttribute="width" id="iiv-op-lRy"/>

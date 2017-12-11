@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LSJ-BB-gdX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Light</string>
+            <string>Avenir-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Change Email-->
+        <scene sceneID="vJZ-uw-7Zt">
+            <objects>
+                <viewController id="LSJ-BB-gdX" customClass="ChangeEmailVC" customModule="Laundrivery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eyd-pU-1uc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpK-Cx-Cmt">
+                                <rect key="frame" x="38" y="225.5" width="300" height="236"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current E-Mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6O-Pc-YeT">
+                                        <rect key="frame" x="118" y="-0.5" width="64.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="someone@example.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Rh-9Z-NXB">
+                                        <rect key="frame" x="0.0" y="17.5" width="300" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New E-Mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFG-YF-lqa">
+                                        <rect key="frame" x="124" y="60" width="51.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="someonenew@example.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5wp-SB-B0b">
+                                        <rect key="frame" x="-0.5" y="78" width="300" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDq-wg-uFv">
+                                        <rect key="frame" x="128.5" y="120" width="42" height="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="********" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O3G-Aw-VfM">
+                                        <rect key="frame" x="-0.5" y="138" width="300.5" height="30"/>
+                                        <color key="textColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XId-Aa-DIg">
+                                        <rect key="frame" x="80.5" y="192" width="139" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.63529411759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="16" minY="10" maxX="16" maxY="10"/>
+                                        <state key="normal" title="Change Email">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeDidTapped:" destination="LSJ-BB-gdX" eventType="touchUpInside" id="U3Y-0H-NJs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xFG-YF-lqa" firstAttribute="top" secondItem="4Rh-9Z-NXB" secondAttribute="bottom" constant="12" id="ES5-C6-aPc"/>
+                                    <constraint firstItem="5wp-SB-B0b" firstAttribute="top" secondItem="xFG-YF-lqa" secondAttribute="bottom" constant="4" id="MSJ-W4-k8U"/>
+                                    <constraint firstItem="4Rh-9Z-NXB" firstAttribute="width" secondItem="FpK-Cx-Cmt" secondAttribute="width" id="NMU-vk-z9M"/>
+                                    <constraint firstItem="XId-Aa-DIg" firstAttribute="centerX" secondItem="FpK-Cx-Cmt" secondAttribute="centerX" id="QWR-w4-Edd"/>
+                                    <constraint firstItem="XId-Aa-DIg" firstAttribute="top" secondItem="O3G-Aw-VfM" secondAttribute="bottom" constant="24" id="TNl-Su-6cj"/>
+                                    <constraint firstItem="O3G-Aw-VfM" firstAttribute="centerX" secondItem="FpK-Cx-Cmt" secondAttribute="centerX" id="W9A-Ba-3PR"/>
+                                    <constraint firstItem="5wp-SB-B0b" firstAttribute="centerX" secondItem="FpK-Cx-Cmt" secondAttribute="centerX" id="XuO-7A-Ux4"/>
+                                    <constraint firstItem="4Rh-9Z-NXB" firstAttribute="centerX" secondItem="FpK-Cx-Cmt" secondAttribute="centerX" id="eWh-wu-CVE"/>
+                                    <constraint firstItem="xFG-YF-lqa" firstAttribute="centerX" secondItem="FpK-Cx-Cmt" secondAttribute="centerX" id="fcv-Kx-tI7"/>
+                                    <constraint firstAttribute="bottom" secondItem="XId-Aa-DIg" secondAttribute="bottom" id="kCm-Ot-QXw"/>
+                                    <constraint firstItem="IDq-wg-uFv" firstAttribute="centerX" secondItem="FpK-Cx-Cmt" secondAttribute="centerX" id="kxz-cc-meb"/>
+                                    <constraint firstItem="O3G-Aw-VfM" firstAttribute="top" secondItem="IDq-wg-uFv" secondAttribute="bottom" constant="4" id="lW4-gG-t0J"/>
+                                    <constraint firstItem="4Rh-9Z-NXB" firstAttribute="top" secondItem="z6O-Pc-YeT" secondAttribute="bottom" constant="4" id="njE-Cs-sfy"/>
+                                    <constraint firstItem="5wp-SB-B0b" firstAttribute="width" secondItem="FpK-Cx-Cmt" secondAttribute="width" id="r9d-7S-qp4"/>
+                                    <constraint firstItem="O3G-Aw-VfM" firstAttribute="width" secondItem="FpK-Cx-Cmt" secondAttribute="width" id="s0i-Ii-cQf"/>
+                                    <constraint firstItem="z6O-Pc-YeT" firstAttribute="centerX" secondItem="FpK-Cx-Cmt" secondAttribute="centerX" id="tv4-MR-mO0"/>
+                                    <constraint firstItem="z6O-Pc-YeT" firstAttribute="top" secondItem="FpK-Cx-Cmt" secondAttribute="top" id="xNE-YY-iOe"/>
+                                    <constraint firstItem="IDq-wg-uFv" firstAttribute="top" secondItem="5wp-SB-B0b" secondAttribute="bottom" constant="12" id="z7R-TL-hA9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20392156859999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FpK-Cx-Cmt" firstAttribute="width" secondItem="Eyd-pU-1uc" secondAttribute="width" multiplier="0.8" id="8g4-c9-6bn"/>
+                            <constraint firstItem="FpK-Cx-Cmt" firstAttribute="centerX" secondItem="N9a-g2-sZp" secondAttribute="centerX" id="i8P-mE-axk"/>
+                            <constraint firstItem="FpK-Cx-Cmt" firstAttribute="centerY" secondItem="N9a-g2-sZp" secondAttribute="centerY" id="v84-Z8-FIQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N9a-g2-sZp"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Change Email" id="V0C-pE-RUK">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="wtv-qK-cSy"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="button" destination="XId-Aa-DIg" id="Ce9-wL-aGX"/>
+                        <outlet property="currentEmailTF" destination="4Rh-9Z-NXB" id="oxV-oI-baU"/>
+                        <outlet property="newEmailTF" destination="5wp-SB-B0b" id="Zqr-kV-6Vz"/>
+                        <outlet property="passwordTF" destination="O3G-Aw-VfM" id="oCB-9K-0Bz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rlB-P2-HeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1685.5999999999999" y="419.64017991004499"/>
+        </scene>
+    </scenes>
+</document>

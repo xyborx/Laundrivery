@@ -5,9 +5,11 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="History" representedClassName="History" syncable="YES" codeGenerationType="class">
-        <attribute name="order" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="deliveryAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="orderId" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pickUpAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="UserProfile" representedClassName="UserProfile" syncable="YES" codeGenerationType="class">
@@ -19,7 +21,7 @@
     </entity>
     <elements>
         <element name="Cart" positionX="-54" positionY="-9" width="128" height="75"/>
-        <element name="History" positionX="-45" positionY="18" width="128" height="105"/>
+        <element name="History" positionX="-45" positionY="18" width="128" height="135"/>
         <element name="UserProfile" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

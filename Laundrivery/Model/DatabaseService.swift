@@ -50,18 +50,20 @@ class DatabaseService {
     
     private var userData: UserInfo?
     private var cartItems = [CartItem]()
+    private var histories = [HistoryInfo]()
     
     func initiate() {
         do {
             wipeOut()
             try Auth.auth().signOut()
         } catch {
-            print("Failed sign out")
+            print("[Laundrivery Error]:[Failed in 'initiate()'")
         }
     }
     
     func initiateLaunched() {
         self.cartItems = fetchCartLocally()
+        self.histories = fetchHistoryLocally()
         if Auth.auth().currentUser != nil {
             self.userData = self.fetchUserLocal()
         }
@@ -153,6 +155,38 @@ class DatabaseService {
         return nil
     }
     
+    func updateCartItem() {
+        var cartItems = [CartItem]()
+        for cart in self.cartItems {
+            if cart.quantity != 0 {
+                cartItems.append(cart)
+            }
+        }
+        self.cartItems = cartItems
+        saveCartLocally(cartItems: self.cartItems)
+    }
+    
+    func updateCartItem(type: String, quantity: Int) {
+        for ind in 0..<cartItems.count {
+            if cartItems[ind].detail.type == type {
+                cartItems[ind].quantity = quantity
+                updateCartItem()
+                saveCartLocally(cartItems: self.cartItems)
+                return
+            }
+        }
+    }
+    
+    func deleteCartItem(type: String) {
+        for ind in 0..<cartItems.count {
+            if cartItems[ind].detail.type == type {
+                cartItems.remove(at: ind)
+                saveCartLocally(cartItems: self.cartItems)
+                return
+            }
+        }
+    }
+    
     func fetchCartLocally() -> [CartItem] {
         var cartItem = [CartItem]()
         let container = appDelegate.persistentContainer.viewContext
@@ -170,7 +204,7 @@ class DatabaseService {
                 cartItem.append(CartItem(named: type, quantity: quantity))
             }
         } catch {
-            print("Failed")
+            print("[Laundrivery Error]:[Failed in 'fetchCartLocally()']")
         }
         return cartItem
     }
@@ -186,7 +220,7 @@ class DatabaseService {
             do {
                 try container.save()
             } catch {
-                print("Failed saving")
+                print("[Laundrivery Error]:[Failed in 'saveCartLocally(cartItems: [CartItem])']")
             }
         }
     }
@@ -199,19 +233,107 @@ class DatabaseService {
     }
     
     /*
+     HISTORY MANAGEMENT
+     */
+    
+    func getHistories() -> [HistoryInfo] {
+        return histories
+    }
+    
+    func addHistory(cartItems: [CartItem], pickUpAddres: String, deliveryAddress: String) {
+        let date = Date()
+        let orderId = userData!.userId + "\(date.timeIntervalSince1970)".replacingOccurrences(of: ".", with: "")
+        self.histories.append(HistoryInfo(date: date, orderId: orderId, order: cartItems, pickUpAddress: pickUpAddres, deliveryAddress: deliveryAddress, status: "Waiting for driver"))
+        saveHistoryLocally(histories: self.histories)
+        saveHistoryToCloud(histories: self.histories)
+        self.cartItems.removeAll()
+        deleteLocalData(named: "Cart")
+    }
+    
+    func saveHistoryLocally(histories: [HistoryInfo]) {
+        deleteLocalData(named: "History")
+        let container = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "History", in: container)
+        for history in histories {
+            var order = ""
+            for item in history.order {
+                order += "\(item.detail.type).\(item.quantity)"
+                if item.detail.type != cartItems.last?.detail.type {
+                    order += ","
+                }
+            }
+            let newItem = NSManagedObject(entity: entity!, insertInto: container)
+            newItem.setValue(history.date, forKey: "date")
+            newItem.setValue(history.deliveryAddress, forKey: "deliveryAddress")
+            newItem.setValue(order, forKey: "order")
+            newItem.setValue(history.orderId, forKey: "orderId")
+            newItem.setValue(history.pickUpAddress, forKey: "pickUpAddress")
+            newItem.setValue(history.status, forKey: "status")
+            do {
+                try container.save()
+            } catch {
+                print("[Laundrivery Error]:[Failed in 'saveHistory(cartItems: [CartItem])']")
+            }
+        }
+    }
+    
+    func fetchHistoryLocally() -> [HistoryInfo] {
+        var histories = [HistoryInfo]()
+        let container = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try container.fetch(request)
+            for data in result as! [NSManagedObject] {
+                guard
+                    let date = data.value(forKey: "date") as? Date,
+                    let deliveryAddress = data.value(forKey: "deliveryAddress") as? String,
+                    let order = data.value(forKey: "order") as? String,
+                    let orderId = data.value(forKey: "orderId") as? String,
+                    let pickUpAddress = data.value(forKey: "pickUpAddress") as? String,
+                    let status = data.value(forKey: "status") as? String
+                else {
+                        continue
+                }
+                let orders = order.components(separatedBy: ",")
+                var cartItems = [CartItem]()
+                for order in orders {
+                    let data = order.components(separatedBy: ".")
+                    cartItems.append(CartItem(named: data[0], quantity: Int(data[1])!))
+                }
+                histories.append(HistoryInfo(date: date, orderId: orderId, order: cartItems, pickUpAddress: pickUpAddress, deliveryAddress: deliveryAddress, status: status))
+            }
+        } catch {
+            print("[Laundrivery Error]:[Failed in 'fetchHistory()']")
+        }
+        return histories
+    }
+    
+    func saveHistoryToCloud(histories: [HistoryInfo]) {
+        for history in histories {
+            let parameters = ["date": "\(history.date)", "deliveryAddress": history.deliveryAddress, "pickUpAdress": history.pickUpAddress, "status": history.status]
+            self.history.child(userData!.userId).child(history.orderId).setValue(parameters)
+            for item in history.order {
+                let parameters = [item.detail.type: item.quantity]
+                self.history.child(userData!.userId).child(history.orderId).child("orders").setValue(parameters)
+            }
+        }
+    }
+    
+    /*
      USER MANAGEMENT
      */
     
     func userSignIn(user: User) {
         let users = UserInfo(userId: user.uid, displayName: user.displayName!, email: user.email!)
         self.userData = fetchUserDetails(user: users)
-        saveUserLocally()
+        self.saveUserLocally(user: self.userData)
     }
     
     func userSignUp() {
         if let user = fetchUserInfo() {
             self.userData = user
-            saveUserLocally()
+            self.saveUserLocally(user: self.userData)
         }
     }
     
@@ -246,15 +368,19 @@ class DatabaseService {
                 let data = result[0] as? NSManagedObject,
                 let userId = data.value(forKey: "uid") as? String,
                 let name = data.value(forKey: "name") as? String,
-                let email = data.value(forKey: "email") as? String,
+                let email = data.value(forKey: "email") as? String
+            else {
+                return nil
+            }
+            guard
                 let phone = data.value(forKey: "phone") as? String,
                 let address = data.value(forKey: "address") as? String
-                else {
-                    return nil
+            else {
+                return UserInfo(userId: userId, displayName: name, email: email)
             }
-            return UserInfo(userId: userId, image: UIImage(), displayName: name, email: email, phone: phone, address: address)
+            return UserInfo(userId: userId, displayName: name, email: email, phone: phone, address: address)
         } catch {
-            print("Failed")
+            print("[Laundrivery Error]:[Failed in 'fetchUserLocal()']")
         }
         return nil
     }
@@ -263,8 +389,8 @@ class DatabaseService {
         return userData
     }
     
-    func saveUserLocally() {
-        if let user = self.userData {
+    func saveUserLocally(user: UserInfo?) {
+        if let user = user {
             deleteLocalData(named: "UserProfile")
             let container = appDelegate.persistentContainer.viewContext
             let entity = NSEntityDescription.entity(forEntityName: "UserProfile", in: container)
@@ -277,7 +403,7 @@ class DatabaseService {
             do {
                 try container.save()
             } catch {
-                print("Failed saving")
+                print("[Laundrivery Error]:[Failed in 'saveUserLocally()']")
             }
         }
     }
@@ -286,6 +412,40 @@ class DatabaseService {
         let parameters = ["phone"   : user.phone!,
                           "address" : user.address!]
         profile.child(user.userId).setValue(parameters)
+    }
+    
+    func updateUser(name: String, phone: String, address: String) {
+        var current = self.userData!
+        current.displayName = name
+        if phone != "" {
+            current.phone = phone
+        }
+        if address != "" {
+            current.address = address
+        }
+        self.userData = current
+        self.saveUserLocally(user: self.userData)
+        if phone != "" && address != "" {
+            self.saveUserToCloud(user: self.userData!)
+        }
+        else if phone != "" {
+            let parameters = ["phone"   : self.userData!.phone!]
+            self.profile.child(self.userData!.userId).setValue(parameters)
+        }
+        else if address != "" {
+            let parameters = ["address" : self.userData!.address!]
+            self.profile.child(self.userData!.userId).setValue(parameters)
+        }
+    }
+    
+    func updateUserImage(image: UIImage) {
+        if image != UIImage(named: "user") {
+            self.userData!.image = image
+        }
+    }
+    
+    func updateEmail(email: String) {
+        self.userData!.email = email
     }
     
     /*
@@ -300,11 +460,14 @@ class DatabaseService {
             try container.execute(batchDeleteRequest)
             
         } catch {
-            print("Failed")
+            print("[Laundrivery Error]:[Failed in 'deleteLocalData(named: String)']")
         }
     }
     
     func wipeOut() {
+        self.cartItems.removeAll()
+        self.histories.removeAll()
+        self.userData = nil
         for data in localData {
             deleteLocalData(named: data)
         }

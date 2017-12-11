@@ -1,37 +1,25 @@
 //
-//  CartVC.swift
+//  CheckOutCart.swift
 //  Laundrivery
 //
-//  Created by Difa Sanditya Alifian on 03/12/17.
+//  Created by Difa Sanditya Alifian on 10/12/17.
 //  Copyright © 2017 Difa Sanditya Alifian. All rights reserved.
 //
 
 import UIKit
 
-class CartVC: UIViewController {
+class CheckOutCart: UIViewController {
     @IBOutlet weak var cartTable: UITableView!
     
-    var cart: [CartItem] = [CartItem]()
-
-    override func viewDidLoad() {
-        cart = DatabaseService.shared.getCartItems()
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        cartTable.separatorInset = UIEdgeInsets.zero
-        cartTable.layoutMargins = UIEdgeInsets.zero
-    }
+    var cart: [CartItem] = DatabaseService.shared.getCartItems()
     
-    @IBAction func checkOutDidTapped(_ sender: Any) {
-        if cart.isEmpty {
-            UtilitiesFunction.showAlert(self, title: "Error", message: "Please add something into your cart first")
-            return
-        }
-        self.performSegue(withIdentifier: "checkOutSegue", sender: nil)
+    override func viewDidLoad() {
+        cartTable.separatorStyle = .none
+        super.viewDidLoad()
     }
 }
 
-extension CartVC: UITableViewDataSource {
+extension CheckOutCart: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cart.count
     }
@@ -45,6 +33,4 @@ extension CartVC: UITableViewDataSource {
         cell.price = item.detail.price
         return cell
     }
-    
-    
 }
